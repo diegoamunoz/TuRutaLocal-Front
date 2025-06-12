@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/public/home/home.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { RegisterComponent } from './pages/public/register/register.component';
 import { ReservasComponent } from './pages/private/reservas/reservas.component';
+import { ServiciosComponent } from './pages/private/servicios/servicios.component';
 
 
 export const routes: Routes = [
@@ -10,6 +11,7 @@ export const routes: Routes = [
     { path:'login', component: LoginComponent  },
     { path:'register', component: RegisterComponent  },
     { path:'reservas', component: ReservasComponent  },
+    {path: 'dashboard/servicios',component:ServiciosComponent},
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
     { path: '', redirectTo: 'home' , pathMatch: 'full' },
 ];
