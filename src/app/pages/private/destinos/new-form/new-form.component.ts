@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-new-form',
+  imports: [ReactiveFormsModule],
+  templateUrl: './new-form.component.html',
+  styleUrl: './new-form.component.css'
+})
+export class destinosNewForm {
+  formData!: FormGroup; 
+
+  constructor(){
+    this.formData = new FormGroup({
+      name: new FormControl (),
+      urlimage: new FormControl (),
+      feedback: new FormControl (),
+      services: new FormControl ()
+    });
+  }
+
+}
