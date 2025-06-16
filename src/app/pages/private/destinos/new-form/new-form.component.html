@@ -1,5 +1,8 @@
 <p>new-form works!</p>
-<form [formGroup]="formData" class="form form-destinos">
+<form 
+    [formGroup]="formData"
+    (submit)="onSubmit()"
+    class="form form-destinos">
     <h1>Registrar Destinos</h1>
     <div class="field">
         <label for="destino-name">nombre del destino</label>
@@ -24,6 +27,6 @@
         </select>
     </div>
     <div class="field">
-        <button>registrar destino</button>
+        <button type="submit">registrar destino</button>
     </div>
 </form>
