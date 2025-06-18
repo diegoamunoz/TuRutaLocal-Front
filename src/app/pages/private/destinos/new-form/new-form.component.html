@@ -14,16 +14,16 @@
     </div>
     <div class="field">
         <label for="calificacion">calificacion</label>
-        <input type="number" formControlName="feedback" value="" placeholder="ej: 5" id="calificacion">
+        <input type="number" max="5" min="1" formControlName="score" value="" placeholder="ej: 5" id="calificacion">
     </div>
     <div class="field">
-        <label for="">Servicio</label>
+        <label for="">Destinos</label>
         <select formControlName="services" id="">
             <option value="">seleccione</option>
-            <option value="">tour por el Eje cafetero</option>
-            <option value="">tour san andres islas</option>
-            <option value="">tour tolu</option>
-            <option value="">paasadia nevado del cocuy</option>
+            <option value="tour por el Eje cafetero">Eje cafetero</option>
+            <option value="tour san andres islas">san andres islas</option>
+            <option value="tour tolu">tolu</option>
+            <option value="paasadia nevado del cocuy">nevado del cocuy</option>
         </select>
     </div>
     <div class="field">
