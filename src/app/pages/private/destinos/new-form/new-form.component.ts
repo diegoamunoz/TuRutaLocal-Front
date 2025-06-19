@@ -9,7 +9,8 @@ import { DestinosService } from '../../../../servicios/destinos.service';
   styleUrl: './new-form.component.css'
 })
 export class destinosNewForm {
-  formData!: FormGroup; 
+  formData!: FormGroup;
+  destinos: any =  [];
 
   constructor(private destinosService: DestinosService ){
     this.formData = new FormGroup({
@@ -41,6 +42,7 @@ export class destinosNewForm {
     this.destinosService.getDestinos().subscribe({
       next: (data) => {
         console.log( data );
+        this.destinos = data;
       },
       error: (error) => {
         console.log( error );

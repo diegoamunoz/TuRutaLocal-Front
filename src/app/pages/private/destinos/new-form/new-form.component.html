@@ -20,10 +20,12 @@
         <label for="">Destinos</label>
         <select formControlName="services" id="">
             <option value="">seleccione</option>
-            <option value="tour por el Eje cafetero">Eje cafetero</option>
-            <option value="tour san andres islas">san andres islas</option>
-            <option value="tour tolu">tolu</option>
-            <option value="paasadia nevado del cocuy">nevado del cocuy</option>
+
+            @for (objDestinos of destinos; track $index) {
+            <option [value]="objDestinos._id">{{objDestinos.name}}</option>
+
+            }
+            
         </select>
     </div>
     <div class="field">

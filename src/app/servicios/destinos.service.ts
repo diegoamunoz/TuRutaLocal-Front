@@ -13,3 +13,6 @@ export class DestinosService {
 
   }
 }
+
+
+// ng generate service services/destinos-service
