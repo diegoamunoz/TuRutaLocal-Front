@@ -10,7 +10,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class servicioNewFormcomponent {
 formData!:FormGroup ;
 
-  constructor(){
+  constructor( ){
     this.formData = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
       description: new FormControl( '', [Validators.required] ),
@@ -37,6 +37,11 @@ formData!:FormGroup ;
 
     this.formData.reset();
   }
+    ngOnInit() {
 
+  }
+  ngOnDestroy() {
+    console.log( 'ngOnDestroy' );
+  }
   
 }
