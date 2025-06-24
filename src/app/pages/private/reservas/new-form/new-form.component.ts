@@ -8,7 +8,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './new-form.component.css'
 })
 
-export class UserNewForm {
+export class ReservasNewForm {
   formData!: FormGroup;
 
   constructor() {
