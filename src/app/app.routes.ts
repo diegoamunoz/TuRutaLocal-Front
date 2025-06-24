@@ -15,6 +15,6 @@ export const routes: Routes = [
     { path:'dashboard/usuarios', component: UsersComponent  },
     { path:'dashboard/usuarios/new', component: UserNewForm  },
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
-    { path: '', redirectTo: 'home' , pathMatch: 'full' }, 
+    { path: '', redirectTo: 'home' , pathMatch: 'full' },
 ];
  
