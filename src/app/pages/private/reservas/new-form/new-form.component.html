@@ -1,36 +1,36 @@
 <form [formGroup]="formData" 
-class="form form-user"
+class="form form-reservas"
 (submit)="onSubmit()"
 >
 
-    <h1> Registrar usuarios </h1>
+    <h1> Registrar reservas </h1>
     <div class="field">
-        <label for="email-usuario">Email</label>
-        <input type="text" formControlName="email" id="email-usuario">
+        <label for="usuario">Usuario</label>
+        <input type="text" formControlName="usuario" id="usuario">
     </div>
     <div class="field">
-        <label for="nombre-usuario">Nombre</label>
-        <input type="text" formControlName="nombre" id="nombre-usuario">
+        <label for="nombre-servicio">Nombre servicio</label>
+        <input type="text" formControlName="nombre-servicio" id="nombre-servicio">
     </div>
      <div class="field">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" id="username">
+        <label for="fechareserva">Fecha reserva</label>
+        <input type="text" formControlName="fecha-reserva" id="fecha-reserva">
     </div>
     <div class="field">
-        <label for="password-usuario">Password</label>
-        <input type="text" formControlName="password" id="password-usuario">
+        <label for="cantidad-personas">Cantidad personas</label>
+        <input type="number" formControlName="cantidad-personas" id="cantidad-personas">
     </div>
     <div class="field">
-        <label for="movilusuario">Móvil</label>
-        <input type="number" formControlName="movil" id="movilusuario">
-    </div>
-    <div class="field">
-        <label for="role">Rol</label>
-        <select formControlName="rol" id="role">
-            <option value="admin">administrador</option>
-            <option value="comercial">comercial</option>
-            <option value="cliente">cliente</option>
+        <label for="role">Estado reserva</label>
+        <select formControlName="estado-reserva" id="estado-reserva">
+            <option value="pendiente">pendiente</option>
+            <option value="confirmada">confirmada</option>
+            <option value="cancelada">cancelada</option>
         </select>
+    </div>
+    <div class="field">
+        <label for="cantidad-personas">Código reserva</label>
+        <input type="number" formControlName="codigo-reserva" id="codigo-reserva">
     </div>
     <div class="field">
         <button type="submit">Register usuario</button>
