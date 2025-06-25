@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DestinosService } from '../../../../servicios/destinos.service';
+import { ServiciosService } from '../../../../services/servicios.service';
+
 
 @Component({
   selector: 'app-new-form',
@@ -10,9 +11,9 @@ import { DestinosService } from '../../../../servicios/destinos.service';
 })
 export class destinosNewForm {
   formData!: FormGroup;
-  destinos: any =  [];
+  servicios: any =  [];
 
-  constructor(private destinosService: DestinosService ){
+  constructor(private serviciosService: ServiciosService ){
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlimage: new FormControl (),
@@ -39,18 +40,20 @@ export class destinosNewForm {
   }
   
   ngOnInit() {
-    this.destinosService.getDestinos().subscribe({
+    this.serviciosService.getServicios().subscribe({
       next: (data) => {
-        console.log( data );
-        this.destinos = data;
+        console.log(data);
+        this.servicios = data
       },
-      error: (error) => {
-        console.log( error );
+      error: ( error ) => {
+        console.error (error);
       },
       complete: () => {
-        console.log( 'complete' );
+        console.log ('complete')
       }
-    })
+    }
+
+    )
   }
 
   ngOnDestroy() {

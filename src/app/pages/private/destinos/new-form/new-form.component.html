@@ -17,14 +17,15 @@
         <input type="number" max="5" min="1" formControlName="score" value="" placeholder="ej: 5" id="calificacion">
     </div>
     <div class="field">
-        <label for="">Destinos</label>
+        <label for="">Servicios</label>
         <select formControlName="services" id="">
             <option value="">seleccione</option>
 
-            @for (objDestinos of destinos; track $index) {
-            <option [value]="objDestinos._id">{{objDestinos.name}}</option>
+           @for (objServicios of servicios; track $index) {
+            <option [value]="objServicios._id">{{objServicios.name}}</option>
+           }
 
-            }
+            
             
         </select>
     </div>
