@@ -1,38 +1,45 @@
 <form [formGroup]="formData" 
-class="form form-reservas"
-(submit)="onSubmit()"
->
+      (ngSubmit)="onSubmit()"
+      class="form form-reservas">
 
-    <h1> Registrar reservas </h1>
-    <div class="field">
-        <label for="usuario">Usuario</label>
-        <input type="text" formControlName="usuario" id="usuario">
-    </div>
-    <div class="field">
-        <label for="nombre-servicio">Nombre servicio</label>
-        <input type="text" formControlName="nombre-servicio" id="nombre-servicio">
-    </div>
-     <div class="field">
-        <label for="fechareserva">Fecha reserva</label>
-        <input type="text" formControlName="fecha-reserva" id="fecha-reserva">
-    </div>
-    <div class="field">
-        <label for="cantidad-personas">Cantidad personas</label>
-        <input type="number" formControlName="cantidad-personas" id="cantidad-personas">
-    </div>
-    <div class="field">
-        <label for="role">Estado reserva</label>
-        <select formControlName="estado-reserva" id="estado-reserva">
-            <option value="pendiente">pendiente</option>
-            <option value="confirmada">confirmada</option>
-            <option value="cancelada">cancelada</option>
-        </select>
-    </div>
-    <div class="field">
-        <label for="cantidad-personas">Código reserva</label>
-        <input type="number" formControlName="codigo-reserva" id="codigo-reserva">
-    </div>
-    <div class="field">
-        <button type="submit">Register usuario</button>
-    </div>
+  <h1>Registrar reservas</h1>
+
+  <div class="field">
+    <label for="usuario">Usuario</label>
+    <input type="text" formControlName="usuario" id="usuario">
+  </div>
+
+  <div class="field">
+    <label for="nombreServicio">Nombre servicio</label>
+    <input type="text" formControlName="nombreServicio" id="nombreServicio">
+  </div>
+
+  <div class="field">
+    <label for="fechaReserva">Fecha reserva</label>
+    <input type="text" formControlName="fechaReserva" id="fechaReserva">
+  </div>
+
+  <div class="field">
+    <label for="cantidadPersonas">Cantidad personas</label>
+    <input type="number" formControlName="cantidadPersonas" id="cantidadPersonas">
+  </div>
+
+  <div class="field">
+    <label for="estadoReserva">Estado reserva</label>
+    <select formControlName="estadoReserva" id="estadoReserva">
+      <option value="pendiente">pendiente</option>
+      <option value="confirmada">confirmada</option>
+      <option value="cancelada">cancelada</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="codigoReserva">Código reserva</label>
+    <input type="number" formControlName="codigoReserva" id="codigoReserva">
+  </div>
+
+  <div class="field">
+    <button type="submit">Registrar reserva</button>
+  </div>
 </form>
+

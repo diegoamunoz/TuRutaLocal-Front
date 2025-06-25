@@ -1,43 +1,32 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-new-form',
-  imports: [ReactiveFormsModule],
+  selector: 'app-reservas-new-form',
   templateUrl: './new-form.component.html',
-  styleUrl: './new-form.component.css'
+  styleUrls: ['./new-form.component.css']
 })
-
 export class ReservasNewForm {
-  formData!: FormGroup;
-
-  constructor() {
-    this.formData = new FormGroup({
-      nombre: new FormControl('', [ Validators.required, Validators.minLength ( 5 ), Validators.maxLength(50) ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      username: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-      movil: new FormControl('', [Validators.required]),
-      rol: new FormControl('cliente', []),
-
-    });
-        
-  }
+  formData = new FormGroup({
+    nombreServicio: new FormControl('', [Validators.required]),
+    fechaReserva: new FormControl('', [Validators.required]),
+    cantidadPersonas: new FormControl('', [Validators.required]),
+    estadoReserva: new FormControl('', [Validators.required]),
+    codigoReserva: new FormControl('cliente', [])
+  });
 
   onSubmit() {
-    
-    console.log( this.formData.invalid,
-      this.formData.valid,
-      this.formData.invalid,
-      this.formData.pristine,
-      this.formData.dirty,
-      this.formData.touched
-    )
+    console.log(
+      'Invalid:', this.formData.invalid,
+      'Valid:', this.formData.valid,
+      'Pristine:', this.formData.pristine,
+      'Dirty:', this.formData.dirty,
+      'Touched:', this.formData.touched
+    );
 
-    if ( this.formData.valid )
-    console.log( this.formData.value );
-
-    this.formData.reset(); //Limpiamos los campos del formulario
-    
+    if (this.formData.valid) {
+      console.log( this.formData.value);
+      this.formData.reset(); // Limpiamos el formulario
+    }
   }
 }
