@@ -1,22 +1,26 @@
+<pre>{{servicios|json}}</pre>
 <form [formGroup] = "formData" 
       (ngSubmit)="onSubmit()"
       class="form form-reservas">
 
   <h1>Registrar reservas</h1>
 
-  <div class="field">
-    <label for="usuario">Usuario</label>
-    <input type="text" formControlName="usuario" id="usuario">
-  </div>
+
 
   <div class="field">
     <label for="nombreServicio">Nombre servicio</label>
-    <input type="text" formControlName="nombreServicio" id="nombreServicio">
+    <select formControlName="servicio">
+      <option value="pendiente">seleccionar</option>
+      @for (servicio of servicios; track $index) {
+        <option [value]="servicio._id">{{servicio.name}}</option>
+    }
+      
+    </select>
   </div>
 
   <div class="field">
     <label for="fechaReserva">Fecha reserva</label>
-    <input type="text" formControlName="fechaReserva" id="fechaReserva">
+    <input type="date" formControlName="fechaReserva" id="fechaReserva">
   </div>
 
   <div class="field">
