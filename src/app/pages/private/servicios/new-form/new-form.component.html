@@ -17,24 +17,26 @@
     </div>
     <div class="field" >
         <label for="">Valor del servicio </label>
-        <input type="text" formControlName="price" id="servicio-valor">
+        <input type="number" formControlName="price" id="servicio-valor">
     </div>
     <div class="field" >
-        <label for="">Categoria del servicio </label>
-            <select name="" id="servicio-categoria">
-            <option value="tour">Tour</option>
-            <option value="caminata">Caminata</option>
-            <option value="viaje">Viaje</option>
+        <label for="servicio-categoria">Categoria del servicio </label>
+            <select formControlName="category" id="servicio-categoria">
+            <option value="non-category">Seleccione...</option>
+            @for (categorie of categories; track $index) { 
+                <option [value]="categorie">{{categorie}}</option>
+            }
+
         <input type="text" formControlName="category" id="">
         </select>
     </div>
     <div class="field" >
         <label for="">estado del servicio </label>
-        <input type="radio" formControlName="state" value="true" id="servicio-estado-disponibilidad">
+        <input type="radio" formControlName="state" [value]="state[0]" id="servicio-estado-disponibilidad">
         <label for="">disponible</label>
-        <input type="radio" formControlName="state" value="no-disponible" id="servicio-estado-no-disponible" >
+        <input type="radio" formControlName="state" [value]="state[1]" id="servicio-estado-no-disponible" >
         <label for="">no disponible</label>
-        <input type="radio" formControlName="state" value="por-confirmar" id="servicio-estado-por-confirmar" >
+        <input type="radio" formControlName="state" [value]="state[2]" id="servicio-estado-por-confirmar" >
         <label for="">por confirmar</label>
     </div>
     <div class="field">
