@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reservas-new-form',
+  imports: [ReactiveFormsModule],
   templateUrl: './new-form.component.html',
   styleUrls: ['./new-form.component.css']
 })
+
 export class ReservasNewForm {
-  formData = new FormGroup({
+  formData!:FormGroup
+  constructor () {
+this.formData = new FormGroup({
     nombreServicio: new FormControl('', [Validators.required]),
     fechaReserva: new FormControl('', [Validators.required]),
     cantidadPersonas: new FormControl('', [Validators.required]),
     estadoReserva: new FormControl('', [Validators.required]),
-    codigoReserva: new FormControl('cliente', [])
+    codigoReserva: new FormControl('cliente', []) 
   });
+  }
+  
 
   onSubmit() {
     console.log(
