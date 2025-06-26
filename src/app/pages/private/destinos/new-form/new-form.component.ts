@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServiciosService } from '../../../../services/servicios.service';
+import { DestinosService } from '../../../../services/destinos.service';
 
 
 @Component({
@@ -13,7 +14,10 @@ export class destinosNewForm {
   formData!: FormGroup;
   servicios: any =  [];
 
-  constructor(private serviciosService: ServiciosService ){
+  constructor(
+    private serviciosService: ServiciosService,
+    private destinosService: DestinosService
+   ){
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlimage: new FormControl (),
@@ -33,7 +37,19 @@ export class destinosNewForm {
     )
 
     if( this.formData.valid ){
-      console.log( this.formData.value )
+      console.log( this.formData.value );
+      this.destinosService.registerDestino( this.formData.value ).subscribe({
+        next: ( data ) =>{
+          console.log( data );
+        },
+        error: (error) =>{
+          console.error(error);
+        },
+        complete: () => {
+          this.formData.reset();
+        }
+      })
+
     }
 
     this.formData.reset();  // limpiamos los campos del formulario 
