@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { servicesService } from '../../../services/services.service';
 
 
 @Component({
@@ -8,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrl: './servicios.component.css'
 })
 export class ServiciosComponent {
-  
+  constructor ( private servicesservice : servicesService) { }
+
+  ngOnInit() { 
+    this.servicesservice.getServicios().subscribe({
+      next:(data)=>{
+        console.log(data);
+      },  
+      error:(error)=>{
+        console.error(error);
+      },
+      complete:()=>{}
+
+    })
+  }
 }

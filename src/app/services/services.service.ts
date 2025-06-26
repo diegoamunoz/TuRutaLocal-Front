@@ -11,4 +11,7 @@ export class servicesService {
   registerServicio (newServicio:any) {
     return this.http.post('http://localhost:3000/api/servicios',newServicio )
   }
+  getServicios () {
+    return this.http.get('http://localhost:3000/api/servicios');
+  }
 }
