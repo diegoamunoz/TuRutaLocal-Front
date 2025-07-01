@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServiciosComponent } from '../servicios.component';
 import { servicesService } from '../../../../services/services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-form',
@@ -14,7 +15,9 @@ export class servicioNewFormcomponent {
   categories:any = ['tour', 'safari', 'caminata']
   state:any = ['disponible', 'no-disponible', 'por-confirmar' ]
 
-  constructor( private servicesService: servicesService ){
+  constructor( private servicesService: servicesService, 
+    private router:Router
+  ){
     this.formData = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
       description: new FormControl( '', [Validators.required] ),
@@ -40,6 +43,7 @@ export class servicioNewFormcomponent {
       this.servicesService.registerServicio(this.formData.value).subscribe({
         next: (data) => {
           console.log(data);
+          this.router.navigateByUrl('/dashboard/servicios/new')
         },
         error: (error) =>{
           console.error(error);

@@ -9,12 +9,15 @@ import { servicesService } from '../../../services/services.service';
   styleUrl: './servicios.component.css'
 })
 export class ServiciosComponent {
+  servicios:any = []
+
   constructor ( private servicesservice : servicesService) { }
 
   ngOnInit() { 
     this.servicesservice.getServicios().subscribe({
       next:(data)=>{
         console.log(data);
+        this.servicios = data;
       },  
       error:(error)=>{
         console.error(error);
