@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ServiciosService } from '../../../../servicios/servicios.service';
 import { JsonPipe } from '@angular/common';
+import { ReservasService } from '../../../../servicios/reservas.service';
 
 @Component({
   selector: 'app-reservas-new-form',
@@ -13,13 +14,16 @@ import { JsonPipe } from '@angular/common';
 export class ReservasNewForm {
   formData!:FormGroup 
   servicios:any=[]
-  constructor (private serviciosService:ServiciosService) {
+  constructor (
+  private serviciosService:ServiciosService,
+  private ReservasService: ReservasService
+) {
 this.formData = new FormGroup({
     servicio: new FormControl('', [Validators.required]),
-    fechaReserva: new FormControl('', [Validators.required]),
+    fechaReservada: new FormControl('', [Validators.required]),
     cantidadPersonas: new FormControl('', [Validators.required]),
     estadoReserva: new FormControl('', [Validators.required]),
-    codigoReserva: new FormControl('cliente', []) 
+    // codigoReserva: new FormControl('cliente', []) 
   });
   }
   
@@ -35,7 +39,18 @@ this.formData = new FormGroup({
 
     if (this.formData.valid) {
       console.log( this.formData.value);
-      this.formData.reset(); // Limpiamos el formulario
+      this.ReservasService.registerReserva( this.formData.value).subscribe({
+        next: ( data) => {
+          console.log( data );
+        },
+        error: ( error) => {
+          console.error( error );
+        },
+        complete: () => {
+          this.formData.reset(); // Limpiamos el formulario
+        }
+      })
+      
     }
   }
   ngOnInit() {
