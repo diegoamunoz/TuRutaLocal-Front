@@ -29,6 +29,7 @@ export class Resena {
       this.formData.dirty,
       this.formData.touched
     )
+    
 
     if( this.formData.valid ){
       console.log( this.formData.value )
