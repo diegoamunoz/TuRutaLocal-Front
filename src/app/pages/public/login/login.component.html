@@ -1,1 +1,43 @@
-<p>login works!</p>
+<form 
+    class="form form-login"
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+>
+    
+    <div class="form-content">
+        <div class="field">
+            <label for="username">username*</label>
+            <input type="text" placeholder="ej:valeria@correo.co" id="username" formControlName="username">
+            <div class="error">
+                @if (formData.get('username')?.invalid && (formData.get('username')?.dirty || formData.get('username')?.touched) ) {
+                    @if (formData.get( 'username' )?.errors?.['required']) {
+                        <span>el usuario es obligatorio</span>
+                    }
+                    @if (formData.get('username')?.errors?.[ 'email' ]) {}
+                    <span>correo no valido</span>
+                }
+            </div>
+        </div>
+        <div class="field">
+            <label for="">Password*</label>
+            <input type="password" placeholder="ej:123456" id="password" formControlName="password">
+            <div class="error">
+                <!-- validar el estado del campo actual -->
+                @if (formData.get( 'password' )?.invalid && (formData.get('password')?.dirty || formData.get('password')?.touched)) {
+                    @if (formData.get( 'password' )?.errors?.['required']) {
+                        <span>la contraseña es obligatoria</span>
+                    }
+                    @if (formData.get( 'password' )?.errors?.['minlenght']) {
+                        <span>minimo ocho caracteres</span>
+                    }
+                    @if (formData.get( 'password' )?.errors?.['maxlenght']) {
+                        <span>maximo doce caracteres</span>
+                    }
+                }
+            </div>
+        </div>
+        <div class="field">
+            <button type="submit" [disabled]="formData.invalid">login</button>
+        </div>
+    </div>
+</form>
