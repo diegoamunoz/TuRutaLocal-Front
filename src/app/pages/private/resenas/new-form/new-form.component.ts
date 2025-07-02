@@ -1,20 +1,21 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import { ResenasService } from "../../../../servicios/resenas.service";
 
 @Component({
-    selector: 'new-form-resenas',
+    selector: 'app-resenas',
     imports: [ReactiveFormsModule],
     templateUrl: './new-form.component.html',
     styleUrl: './new-form.component.css'
 })
-export class ResenasService {
+export class Resena {
     formData!: FormGroup;
     resenas: any =  [];
 
     constructor(private resenasService: ResenasService){
         this.formData = new FormGroup({
             usuario: new FormControl ( '',[Validators.required]),
-            Servicio: new FormControl ( '',[ Validators.required]),
+            servicio: new FormControl ( '',[ Validators.required]),
             score: new FormControl ( '',[ Validators.required]),
             comentario: new FormControl ( '',[ Validators.required])
         })
