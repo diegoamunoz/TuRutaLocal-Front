@@ -33,7 +33,7 @@ export class Resena {
     if( this.formData.valid ){
       console.log( this.formData.value )
     }
-
+          
     this.formData.reset();  // limpiamos los campos del formulario 
   }
 }
