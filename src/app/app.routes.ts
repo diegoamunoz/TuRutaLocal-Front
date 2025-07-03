@@ -6,15 +6,18 @@ import { ReservasComponent } from './pages/private/reservas/reservas.component';
 import { ServiciosComponent } from './pages/private/servicios/servicios.component';
 import { Component } from '@angular/core';
 import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new-form.component';
+import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
+import { authGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
-    { path:'', component: HomeComponent},
+    { path:'home', component: HomeComponent},
     { path:'login', component: LoginComponent  },
     { path:'register', component: RegisterComponent  },
     { path:'reservas', component: ReservasComponent  },
-    {path: 'dashboard/servicios',component:ServiciosComponent},
-    {path: 'dashboard/servicios/new', component:servicioNewFormcomponent},
+    {path:'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
+    {path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
+    {path: 'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
     { path: '', redirectTo: 'home' , pathMatch: 'full' },
 ];
