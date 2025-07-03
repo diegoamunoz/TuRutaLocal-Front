@@ -21,7 +21,6 @@ export class destinosNewForm {
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlimage: new FormControl (),
-      score: new FormControl (),
       services: new FormControl ()   // TODO: Traer los datos antes de establecer las reglas 
     });
   }
