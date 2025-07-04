@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, map, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,26 @@ export class AuthService {
 
   verifyAuthenticateUser() {
     return this.http.get('http://localhost:3000/api/auth/re-new-token',{headers: this.getHeaders()})
+    .pipe(
+      map((data: any) => {
+        console.log( 'service', data);
+        return data.token;
+      } ),
+      catchError(() => {
+        return of(false);
+      } )
+    );
+  //   .pipe(tap( (data) => {
+  //     console.log(data);
+  //     return data;
+  //   }),
+  //   map((newData: any) => {
+  //     return newData.token.lenght
+  //   } ),
+  //   catchError( () => {
+  //     return of(false);
+  //   } )
+  // )
   }
 
   getHeaders() {
