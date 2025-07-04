@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, map, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,31 @@ export class AuthService {
 
   verifyAuthenticadeUser() {
     return this.http.get( 'http://localhost:3000/api/auth/re-new-token', { headers: this.getHeaders()})
+    .pipe(
+      map( ( data: any ) => {
+        console.log( 'Service', data );
+
+        return data.token; 
+      }),
+      catchError(() => {
+        return of ( false );
+      })
+    )
+        //    .pipe( 
+        //     tap ( ( data ) => {
+        //     console.log( data );
+
+        //     return data; 
+        //    }),
+        //    map( ( newData: any ) => {
+        //     return newData.token.length;
+        //    }),
+        //    catchError( () => {
+        //     return of( false ); 
+        //    })
+        // );
   }
 
-  
   getHeaders() {
     const token = localStorage.getItem( 'token') ?? ''; //Obtiene el token del localStorage
      return new HttpHeaders().set( 'X-Token' , token); //Envuelve el token en una Header tipo Http
