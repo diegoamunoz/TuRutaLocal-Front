@@ -24,10 +24,8 @@ export class LoginComponent {
       console.log(this.formData.value);
       this.authService.loginUser( this.formData.value).subscribe({
         next: (data: any ) =>{
-          this.authService.saveLocalStorage('token', data.token)
           this.router.navigateByUrl('dashboard');
-        },
-        
+        }, 
         error: (error ) =>{
           console.error(error);
         },
