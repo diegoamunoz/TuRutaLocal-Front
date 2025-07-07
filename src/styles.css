@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
 /* Estilos para el formulario de destinos */
 body {
@@ -64,4 +65,46 @@ button {
 
 button:hover {
     background-color: #45a049;
+=======
+/** CSS: Forms */
+.form h1 {
+    text-align: center;
+}
+
+.form-content {
+    border: 1px dotted;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.form-errors {
+    border: 1px dotted;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    .title {
+        font-size: 1.2rem;
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.error {
+    font-size: 1.3rem;    height: 1rem;
+    color: red;
+    font-style: italic;
+>>>>>>> 22ee6898546bb01ab1988cee76438d57983556c8
 }
