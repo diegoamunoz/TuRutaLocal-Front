@@ -6,12 +6,12 @@ import { ReservasComponent } from './pages/private/reservas/reservas.component';
 import { destinosNewForm } from './pages/private/destinos/new-form/new-form.component';
 import { ContactosComponent } from './pages/public/contactos/contactos.component';
 import { DestinosComponent } from './pages/public/destinos/destinos.component';
-import { resenasNewForm } from './pages/private/resenas/new-form/new-form.component';
 import { NosotrosComponent } from './pages/public/nosotros/nosotros.component';
 import { ServiciosComponent } from './pages/private/servicios/servicios.component';
 import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new-form.component';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
 import { authGuard } from './guards/auth.guard';
+import { resenas } from './pages/public/resenas/new-form/new-form.component';
 
 
 export const routes: Routes = [
@@ -24,7 +24,7 @@ export const routes: Routes = [
     { path:'reservas', component: ReservasComponent  },
     { path:'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
     { path:'dashboard/destinos/new-form', component:destinosNewForm},
-    { path:'dashboard/resenas/new-form', component: resenasNewForm},
+    { path:'resenas/new-form', component: resenas},
     { path:'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
     { path:'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
     { path:'**', redirectTo: 'home' , pathMatch: 'full' },

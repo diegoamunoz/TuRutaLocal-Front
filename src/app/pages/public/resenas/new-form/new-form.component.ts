@@ -8,7 +8,7 @@ import { ResenasService } from "../../../../services/resenas.service";
     templateUrl: './new-form.component.html',
     styleUrl: './new-form.component.css'
 })
-export class resenasNewForm{
+export class resenas{
     formData!: FormGroup;
     resenas: any =  [];
 
