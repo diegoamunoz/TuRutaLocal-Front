@@ -39,11 +39,11 @@ export class destinosNewForm {
   
   ngOnInit() {
     this.destinosService.getDestinos().subscribe({
-      next: (data) => {
+      next: (data: any) => {
         console.log( data );
         this.destinos = data;
       },
-      error: (error) => {
+      error: (error: any) => {
         console.log( error );
       },
       complete: () => {
