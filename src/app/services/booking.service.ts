@@ -15,4 +15,8 @@ export class BookingService {
   registerBooking( newBooking: any ) {
     return this.http.post( 'http://localhost:3000/api/reservas', newBooking, { headers: this.authService.getHeaders() } )
   }
+
+  getBookings() {
+    return this.http.get( 'http://localhost:3000/api/reservas' );
+  }
 }
