@@ -1,0 +1,41 @@
+/*barra de navegacion*/ /* header */
+.navbar__left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 2rem;
+    color: #7E2E84;
+}
+
+.img-navbar__left {
+    height: 100px;
+    width: 150px;
+    object-fit: contain;
+    display: block;
+    margin-right: 1rem;
+}
+
+.menu-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-main a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.menu-img1,
+.menu-img2,
+.menu-img3 {
+    height: 25px;
+    width: 25px;
+}
