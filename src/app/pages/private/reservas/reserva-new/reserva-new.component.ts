@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ReservasService } from '../../../../services/reservas.service';
 import { servicesService } from '../../../../services/services.service';
@@ -6,10 +7,20 @@ import { servicesService } from '../../../../services/services.service';
 @Component({
   selector: 'app-reserva-new',
   imports: [ ReactiveFormsModule],
+=======
+import { servicesService } from '../../../../services/services.service';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { BookingService } from '../../../../services/booking.service';
+
+@Component({
+  selector: 'app-reserva-new',
+  imports: [ ReactiveFormsModule ],
+>>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222
   templateUrl: './reserva-new.component.html',
   styleUrl: './reserva-new.component.css'
 })
 export class ReservaNewComponent {
+<<<<<<< HEAD
   formData!:FormGroup 
   servicios:any=[]
   constructor (
@@ -56,10 +67,36 @@ this.formData = new FormGroup({
       next: ( data ) => {
         console.log( data );
         this.servicios = data;
+=======
+  formData!: FormGroup;
+  servicios: any = [];
+
+  constructor( 
+    private servicioService: servicesService,
+    private bookingService: BookingService
+  ) {
+    // TODO: Tarea para Diego, colocar las validaciones de los campos
+    this.formData = new FormGroup({
+      servicio: new FormControl( '', [] ),
+      fechaReservada: new FormControl( '', [] ),
+      cantidadPersonas: new FormControl( '', [] ),
+      estado: new FormControl( '', [] ),
+      // codigoReserva: new FormControl( '', [] )
+    });
+  }
+
+  // La inicializacion del componente
+  ngOnInit() {
+    this.servicioService.getServicios().subscribe({
+      next: ( data ) => {
+        console.log( data );
+        this.servicios = data;  // Guardando los servicios que se van a desplegar en el componente
+>>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222
       },
       error: ( error ) => {
         console.error( error );
       },
+<<<<<<< HEAD
       complete: () => {
         console.log( 'complete' );
       }
@@ -70,3 +107,25 @@ this.formData = new FormGroup({
     }
   }
 
+=======
+      complete: () => {}
+    });
+  }
+
+  onSubmit() {
+    if( this.formData.valid ) {
+      console.log( this.formData.value );
+
+      this.bookingService.registerBooking( this.formData.value ).subscribe({
+        next: ( data ) => {
+          console.log( data );
+        },
+        error: ( error ) => {
+          console.error( error );
+        },
+        complete: () => {}
+      });
+    }
+  }
+}
+>>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222

@@ -1,3 +1,44 @@
+<<<<<<< HEAD
 <h1> Lista de reservas </h1>
 
 <a href="#" routerLink="/dashboard/reservas/new">Reservas new</a>
+=======
+<div class="page page-bookins-list">
+    <h1>Lista de Reservas Registradas</h1>
+
+    <table border="1">
+        <thead>
+            <th>
+                <tr>Nombre Servicio</tr>
+            </th>
+            <th>
+                <tr>Fecha Reservada</tr>
+            </th>
+            <th>
+                <tr>Cantidad Personas</tr>
+            </th>
+            <th>
+                <tr>Estado</tr>
+            </th>
+            <th>
+                <tr>Codigo de Reserva</tr>
+            </th>
+            <th>
+                <tr>Acciones</tr>
+            </th>
+        </thead>
+        <tbody>
+            @for ( booking of bookings; track $index) {
+            <tr>
+                <td>{{ booking.servicio.name }}</td>
+                <td>{{ booking.fechaReservada | date }}</td>
+                <td>{{ booking.cantidadPersonas }}</td>
+                <td>{{ booking.estado }}</td>
+                <td>{{ booking.codigoReserva }}</td>
+                <td>6</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+>>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222

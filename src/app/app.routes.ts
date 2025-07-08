@@ -18,7 +18,8 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'login', component: LoginComponent  },
     { path: 'register', component: RegisterComponent  },
-    { path:'reservas', component: ReservasComponent  },
+
+    { path: 'dashboard/reservas',component: ReservasComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
 
     { path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
@@ -30,5 +31,12 @@ export const routes: Routes = [
     { path:'dashboard/resenas/new-form', component: Resena, canActivate:[authGuard] },  
 
 // import { ReservasComponent } from './pages/private/reservas/reservas.component';
+{ path: '**', redirectTo: 'home' , pathMatch: 'full' },
+    { path: '', redirectTo: 'home' , pathMatch: 'full' },
+];
 
-]
+
+
+    
+    
+

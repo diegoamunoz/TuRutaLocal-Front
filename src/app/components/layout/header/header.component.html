@@ -1,9 +1,21 @@
+<p>header works!</p>
+
+<nav class="nabvarmenu">
+    <ul class="main-menu">
+        <li><a routerLink="dashboard/servicios">servicios</a></li>
+        <li class="menu-item">
+            <a class="btn btn-outline-primary btn-login" routerLink="login">Login</a>
+        </li>
+        <li class="menu-item">
+            <a class="btn btn-outline-primary btn-login" (click)="logout()">Logout</a>
+        </li>
+        <li><a routerLink="register">register</a></li>
+        <li><a routerLink="dashboard/servicios">Lista Servicio</a></li>
+        <li><a routerLink="dashboard/reservas">Lista Reservas</a></li>
+        <li><a routerLink="dashboard/destinos">destinos</a></li>
 <nav class="nabvarmenu">
     <ul class = "destinos">
         <li><a routerLink="dashboard/destinos">destinos</a></li>
-        <li><a routerLink="login">login</a></li>
-        <li><a routerLink="register">register</a></li>
-        <li><a routerLink="dashboard/servicios">Lista Servicio</a></li>
         <li><a routerLink="dashboard/usuarios">Usuarios list</a></li>
     <li><a routerLink="dashboard/usuarios/new">New User</a></li>
     <li><a routerLink="dashboard/reservas">Reservas</a></li>
