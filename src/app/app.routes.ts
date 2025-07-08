@@ -8,16 +8,19 @@ import { ServiciosComponent } from './pages/private/servicios/servicios.componen
 import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new-form.component';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
 import { authGuard } from './guards/auth.guard';
+import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
 
 
 export const routes: Routes = [
-    { path:'home', component: HomeComponent},
-    { path:'login', component: LoginComponent  },
-    { path:'register', component: RegisterComponent  },
-    { path:'reservas', component: ReservasComponent  },
-    { path:'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
+    { path: 'home', component: HomeComponent},
+    { path: 'login', component: LoginComponent  },
+    { path: 'register', component: RegisterComponent  },
+    { path: 'reservas', component: ReservasComponent  },
+    { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
     { path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
+    { path: 'dashboard/reservas',component: ReservasComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
+    { path: 'dashboard/reservas/new', component: ReservaNewComponent, canActivate:[ authGuard ] },
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
     { path: '', redirectTo: 'home' , pathMatch: 'full' },
 ];
