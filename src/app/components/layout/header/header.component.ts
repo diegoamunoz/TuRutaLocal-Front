@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { Token } from '@angular/compiler';
 
+=======
+import { RouterLink } from '@angular/router';
+>>>>>>> feature/users
 
 @Component({
   selector: 'app-header',
