@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DestinosService } from '../../../../servicios/destinos.service';
+import { DestinosService } from '../../../../services/destinos.service';
 
 @Component({
   selector: 'app-new-form',
@@ -16,7 +16,6 @@ export class destinosNewForm {
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlimage: new FormControl (),
-      score: new FormControl (),
       services: new FormControl ()   // TODO: Traer los datos antes de establecer las reglas 
     });
   }

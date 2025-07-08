@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { ResenasService } from "../../../../servicios/resenas.service";
+import { ResenasService } from "../../../../services/resenas.service";
 
 @Component({
     selector: 'app-resenas',
