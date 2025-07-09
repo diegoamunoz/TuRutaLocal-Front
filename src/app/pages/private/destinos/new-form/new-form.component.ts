@@ -13,7 +13,10 @@ export class destinosNewForm {
   formData!: FormGroup;
   destinos: any =  [];
 
-  constructor(private destinosService: DestinosService, private router: Router ){
+  constructor(
+    private destinosService: DestinosService, 
+    private router: Router 
+  ){
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlimage: new FormControl (),
@@ -36,7 +39,7 @@ export class destinosNewForm {
       this.destinosService.registerDestino( this.formData.value).subscribe({
         next: ( data ) => {
           console.log( data );
-          this.router.navigateByUrl( '/dashboard/destinos/new-form' );
+          this.router.navigateByUrl( '/dashboard/destinos' );
         },
          error: ( error ) => {
           console.error( error );
