@@ -1,54 +1,3 @@
-<<<<<<< HEAD
-<!-- <pre>{{servicios|json}}</pre> -->
-<form [formGroup] = "formData" 
-      (ngSubmit)="onSubmit()"
-      class="form form-reservas">
-
-  <h1>Registrar reservas</h1>
-
-
-
-  <div class="field">
-    <label for="nombreServicio">Nombre servicio</label>
-    <select formControlName="servicio">
-      <option value="pendiente">seleccionar</option>
-      @for (servicio of servicios; track $index) {
-        <option [value]="servicio._id">{{servicio.name}}</option>
-    }
-      
-    </select>
-  </div>
-
-  <div class="field">
-    <label for="fechaReserva">Fecha reserva</label>
-    <input type="text" formControlName="fechaReservada" id="fechaReserva">
-  </div>
-
-  <div class="field">
-    <label for="cantidadPersonas">Cantidad personas</label>
-    <input type="number" formControlName="cantidadPersonas" id="cantidadPersonas">
-  </div>
-
-  <div class="field">
-    <label for="estadoReserva">Estado reserva</label>
-    <select formControlName="estadoReserva" id="estadoReserva">
-      <option value="pendiente">pendiente</option>
-      <option value="confirmada">confirmada</option>
-      <option value="cancelada">cancelada</option>
-    </select>
-  </div>
-
-  <!-- <div class="field">
-    <label for="codigoReserva">Código reserva</label>
-    <input type="number" formControlName="codigoReserva" id="codigoReserva">
-  </div> -->
-
-  <div class="field">
-    <button type="submit">Registrar reserva</button>
-  </div>
-</form>
-
-=======
 <form 
     class="form form-login"
     [formGroup]="formData"
@@ -93,4 +42,4 @@
         </div>
     </div>
 </form>
->>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222
+

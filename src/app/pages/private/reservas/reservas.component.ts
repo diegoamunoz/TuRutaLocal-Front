@@ -1,34 +1,19 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { ReservasService } from '../../../services/reservas.service';
-=======
 import { BookingService } from '../../../services/booking.service';
 import { DatePipe } from '@angular/common';
->>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-reservas',
-  imports: [ DatePipe ],
+  imports: [ DatePipe, RouterLink ],
   templateUrl: './reservas.component.html',
   styleUrl: './reservas.component.css'
 })
 export class ReservasComponent {
-<<<<<<< HEAD
-  constructor ( private reservasService: ReservasService ) {};
-  ngOnInit() {
-    this.reservasService.getReservas().subscribe({
-      next:( data ) => {
-        console.log( data )
-      },
-      error:( error ) => {
-        console.error( error )
-      },
-      complete: () => {}
-    });
-  }
-=======
+onDelete(arg0: any) {
+throw new Error('Method not implemented.');
+}
   bookings: any = [];
->>>>>>> 252e7702f95604a7023cc23feca8e8293a2d5222
 
   constructor( private bookingService: BookingService ) {}
 

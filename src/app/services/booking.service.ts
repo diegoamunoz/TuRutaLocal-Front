@@ -12,11 +12,22 @@ export class BookingService {
     private authService: AuthService
   ) { }
 
-  registerBooking( newBooking: any ) {
-    return this.http.post( 'http://localhost:3000/api/reservas', newBooking, { headers: this.authService.getHeaders() } )
+  registerBooking(newBooking: any) {
+    return this.http.post(
+      'http://localhost:3000/api/reservas',
+      newBooking,
+      { headers: this.authService.getHeaders() }
+    );
   }
 
   getBookings() {
-    return this.http.get( 'http://localhost:3000/api/reservas' );
+    return this.http.get('http://localhost:3000/api/reservas');
+  }
+
+  deleteBookings(id: string) {
+    return this.http.delete(
+      `http://localhost:3000/api/reservas/${id}`,
+
+    );
   }
 }
