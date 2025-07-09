@@ -1,3 +1,6 @@
+<!-- <pre>{{ destinos | json }}</pre> -->
+
+
 <div class="page-destinos-list">
     <h1>destinos list</h1>
 
@@ -17,12 +20,23 @@
             </th>
         </thead>
         <tbody>
+            @for (destino of destinos; track $index) {
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+                <td>
+                    {{ destino.name }}
+                </td>
+                <td>
+                    <img class="destino-img" [src]="destino.urlImage" [alt]="destino.name" />
+                </td>
+                <td>
+                    {{ destino.services?.name }}
+                </td>
+                <td>
+                    actions
+                </td>
             </tr>
+            }
+
         </tbody>
     </table>
 </div>

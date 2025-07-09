@@ -10,15 +10,15 @@
     </div>
     <div class="field">
         <label for="destino-urlimage">imagen</label>
-        <input type="text" formControlName="urlimage" value="" placeholder="http://..." id="destino-urlimage">
+        <input type="text" formControlName="urlImage" value="" placeholder="http://..." id="destino-urlimage">
     </div>
     <div class="field">
-        <label for="">Destinos</label>
+        <label for="">servicios</label>
         <select formControlName="services" id="">
             <option value="">seleccione</option>
 
-            @for (objDestinos of destinos; track $index) {
-            <option [value]="objDestinos._id">{{objDestinos.name}}</option>
+            @for (objServices of servicios; track $index) {
+                <option [value]="objServices._id">{{objServices.name}}</option>
 
             }
             

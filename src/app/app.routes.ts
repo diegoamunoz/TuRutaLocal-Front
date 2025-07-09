@@ -13,7 +13,6 @@ import { DashboardComponent } from './pages/private/dashboard/dashboard.componen
 import { authGuard } from './guards/auth.guard';
 import { resenas } from './pages/public/resenas/new-form/new-form.component';
 import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
-//import { DestinosComponent } from './pages/public/destinos/destinos.component';
 
 
 

@@ -6,7 +6,6 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class DestinosService {
-
   constructor( private http: HttpClient, private authService: AuthService ) { }
 
   registerDestino( newDestino: any ){
