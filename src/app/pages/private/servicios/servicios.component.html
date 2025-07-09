@@ -24,13 +24,18 @@
 
         </thead>
         <tbody>
+            <img src="servicio.urlimage" alt="servicio.name" class="servicio-image">
             @for (servicio of servicios; track $index ){
             <tr>
                 <td>{{servicio.name}} </td>
                 <td>{{servicio.description}}</td>
-                <td>{{servicio.price}}</td>
+                <td>{{servicio.price | currency }}</td>
                 <td>{{servicio.category}}</td>
                 <td>{{servicio.state}}</td>
+                <td>
+                    <a class="btn btn-primary" href="">edit</a>
+                    <a class="btn btn-secondary" (click)="onDelete(servicio._id)">delete</a>
+                </td>
             </tr>
             }
 
