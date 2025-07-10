@@ -1,0 +1,44 @@
+<form 
+    class="form form-login"
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+>
+    <h1>Editar Reserva</h1>
+
+    <div class="form-content">
+        <div class="field">
+            <label for="servicio-name">Servicio</label>
+            <select formControlName="servicio" id="servicio-name">
+                <option value="">Selected..</option>
+                @for ( servicio of servicios; track $index ) {
+                    <option [value]="servicio._id">{{ servicio.name }}</option>
+                }
+            </select>
+        </div>
+        <div class="field">
+            <label for="servicio-fecha-reserva">Fecha de reserva</label>
+            <input type="date" formControlName="fechaReservada" placeholder="Ej: Manzana" id="servicio-fecha-reserva">
+        </div>
+        <div class="field">
+            <label for="servicio-cantidad-personas">Cantidad personas</label>
+            <input type="number" formControlName="cantidadPersonas" placeholder="Ej: Manzana" id="servicio-cantidad-personas">
+        </div>
+        <div class="field">
+            <label>Estado de la reserva </label>
+            <input type="radio" formControlName="estado" value="pendiente" placeholder="" id="reserva-estado-pendiente">
+            <label for="reserva-estado-pendiente">Pendiente</label>
+            <input type="radio" formControlName="estado" value="confirmada" placeholder="" id="reserva-estado-confirmada">
+            <label for="reserva-estado-confirmada">Confirmada</label>
+            <input type="radio" formControlName="estado" value="cancelada" placeholder="" id="reserva-estado-cancelada">
+            <label for="reserva-estado-cancelada">Cancelada</label>
+        </div>
+        <!-- <div class="field">
+            <label for="servicio-codigo">Código de Reserva</label>
+            <input type="text" formControlName="codigoReserva" placeholder="Ej: Manzana" id="servicio-cantidad-codigo" disabled>
+        </div> -->
+
+        <div class="field">
+            <button type="submit">Actualizar Reserva</button>
+        </div>
+    </div>
+</form>

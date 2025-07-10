@@ -19,6 +19,7 @@ export class ReservaNewComponent {
     private servicioService: servicesService,
     private bookingService: BookingService,
     private router: Router
+
   ) {
     // TODO: Tarea para Diego, colocar las validaciones de los campos
     this.formData = new FormGroup({
@@ -50,7 +51,7 @@ export class ReservaNewComponent {
 
   onDelete( id:string) {
     console.log(id);
-    this.bookingService.deleteBookings(id).subscribe({
+    this.bookingService.deleteBooking(id).subscribe({
     next: (data) => {
       console.log(data);
       this.loadData();

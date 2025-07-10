@@ -17,6 +17,10 @@ export class ReservasComponent {
 
   // Carga los datos en la inicializacion del componente
   ngOnInit() {
+   this.onLoadData() 
+  }
+
+  onLoadData(){
     this.bookingService.getBookings().subscribe({
       next: ( data ) => {
         console.log( data );
@@ -29,7 +33,17 @@ export class ReservasComponent {
     });
   }
 
-  onDelete(arg0: any) {
-  
+  onDelete(id:string){
+    this.bookingService.deleteBooking(id).subscribe({
+      next: ( data ) => {
+        console.log( data );
+        this.onLoadData()   
+      },
+      error: ( error ) => {
+        console.error( error );
+      },
+      complete: () => {}
+    })
+
   }
 }

@@ -1,12 +1,11 @@
-
 <h1> Lista de reservas </h1>
 
 <a routerLink="/dashboard/reservas/new">Reservas new</a>
-
 <div class="page page-bookins-list">
     <h1>Lista de Reservas Registradas</h1>
-
-    <table border="1">
+    <a routerLink="/dashboard/reservas/new" routerLinkActive="router-link-active" > Crear nueva reserva</a>
+    @if (bookings.length>0) {
+         <table border="1">
         <thead>
             <tr>
                 <th>Nombre Servicio</th>
@@ -18,20 +17,24 @@
             </tr>
         </thead>
         <tbody>
-            @for ( booking of bookings; track $index) {
-            <tr>
-                <td>{{ booking.servicio?.name || 'Servicio no disponible' }}</td>
-                <td>{{ booking.fechaReservada | date }}</td>
-                <td>{{ booking.cantidadPersonas }}</td>
-                <td>{{ booking.estado }}</td>
-                <td>{{ booking.codigoReserva }}</td>
-                <td>
-                    <a class="btn btn-primary">Edit 1</a>
-                    <a class="btn btn-primary">Edit 2</a>
-                    <a class="btn btn-secondy" (click)="onDelete(booking._id)">Delete</a>
-                </td>
-            </tr>
-            }
+                @for ( booking of bookings; track $index ) {
+                    <tr>
+                        <td>{{ booking.servicio.name }}</td>
+              
+                        <td>{{ booking?.fechaReservada | date }}</td>
+                        <td>{{ booking?.cantidadPersonas }}</td>
+                        <td>{{ booking?.estado }}</td>
+                        <td>{{ booking?.codigoReserva }}</td>
+                        <td>
+                            <a href="#" [routerLink]="['/dashboard','reservas','edit',booking._id]">Actualizar</a>
+                            <a href="#" (click)="onDelete(booking?._id); $event.preventDefault();">eliminar</a>
+                        </td>
+                    </tr>
+                }
         </tbody>
     </table>
+    }
+   @else {
+    <h3>No hay reservas registradas</h3>
+   }
 </div>
