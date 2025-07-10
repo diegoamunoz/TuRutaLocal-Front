@@ -24,9 +24,12 @@
 
         </thead>
         <tbody>
-            <img src="servicio.urlimage" alt="servicio.name" class="servicio-image">
+           
             @for (servicio of servicios; track $index ){
             <tr>
+                <td>
+                     <img [src]="servicio.urlImage" [alt]="servicio.name" class="servicio-image">
+                </td>
                 <td>{{servicio.name}} </td>
                 <td>{{servicio.description}}</td>
                 <td>{{servicio.price | currency }}</td>
