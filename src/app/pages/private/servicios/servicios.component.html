@@ -3,7 +3,7 @@
     <h1>Lista de servicios</h1>
 
     <a routerLink="/dashboard/servicios/new">Nuevo Servicio</a>
-    <!-- <pre>{{servicios | json }}</pre> -->
+    @if (servicios.length > 0 ) {
     <table border="1">
         <thead>
             <th>
@@ -33,7 +33,7 @@
                 <td>{{servicio.category}}</td>
                 <td>{{servicio.state}}</td>
                 <td>
-                    <a class="btn btn-primary" href="">edit</a>
+                    <a class="btn btn-primary" [routerLink]="['/dashboard', 'servicios', 'edit', servicio._id ]" >edit</a>
                     <a class="btn btn-secondary" (click)="onDelete(servicio._id)">delete</a>
                 </td>
             </tr>
@@ -41,4 +41,8 @@
 
         </tbody>
     </table>
+    }
+    @else {
+        <h3> no hay servicios registrados  </h3>
+    }
 </div>

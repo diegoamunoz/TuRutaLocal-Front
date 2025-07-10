@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ServiciosComponent } from '../servicios.component';
+import { ActivatedRoute, Router } from '@angular/router';
 import { servicesService } from '../../../../services/services.service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-new-form',
+  selector: 'app-servicio-edit',
   imports: [ReactiveFormsModule],
-  templateUrl: './new-form.component.html',
-  styleUrl: './new-form.component.css'
+  templateUrl: './servicio-edit.component.html',
+  styleUrl: './servicio-edit.component.css'
 })
-export class servicioNewFormcomponent {
+export class ServicioEditComponent {
   formData!:FormGroup ;
   categories:any = ['tour', 'safari', 'caminata']
   state:any = ['disponible', 'no-disponible', 'por-confirmar' ]
 
   constructor( private servicesService: servicesService, 
-    private router:Router
+    private router:Router,
+    private servicioService:servicesService,
+    private activateRoute: ActivatedRoute
   ){
     this.formData = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
@@ -59,7 +60,35 @@ export class servicioNewFormcomponent {
     this.formData.reset();
   }
     ngOnInit() {
+    this.activateRoute.params.subscribe({
+      next: (data ) => {
+        console.log(data['id']);
+        this.servicesService.getServicioById(data['id']).subscribe({
+        next: (data) => {
+          console.log(data);
+          this.formData.patchValue({
+            name:data.name,
+            description:data.description,
+            price:data.price,
+            category:data.category,
+            state:data.state
+          })
+        },
+        error: (error) => {
+        console.error(error);
+      },
+      complete: () =>{
 
+      }
+        })
+      },
+      error: (error) => {
+        console.error(error);
+      },
+      complete: () =>{
+
+      }
+        })
   }
   ngOnDestroy() {
     console.log( 'ngOnDestroy' );
