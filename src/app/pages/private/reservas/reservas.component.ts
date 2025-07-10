@@ -10,9 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './reservas.component.css'
 })
 export class ReservasComponent {
-onDelete(arg0: any) {
-throw new Error('Method not implemented.');
-}
+
   bookings: any = [];
 
   constructor( private bookingService: BookingService ) {}
@@ -29,5 +27,9 @@ throw new Error('Method not implemented.');
       },
       complete: () => {}
     });
+  }
+
+  onDelete(arg0: any) {
+  
   }
 }
