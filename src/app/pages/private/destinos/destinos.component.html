@@ -3,8 +3,11 @@
 
 <div class="page-destinos-list">
     <h1>destinos list</h1>
+    <a href="#" routerLink="/dashboard/destinos/new-form" routerLinkActive="router-link-active" >crear un nuevo destino</a>
+    
+    @if (destinos.length>0) {
 
-    <table border="1">
+         <table border="1">
         <thead>
             <th>
                 Destino
@@ -23,20 +26,27 @@
             @for (destino of destinos; track $index) {
             <tr>
                 <td>
-                    {{ destino.name }}
+                    {{ destino?.name }}
                 </td>
                 <td>
                     <img class="destino-img" [src]="destino.urlImage" [alt]="destino.name" />
                 </td>
                 <td>
-                    {{ destino.services?.name }}
+                    {{ destino?.services?.name }}
                 </td>
                 <td>
-                    actions
+                    <a href="#" [routerLink]="['/dashboard','destinos','edit',destino._id]">actualizar</a>
+                    <a href="#" (click)="onDelete(destino?._id); $event.preventDefault()">eliminar</a>
                 </td>
             </tr>
             }
 
         </tbody>
     </table>
+    }
+    @else {
+        <h3> no hay reservas registradas</h3>
+    }
+
+   
 </div>

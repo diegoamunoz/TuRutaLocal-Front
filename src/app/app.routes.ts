@@ -13,6 +13,7 @@ import { DashboardComponent } from './pages/private/dashboard/dashboard.componen
 import { authGuard } from './guards/auth.guard';
 import { resenas } from './pages/public/resenas/new-form/new-form.component';
 import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
+import { DestinosEditComponent } from './pages/private/destinos/destinos-edit/destinos-edit.component';
 
 
 
@@ -28,6 +29,7 @@ export const routes: Routes = [
     { path:'resenas/new-form', component: resenas},
     { path:'dashboard/destinos', component: DestinosComponent},
     { path:'dashboard/destinos/new-form', component:destinosNewForm},
+    { path:'dashboard/destinos/edit/:id', component: DestinosEditComponent, canActivate:[ authGuard ]},
     { path:'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
     { path:'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
     { path:'dashboard/reservas/new', component: ReservaNewComponent, canActivate:[ authGuard ] },

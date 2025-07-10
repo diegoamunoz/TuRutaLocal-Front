@@ -1,0 +1,30 @@
+<p>new-form works!</p>
+<form 
+    [formGroup]="formData"
+    (submit)="onSubmit()"
+    class="form form-destinos">
+    <h1>Editar Destinos</h1>
+    <div class="field">
+        <label for="destino-name">nombre del destino</label>
+        <input type="text" formControlName="name" value="" placeholder="eje cafetero" id="destino-name">
+    </div>
+    <div class="field">
+        <label for="destino-urlimage">imagen</label>
+        <input type="text" formControlName="urlImage" value="" placeholder="http://..." id="destino-urlimage">
+    </div>
+    <div class="field">
+        <label for="">servicios</label>
+        <select formControlName="services" id="">
+            <option value="">seleccione</option>
+
+            @for (objServices of servicios; track $index) {
+                <option [value]="objServices._id">{{objServices.name}}</option>
+
+            }
+            
+        </select>
+    </div>
+    <div class="field">
+        <button type="submit">actualizar destino</button>
+    </div>
+</form>
