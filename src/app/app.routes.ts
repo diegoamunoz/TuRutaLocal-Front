@@ -9,6 +9,7 @@ import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
 import { authGuard } from './guards/auth.guard';
 import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
+import { ReservaEditComponent } from './pages/private/reservas/reserva-edit/reserva-edit.component';
 
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
     { path: 'dashboard/reservas',component: ReservasComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
     { path: 'dashboard/reservas/new', component: ReservaNewComponent, canActivate:[ authGuard ] },
+    { path: 'dashboard/reservas/edit/:id', component: ReservaEditComponent, canActivate:[ authGuard ] },
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
     { path: '', redirectTo: 'home' , pathMatch: 'full' },
 ];

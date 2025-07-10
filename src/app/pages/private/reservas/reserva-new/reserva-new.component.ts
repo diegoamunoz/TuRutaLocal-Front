@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { servicesService } from '../../../../services/services.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BookingService } from '../../../../services/booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reserva-new',
@@ -15,7 +16,8 @@ export class ReservaNewComponent {
 
   constructor( 
     private servicioService: servicesService,
-    private bookingService: BookingService
+    private bookingService: BookingService,
+    private router:Router
   ) {
     // TODO: Tarea para Diego, colocar las validaciones de los campos
     this.formData = new FormGroup({
@@ -48,6 +50,7 @@ export class ReservaNewComponent {
       this.bookingService.registerBooking( this.formData.value ).subscribe({
         next: ( data ) => {
           console.log( data );
+          this.router.navigateByUrl('/dashboard/reservas')
         },
         error: ( error ) => {
           console.error( error );
