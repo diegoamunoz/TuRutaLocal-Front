@@ -7,6 +7,9 @@
     <table border="1">
         <thead>
             <th>
+                <tr>image</tr>
+            </th>
+            <th>
                 <tr>name Service</tr>
             </th>
             <th>
@@ -19,16 +22,24 @@
                 <tr>categoria del servicio</tr>
             </th>
             <th>
+                <tr>estado</tr>
+            </th>
+            <th>
                 <tr>acciones</tr>
             </th>
 
         </thead>
+        <thead>
+            
+        </thead>
+        
+        
         <tbody>
-           
+
             @for (servicio of servicios; track $index ){
             <tr>
                 <td>
-                     <img [src]="servicio.urlImage" [alt]="servicio.name" class="servicio-image">
+                    <img [src]="servicio.urlImage" [alt]="servicio.name" class="servicio-image">
                 </td>
                 <td>{{servicio.name}} </td>
                 <td>{{servicio.description}}</td>
@@ -36,7 +47,8 @@
                 <td>{{servicio.category}}</td>
                 <td>{{servicio.state}}</td>
                 <td>
-                    <a class="btn btn-primary" [routerLink]="['/dashboard', 'servicios', 'edit', servicio._id ]" >edit</a>
+                    <a class="btn btn-primary"
+                        [routerLink]="['/dashboard', 'servicios', 'edit', servicio._id ]">edit</a>
                     <a class="btn btn-secondary" (click)="onDelete(servicio._id)">delete</a>
                 </td>
             </tr>
@@ -46,6 +58,6 @@
     </table>
     }
     @else {
-        <h3> no hay servicios registrados  </h3>
+    <h3> no hay servicios registrados </h3>
     }
 </div>
