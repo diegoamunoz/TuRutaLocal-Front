@@ -1,0 +1,22 @@
+<div class="imagen-principal">
+    <img class="img imagen-principal" src="imagenes/shutter.png" alt="cartagena">
+</div>
+
+
+<h1>Nuestros destinos</h1>
+
+@for (destino of destinos; track $index) {
+
+<div class="card-tour vertical">
+    <img class="imagen-destinos" [src]="destino?.urlImage" [alt]="">
+    <div>
+        <h2 class="name">{{destino?.name}}</h2>
+    </div>
+    <div>
+        <h4 class="descripcion">{{destino?.descripcion}}</h4>
+    </div>
+    <div class="boton">
+        <button>Ver detalles</button>
+    </div>
+</div>
+}

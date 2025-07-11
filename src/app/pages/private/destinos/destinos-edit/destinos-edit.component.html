@@ -1,4 +1,3 @@
-<p>new-form works!</p>
 <form 
     [formGroup]="formData"
     (submit)="onSubmit()"
@@ -13,6 +12,10 @@
         <input type="text" formControlName="urlImage" value="" placeholder="http://..." id="destino-urlimage">
     </div>
     <div class="field">
+        <label for="destino-descripcion">descripcion</label>
+        <input type="text" formControlName="descripcion" value="" placeholder="" id="destino-descripcion">
+    </div>
+    <!-- <div class="field">
         <label for="">servicios</label>
         <select formControlName="services" id="">
             <option value="">seleccione</option>
@@ -23,7 +26,7 @@
             }
             
         </select>
-    </div>
+    </div> -->
     <div class="field">
         <button type="submit">actualizar destino</button>
     </div>

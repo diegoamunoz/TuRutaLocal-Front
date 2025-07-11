@@ -16,8 +16,11 @@
                 imagen
             </th>
             <th>
-                servicio
+                descripcion
             </th>
+            <!-- <th>
+                servicio
+            </th> -->
             <th>
                 actions
             </th>
@@ -32,8 +35,11 @@
                     <img class="destino-img" [src]="destino.urlImage" [alt]="destino.name" />
                 </td>
                 <td>
-                    {{ destino?.services?.name }}
+                    {{destino?.descripcion}}
                 </td>
+                <!-- <td>
+                    {{ destino?.services?.name }}
+                </td> -->
                 <td>
                     <a href="#" [routerLink]="['/dashboard','destinos','edit',destino._id]">actualizar</a>
                     <a href="#" (click)="onDelete(destino?._id); $event.preventDefault()">eliminar</a>

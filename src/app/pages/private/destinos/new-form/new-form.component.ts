@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { servicesService } from '../../../../services/services.service';
 import { DestinosService } from '../../../../services/destinos.service';
 
 @Component({
@@ -15,13 +14,14 @@ export class destinosNewForm {
   servicios: any =  [];
 
   constructor(
-    private sServicio: servicesService,
+    // private sServicio: servicesService,
     private destinosService: DestinosService,
     private router: Router 
   ){
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlImage: new FormControl (),
+      descripcion: new FormControl(),
       services: new FormControl ()   // TODO: Traer los datos antes de establecer las reglas 
     });
   }
@@ -54,23 +54,26 @@ export class destinosNewForm {
 
   }
   
-  ngOnInit() {
-    this.sServicio.getServicios().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.servicios = data
-      },
-      error: ( error ) => {
-          console.error( error );
-        },
-      complete: () => {
-        this.formData.reset();  // Limpiamos los campos del formulario
-      }
-    })
-  }
-
-  ngOnDestroy() {
+    ngOnDestroy() {
     console.log( 'ngOnDestroy' );
   }
 
 }
+
+
+  // ngOnInit() {
+  //   this.sServicio.getServicios().subscribe({
+  //     next: (data) => {
+  //       console.log(data);
+  //       this.servicios = data
+  //     },
+  //     error: ( error ) => {
+  //         console.error( error );
+  //       },
+  //     complete: () => {
+  //       this.formData.reset();  // Limpiamos los campos del formulario
+  //     }
+  //   })
+  // }
+
+

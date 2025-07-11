@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { servicesService } from '../../../../services/services.service';
 import { DestinosService } from '../../../../services/destinos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -17,7 +16,6 @@ export class DestinosEditComponent {
   selectedId!: string;
 
   constructor(
-    private sServicio: servicesService,
     private destinosService: DestinosService,
     private router: Router,
     private activatedRoute: ActivatedRoute
@@ -26,6 +24,7 @@ export class DestinosEditComponent {
     this.formData = new FormGroup({
       name: new FormControl ( '',[ Validators.required]),
       urlImage: new FormControl (),
+      descripcion: new FormControl(),
       services: new FormControl ()   // TODO: Traer los datos antes de establecer las reglas 
     });
   }
@@ -59,7 +58,8 @@ export class DestinosEditComponent {
             this.formData.patchValue({
               name: data.name,  
               urlImage: data.urlImage,
-              services: data.services._id
+              descripcion: data.descripcion
+              // services: data.services._id
             })
           },
           error: (error) => {
@@ -78,18 +78,7 @@ export class DestinosEditComponent {
        
       }
     })
-    this.sServicio.getServicios().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.servicios = data
-      },
-      error: ( error ) => {
-          console.error( error );
-        },
-      complete: () => {
-        this.formData.reset();  // Limpiamos los campos del formulario
-      }
-    })
+
   }
 
   ngOnDestroy() {
