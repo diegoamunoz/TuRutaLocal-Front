@@ -1,1 +1,61 @@
-<p>register works!</p>
+<form 
+  class="form form-register"
+  [formGroup]="formData"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="title">Registro de Usuario</h1>
+
+  <div class="form-content">
+    <div class="field">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" formControlName="name" placeholder="Ej: Diego" />
+      @if (formData.get('name')?.invalid && formData.get('name')?.touched) {
+        <div class="error">El nombre debe tener mínimo 5 caracteres.</div>
+      }
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="ejemplo@correo.com" />
+      @if (formData.get('email')?.invalid && formData.get('email')?.touched) {
+        <div class="error">Email no válido.</div>
+      }
+    </div>
+
+    <div class="field">
+      <label for="username">Usuario</label>
+      <input id="username" type="text" formControlName="username" placeholder="usuario123" />
+      @if (formData.get('username')?.invalid && formData.get('username')?.touched) {
+        <div class="error">El nombre de usuario es obligatorio.</div>
+      }
+    </div>
+
+    <div class="field">
+      <label for="password">Contraseña</label>
+      <input id="password" type="password" formControlName="password" placeholder="••••••••" />
+      @if (formData.get('password')?.invalid && formData.get('password')?.touched) {
+        <div class="error">La contraseña es obligatoria.</div>
+      }
+    </div>
+
+    <div class="field">
+      <label for="movil">Móvil</label>
+      <input id="movil" type="number" formControlName="movil" placeholder="3111111111" />
+      @if (formData.get('movil')?.invalid && formData.get('movil')?.touched) {
+        <div class="error">Número de móvil requerido.</div>
+      }
+    </div>
+
+    <div class="field rol-field">
+      <label>Rol</label>
+      <label><input type="radio" formControlName="rol" value="administrador" /> Administrador</label>
+      <label><input type="radio" formControlName="rol" value="comercial" /> Comercial</label>
+      <label><input type="radio" formControlName="rol" value="cliente" /> Cliente</label>
+    </div>
+
+    <div class="field">
+      <button type="submit" [disabled]="formData.invalid">Registrar Usuario</button>
+    </div>
+  </div>
+</form>
+

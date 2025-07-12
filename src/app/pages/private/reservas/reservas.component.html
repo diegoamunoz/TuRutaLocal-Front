@@ -1,6 +1,3 @@
-<h1> Lista de reservas </h1>
-
-<a routerLink="/dashboard/reservas/new">Reservas new</a>
 <div class="page page-bookins-list">
     <h1>Lista de Reservas Registradas</h1>
     <a routerLink="/dashboard/reservas/new" routerLinkActive="router-link-active" > Crear nueva reserva</a>
@@ -19,7 +16,7 @@
         <tbody>
                 @for ( booking of bookings; track $index ) {
                     <tr>
-                        <td>{{ booking.servicio.name }}</td>
+                        <td>{{ booking.servicio?.name }}</td>
               
                         <td>{{ booking?.fechaReservada | date }}</td>
                         <td>{{ booking?.cantidadPersonas }}</td>
