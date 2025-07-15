@@ -1,0 +1,54 @@
+<form 
+  class="form form-login"
+  [formGroup]="formData"
+  (ngSubmit)="onSubmit()"
+>
+  <h1>Editar Usuario</h1>
+
+  <div class="form-content">
+
+    <div class="field">
+      <label for="nombre-usuario">Nombre</label>
+      <input type="text" formControlName="name" placeholder="Ej: Diego" id="nombre-usuario">
+    </div>
+
+    <div class="field">
+      <label for="email-usuario">Email</label>
+      <input type="email" formControlName="email" placeholder="ejemplo@correo.com" id="email-usuario">
+    </div>
+
+    <div class="field">
+      <label for="username-usuario">Username</label>
+      <input type="text" formControlName="username" placeholder="diegoamun" id="username-usuario">
+    </div>
+
+    <div class="field">
+      <label for="password-usuario">Nueva contraseña (opcional)</label>
+      <input type="password" formControlName="password" placeholder="Dejar vacío si no deseas cambiarla" id="password-usuario">
+    </div>
+
+    <div class="field">
+      <label for="movil-usuario">Móvil</label>
+      <input type="tel" formControlName="movil" placeholder="Ej: 3112223344" id="movil-usuario">
+    </div>
+
+    <div class="field">
+      <label>Rol</label>
+      <input type="radio" formControlName="rol" value="administrador" id="rol-administrador">
+      <label for="rol-administrador">Administrador</label>
+
+      <input type="radio" formControlName="rol" value="comercial" id="rol-comercial">
+      <label for="rol-comercial">Comercial</label>
+
+      <input type="radio" formControlName="rol" value="cliente" id="rol-cliente">
+      <label for="rol-cliente">Cliente</label>
+    </div>
+
+    <div class="field">
+      <button type="submit">Guardar cambios</button>
+    </div>
+
+  </div>
+</form>
+
+

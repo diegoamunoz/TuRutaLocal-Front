@@ -1,0 +1,98 @@
+:root {
+  --color-primary: #228675;
+  --color-text: #333;
+  --color-light: #fff;
+  --color-error: #e30f0f;
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f6f8fa;
+  color: var(--color-text);
+}
+
+.form-register {
+  max-width: 500px;
+  margin: 3rem auto;
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-register h1.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: var(--color-primary);
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="number"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.field input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.field.rol-field {
+  gap: 0.5rem;
+}
+
+.rol-field label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #1b6e60;
+}
+
+button[disabled] {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e30f0f ;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}

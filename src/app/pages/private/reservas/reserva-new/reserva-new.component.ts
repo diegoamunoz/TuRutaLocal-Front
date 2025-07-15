@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 import { servicesService } from '../../../../services/services.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BookingService } from '../../../../services/booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reserva-new',
@@ -15,9 +17,11 @@ export class ReservaNewComponent {
 
   constructor( 
     private servicioService: servicesService,
-    private bookingService: BookingService
+    private bookingService: BookingService,
+    private router: Router
+
   ) {
-    // TODO: Tarea para Diego, colocar las validaciones de los campos
+
     this.formData = new FormGroup({
       servicio: new FormControl( '', [] ),
       fechaReservada: new FormControl( '', [] ),
@@ -29,6 +33,10 @@ export class ReservaNewComponent {
 
   // La inicializacion del componente
   ngOnInit() {
+    this.loadData();
+  };
+
+  loadData () {
     this.servicioService.getServicios().subscribe({
       next: ( data ) => {
         console.log( data );
@@ -41,6 +49,19 @@ export class ReservaNewComponent {
     });
   }
 
+  onDelete( id:string) {
+    console.log(id);
+    this.bookingService.deleteBooking(id).subscribe({
+    next: (data) => {
+      console.log(data);
+      this.loadData();
+    },
+    error: (error) => {
+      console.error( error);
+    },
+    complete: () => {}
+     })
+  }
   onSubmit() {
     if( this.formData.valid ) {
       console.log( this.formData.value );
@@ -48,6 +69,7 @@ export class ReservaNewComponent {
       this.bookingService.registerBooking( this.formData.value ).subscribe({
         next: ( data ) => {
           console.log( data );
+          this.router.navigateByUrl('/dashboard/reservas')
         },
         error: ( error ) => {
           console.error( error );

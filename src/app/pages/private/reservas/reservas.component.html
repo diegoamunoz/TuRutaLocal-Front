@@ -1,38 +1,37 @@
 <div class="page page-bookins-list">
     <h1>Lista de Reservas Registradas</h1>
-
-    <table border="1">
+    <a routerLink="/dashboard/reservas/new" routerLinkActive="router-link-active" > Crear nueva reserva</a>
+    @if (bookings.length>0) {
+         <table border="1">
         <thead>
-            <th>
-                <tr>Nombre Servicio</tr>
-            </th>
-            <th>
-                <tr>Fecha Reservada</tr>
-            </th>
-            <th>
-                <tr>Cantidad Personas</tr>
-            </th>
-            <th>
-                <tr>Estado</tr>
-            </th>
-            <th>
-                <tr>Codigo de Reserva</tr>
-            </th>
-            <th>
-                <tr>Acciones</tr>
-            </th>
+            <tr>
+                <th>Nombre Servicio</th>
+                <th>Fecha Reservada</th>
+                <th>Cantidad Personas</th>
+                <th>Estado</th>
+                <th>Codigo de Reserva</th>
+                <th>Acciones</th>
+            </tr>
         </thead>
         <tbody>
-            @for ( booking of bookings; track $index) {
-            <tr>
-                <td>{{ booking.servicio.name }}</td>
-                <td>{{ booking.fechaReservada | date }}</td>
-                <td>{{ booking.cantidadPersonas }}</td>
-                <td>{{ booking.estado }}</td>
-                <td>{{ booking.codigoReserva }}</td>
-                <td>6</td>
-            </tr>
-            }
+                @for ( booking of bookings; track $index ) {
+                    <tr>
+                        <td>{{ booking.servicio?.name }}</td>
+              
+                        <td>{{ booking?.fechaReservada | date }}</td>
+                        <td>{{ booking?.cantidadPersonas }}</td>
+                        <td>{{ booking?.estado }}</td>
+                        <td>{{ booking?.codigoReserva }}</td>
+                        <td>
+                            <a href="#" [routerLink]="['/dashboard','reservas','edit',booking._id]">Actualizar</a>
+                            <a href="#" (click)="onDelete(booking?._id); $event.preventDefault();">eliminar</a>
+                        </td>
+                    </tr>
+                }
         </tbody>
     </table>
+    }
+   @else {
+    <h3>No hay reservas registradas</h3>
+   }
 </div>

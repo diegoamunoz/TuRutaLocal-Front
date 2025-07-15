@@ -3,7 +3,7 @@
     [formGroup]="formData"
     (ngSubmit)="onSubmit()"
 >
-    <h1>Registrar Reserva</h1>
+    <h1>Editar Reserva</h1>
 
     <div class="form-content">
         <div class="field">
@@ -32,10 +32,13 @@
             <input type="radio" formControlName="estado" value="cancelada" placeholder="" id="reserva-estado-cancelada">
             <label for="reserva-estado-cancelada">Cancelada</label>
         </div>
+        <!-- <div class="field">
+            <label for="servicio-codigo">Código de Reserva</label>
+            <input type="text" formControlName="codigoReserva" placeholder="Ej: Manzana" id="servicio-cantidad-codigo" disabled>
+        </div> -->
 
         <div class="field">
-            <button type="submit">Registrar Reserva</button>
+            <button type="submit">Actualizar Reserva</button>
         </div>
     </div>
 </form>
-
