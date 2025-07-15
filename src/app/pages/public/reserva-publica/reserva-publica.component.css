@@ -1,0 +1,214 @@
+:root {
+  --Azul: #2274A5;
+  --naranjagrisaceo: #E7DFC6;
+  --verydark: #131B23;
+  --morado: #7E2E84;
+  --overall-fontsize: 62.5%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: var(--overall-fontsize);
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.maincontainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+/* RESUMEN */
+.resumenreserva {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.imgcalltoaction {
+  display: flex;
+  justify-content: flex-end;
+  background: url('../../../../../public/imagenes/fondocalltoaction.jpg') center/cover no-repeat;
+  height: 30rem;
+}
+
+.imgcalltoaction h1 {
+  background-color: rgba(231, 223, 198, 0.7);
+  color: var(--verydark);
+  font-size: 2.5rem;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datosreserva {
+  padding: 2rem;
+  background: white;
+  color: black;
+}
+
+.cuadroreserva {
+  border: 1px solid var(--Azul);
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.cuadroreserva h2 {
+  font-size: 1.8rem;
+}
+
+.cuadroreserva h3 {
+  font-size: 2.4rem;
+  color: var(--morado);
+  margin-top: 1rem;
+}
+
+.cuadroreserva img {
+  height: 45px;
+  margin: 1rem 0;
+}
+
+.fechareserva {
+  display: flex;
+  gap: 2rem;
+  border: 1px solid var(--Azul);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.fechareserva img {
+  width: 24px;
+  height: 24px;
+}
+
+.precio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.precio h1 {
+  font-size: 2.2rem;
+  color: var(--morado);
+}
+
+.precio button {
+  background-color: #59BFF3;
+  color: white;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+
+/* FORMULARIO */
+.formreserva {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.condicionesreserva {
+  flex: 1 1 35%;
+  text-align: left;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+.formularioreserva {
+  flex: 1 1 60%;
+  background-color: #f6f1e9;
+}
+
+.form-container {
+  padding: 2rem;
+}
+
+.form-container h2 {
+  color: var(--morado);
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  margin-bottom: 1.6rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+}
+
+.field button {
+  background-color: var(--morado);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.field button:hover {
+  background-color: #6d2466;
+}
+
+/* AGRADECIMIENTO */
+.agradecimiento {
+  background: url('../../../../../public/imagenes/imgfinalizar.jpg') center/cover no-repeat;
+  height: 30rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.textodespedida {
+  background-color: rgba(126, 46, 132, 0.5);
+  color: white;
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .resumenreserva,
+  .formreserva {
+    flex-direction: column;
+  }
+
+  .condicionesreserva,
+  .formularioreserva {
+    width: 100%;
+  }
+}
