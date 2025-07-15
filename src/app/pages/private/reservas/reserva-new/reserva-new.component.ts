@@ -21,7 +21,7 @@ export class ReservaNewComponent {
     private router: Router
 
   ) {
-    // TODO: Tarea para Diego, colocar las validaciones de los campos
+
     this.formData = new FormGroup({
       servicio: new FormControl( '', [] ),
       fechaReservada: new FormControl( '', [] ),

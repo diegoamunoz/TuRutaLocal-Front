@@ -20,7 +20,7 @@ export class RegisterComponent {
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       movil: new FormControl('', [Validators.required]),
-      rol: new FormControl('cliente'), // Solo permite registro de clientes
+      rol: new FormControl('cliente'), 
     });
   }
 

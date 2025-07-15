@@ -3,9 +3,10 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/public/home/home.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { RegisterComponent } from './pages/public/register/register.component';
+import { ReservaPublicaComponent } from './pages/public/reserva-publica/reserva-publica.component';
+
+
 import { ServiciosComponent } from './pages/private/servicios/servicios.component';
-
-
 import { UsersComponent } from './pages/private/users/users.component';
 import { UserNewComponent } from './pages/private/users/new-form/users-new-component';
 import { ReservasComponent } from './pages/private/reservas/reservas.component';
@@ -35,6 +36,7 @@ export const routes: Routes = [
     { path:'dashboard/destinos/new-form', component: destinosNewForm},
     { path:'dashboard/resenas/new-form', component: Resena, canActivate:[authGuard] },  
     { path: 'dashboard/reservas/new', component: ReservaNewComponent, canActivate:[ authGuard ] },
+    { path: 'reserva', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
     { path: 'dashboard/reservas/edit/:id', component: ReservaEditComponent, canActivate:[ authGuard ] },
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
     { path: '', redirectTo: 'home' , pathMatch: 'full' },
