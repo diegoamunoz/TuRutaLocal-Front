@@ -11,7 +11,7 @@ import { UsersComponent } from './pages/private/users/users.component';
 import { UserNewComponent } from './pages/private/users/new-form/users-new-component';
 import { ReservasComponent } from './pages/private/reservas/reservas.component';
 import { destinosNewForm } from './pages/private/destinos/new-form/new-form.component';
-import { Resena } from './pages/private/resenas/new-form/new-form.component';
+// import { Resena } from './pages/private/resenas/new-form/new-form.component';
 import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new-form.component';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
 import { authGuard } from './guards/auth.guard';
@@ -34,7 +34,7 @@ export const routes: Routes = [
     { path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
     { path:'dashboard/destinos/new-form', component: destinosNewForm},
-    { path:'dashboard/resenas/new-form', component: Resena, canActivate:[authGuard] },  
+    // { path:'dashboard/resenas/new-form', component: Resena, canActivate:[authGuard] },  
     { path: 'dashboard/reservas/new', component: ReservaNewComponent, canActivate:[ authGuard ] },
     { path: 'reserva', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
     { path: 'dashboard/reservas/edit/:id', component: ReservaEditComponent, canActivate:[ authGuard ] },
