@@ -3,7 +3,6 @@ import { HomeComponent } from './pages/public/home/home.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { RegisterComponent } from './pages/public/register/register.component';
 import { DestinosPublicComponent } from './pages/public/destinos-public/destinos-public.component';
-import { ReservasComponent } from './pages/private/reservas/reservas.component';
 import { ReservaPublicaComponent } from './pages/public/reserva-publica/reserva-publica.component';
 
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
@@ -13,23 +12,18 @@ import { destinosNewForm } from './pages/private/destinos/new-form/new-form.comp
 import { DestinosEditComponent } from './pages/private/destinos/destinos-edit/destinos-edit.component';
 
 import { ServiciosComponent } from './pages/private/servicios/servicios.component';
+import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new-form.component';
 
-
-
-
-
-
+import { ReservasComponent } from './pages/private/reservas/reservas.component';
 import { ReservaEditComponent } from './pages/private/reservas/reserva-edit/reserva-edit.component';
-import { UserEditComponent } from './pages/private/users/user-edit/user-edit.component';
-
+import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
 
 import { UsersComponent } from './pages/private/users/users.component';
 import { UserNewComponent } from './pages/private/users/new-form/users-new-component';
+import { UserEditComponent } from './pages/private/users/user-edit/user-edit.component';
 
 import { authGuard } from './guards/auth.guard';
 
-import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
-import { servicioNewFormcomponent } from './pages/private/servicios/new-form/new-form.component';
 
 // import { Resena } from './pages/private/resenas/new-form/new-form.component';
 // import { resenas } from './pages/public/resenas/new-form/new-form.component';
@@ -42,7 +36,6 @@ export const routes: Routes = [
     { path:'login', component: LoginComponent  },
     { path:'register', component: RegisterComponent  },
     { path:'destinos', component: DestinosPublicComponent},
-    { path:'reservas', component: ReservasComponent  },
     { path:'reserva', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
 
     { path:'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
