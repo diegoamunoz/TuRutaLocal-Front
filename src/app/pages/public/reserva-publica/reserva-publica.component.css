@@ -3,6 +3,7 @@
   --naranjagrisaceo: #E7DFC6;
   --verydark: #131B23;
   --morado: #7E2E84;
+  --grisfondo: #F5F5F5;
   --overall-fontsize: 62.5%;
 }
 
@@ -11,46 +12,70 @@ html, body {
   padding: 0;
   font-size: var(--overall-fontsize);
   height: 100%;
-}
-
-body {
+  background-color: var(--grisfondo);
   font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  text-align: center;
+  color: #333;
 }
 
-.maincontainer {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.main {
-  flex-grow: 1;
-}
-
-/* RESUMEN */
-.resumenreserva {
+/* Fondo mejorado con imagen y overlay */
+.full-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('../../../../../public/imagenes/fondocalltoaction.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-background h1 {
   color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+}
+
+/* CONTENEDOR GENERAL */
+.maincontainer {
+  max-width: 1280px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* SECCIÓN RESUMEN */
+.resumenreserva {
+ display: flex;
+    flex-direction: column;
+    color: white;
+    height: 43rem;
 }
 
 .imgcalltoaction {
-  display: flex;
-  justify-content: flex-end;
-  background: url('../../../../../public/imagenes/fondocalltoaction.jpg') center/cover no-repeat;
-  height: 30rem;
+  width: 100vw;
+    height: 44rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../../../../../public/imagenes/fondocalltoaction.jpg) center center no-repeat;
+    background-size: cover
 }
 
 .imgcalltoaction h1 {
   background-color: rgba(231, 223, 198, 0.7);
-  color: var(--verydark);
-  font-size: 2.5rem;
-  height: 7rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color: var(--verydark);
+    font-size: 3.4rem;
+    height: 44rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
 }
 
 .datosreserva {
@@ -61,23 +86,32 @@ body {
 
 .cuadroreserva {
   border: 1px solid var(--Azul);
-  padding: 1.5rem;
-  text-align: left;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  background-color: #fff;
 }
 
 .cuadroreserva h2 {
   font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .cuadroreserva h3 {
   font-size: 2.4rem;
   color: var(--morado);
-  margin-top: 1rem;
+  font-weight: 800;
+  margin: 1rem 0 0.5rem;
 }
 
 .cuadroreserva img {
   height: 45px;
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem;
+}
+
+.cuadroreserva h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .fechareserva {
@@ -85,12 +119,25 @@ body {
   gap: 2rem;
   border: 1px solid var(--Azul);
   padding: 1rem;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0.6rem;
+  align-items: center;
 }
 
 .fechareserva img {
   width: 24px;
   height: 24px;
+}
+
+.fechareserva h5 {
+  margin: 0 0 0 0.6rem;
+  font-size: 1.4rem;
+}
+
+.fecha,
+.numeropersonas {
+  display: flex;
+  align-items: center;
 }
 
 .precio {
@@ -102,15 +149,22 @@ body {
 .precio h1 {
   font-size: 2.2rem;
   color: var(--morado);
+  font-weight: bold;
 }
 
 .precio button {
   background-color: #59BFF3;
   color: white;
-  padding: 0.6rem 2rem;
+  padding: 0.8rem 2.4rem;
   border: none;
   border-radius: 1rem;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.precio button:hover {
+  background-color: #4699c8;
 }
 
 /* FORMULARIO */
@@ -118,69 +172,84 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem;
+  padding: 3rem;
   background-color: #f9f9f9;
 }
 
 .condicionesreserva {
-  flex: 1 1 35%;
+  flex: 1 1 40%;
   text-align: left;
   font-size: 1.4rem;
   line-height: 2.2rem;
 }
 
 .formularioreserva {
-  flex: 1 1 60%;
-  background-color: #f6f1e9;
-}
-
-.form-container {
-  padding: 2rem;
+  flex: -1 1 55%;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .form-container h2 {
   color: var(--morado);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
   font-size: 1.4rem;
-  margin-bottom: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 .field {
-  margin-bottom: 1.6rem;
-  text-align: left;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .field label {
   font-weight: 600;
+  font-size: 1.4rem;
 }
 
 .field input,
 .field select {
-  padding: 0.8rem;
+  padding: 1rem;
   border-radius: 0.6rem;
   border: 1px solid #ccc;
   font-size: 1.4rem;
+  background-color: #f2f2f2;
 }
 
 .field button {
   background-color: var(--morado);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
   border: none;
   border-radius: 0.6rem;
-  font-weight: bold;
-  font-size: 1.4rem;
+  font-weight: 600;
+  font-size: 1.6rem;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 .field button:hover {
   background-color: #6d2466;
+}
+
+/* Validación */
+.field.invalid input,
+.field.invalid select {
+  border-color: #e53935;
+  background-color: #fff5f5;
+}
+
+.error-msg {
+  color: #e53935;
+  font-size: 1.2rem;
 }
 
 /* AGRADECIMIENTO */
@@ -189,6 +258,7 @@ body {
   height: 30rem;
   display: flex;
   align-items: flex-end;
+  margin-top: 2rem;
 }
 
 .textodespedida {
@@ -198,6 +268,7 @@ body {
   padding: 2rem;
   text-align: center;
   width: 100%;
+  font-weight: 500;
 }
 
 /* RESPONSIVE */
@@ -210,5 +281,14 @@ body {
   .condicionesreserva,
   .formularioreserva {
     width: 100%;
+  }
+
+  .precio {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .maincontainer {
+    margin: 1rem;
   }
 }
