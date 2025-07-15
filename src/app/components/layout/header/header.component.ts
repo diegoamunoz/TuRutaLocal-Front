@@ -9,10 +9,23 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class HeaderComponent {
 
-  constructor( private authService: AuthService ) {}
+  constructor(private authService: AuthService) {
+
+  }
 
   logout() {
     this.authService.logoutUser();
   }
 
+  menuAbierto: boolean = false;
+  abrirMenu() {
+    this.menuAbierto = true;
+  }
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
+
+
 }
+
+

@@ -1,67 +1,126 @@
-.imagen-principal img{
-    width: 100%;
-  height: auto;
+:root {
+  --Lapis-Lazuli: #2274A5;
+  --Maximum-Purple: #7E2E84;
+  --White: #FFFFFF;
+  --verydark: #000000;
+}
+
+/*imagen principal*/
+
+.imagen-principal img {
+  width: 100%;
+  height: 25rem;
   display: block;
   object-fit: cover;
   border-radius: 0 0 10px 10px;
 }
-/* Card vertical */
-  .card-tour.vertical {
-    width: 270px;
-  }
-  
-  .card-tour.vertical img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-  
-  .card-tour.vertical .card-body {
-    padding: 1.2rem;
-  }
-  
-  .card-tour.vertical .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+
+/*titulo*/
+
+h1 {
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+  color: #2274A5;
 }
 
-.card-tour.vertical h3 {
-    font-size: 1.9rem;
-    margin: 0;
-    color: #131B23;
-    text-align: left;
+
+/* Contenedor de las cards */
+.menu-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+
 }
 
-.card-tour.vertical .precio {
-    font-size: 1.4rem;
-    color: #888;
-    text-align: right;
-    margin: 0;
-    border: dotted;
-    border-width: 1px;
-    padding: 3px;
+/* Estilo de cada card */
+.card {
+  background: var(--White);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px #7E2E84;
+  flex-wrap: wrap;
+  height: 26rem;
+  width: 18rem;
 }
-  
-.card-tour.vertical .precio span {
-    color: #0077cc;
-    font-weight: bold;
-    font-size: 1.5rem;
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #7E2E84;
 }
-  
-  .card-tour.vertical .descripcion {
-    font-size: 0.95rem;
-    margin: 1rem 0;
-    text-align: left;
-  }
-  
-  .card-tour.vertical button {
-    width: 100%;
-    background-color: #7E2E84;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+
+/* Imagen de cada destino */
+.imagen-destinos {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido interno */
+.name {
+  margin: 16px;
+  font-size: 1.4rem;
+  color: var(--Lapis-Lazuli);
+  display: flex;
+  align-items: center;
+}
+
+.descripcion {
+  margin: 0 16px 16px;
+  font-size: 1rem;
+  color: #000000;
+  flex-grow: 1;
+  font-weight: 100;
+}
+
+/* Botón con estilo personalizado */
+.boton {
+  padding: 16px;
+}
+
+.boton button {
+  width: 100%;
+  background: var(--Maximum-Purple);
+  color: var(--White);
+  border: none;
+  padding: 10px;
+  border-radius: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.boton button:hover {
+  background: #6a296f;
+}
+
+/*pagos*/
+
+
+.titulo{
+  width: 10rem;
+}
+
+.metodo_pago{
+  color: #2274A4;
+  font-size: 1rem;
+}
+
+.pago{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 2rem;
+}
+
+.img_pagos{
+  width: 4rem;
+  height: 4rem; 
+}
+
+

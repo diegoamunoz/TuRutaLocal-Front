@@ -1,13 +1,17 @@
-<header class="barra-navegacion">
-        <div class="container">
-            <nav class="navbar__left">
-                <img class="img-navbar__left" src="imagenes/Group 1.png" alt="TuRutaLocal" />
-                <ul class="menu-main">
-                    <li><a class="menu-item2" routerLink="destinos">Destinos</a></li>
-                    <li><a class="menu-item2" routerLink="destinos">Servicios</a></li>
-                    <li><a class="menu-item1" routerLink="nosotros">Inicia sesion</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
 
+    <img class="logo" src="imagenes/Group 1.png" alt="TuRutaLocal" routerLink="home" />
+    <button class="abrir-menu" (click)="abrirMenu()"><img src="imagenes/menus.png" alt="menu-cerrar"></button>
+    <nav class="nav" [class.visible]="menuAbierto">
+
+        <button class="cerrar-menu" (click)="cerrarMenu()"><img src="imagenes/cancelar.png" alt=""></button>
+
+        <ul class="menu-main">
+            <li><a class="menu-item2" routerLink="destinos" (click)="cerrarMenu()">Destinos</a></li>
+            <li><a class="menu-item2" routerLink="servicios" (click)="cerrarMenu()">Servicios</a></li>
+            <li><a class="menu-item1" routerLink="#" (click)="cerrarMenu()">Registrarte</a></li>
+            <li><a class="menu-item1" routerLink="login" (click)="cerrarMenu()">Inicia sesion</a></li>
+        </ul>
+    </nav>
+
+</header>

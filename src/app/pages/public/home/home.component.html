@@ -1,68 +1,107 @@
-<div class="imagenyfrase">
-    <h1 class="frase">Vive una vida</h1>
-    <h1 class="frase">que puedas</h1>
-    <h1 class="frase">recordar</h1>
-</div>
-<div class="search-container">
-    <input type="text" placeholder="¿Cual es tu destino?" class="search-input">
-    <button class="search-button">Buscar</button>
-</div>
+<section class="imagen-principal">
+    <div class="frase">
+        <h1>Vive una vida que puedas recordar</h1>
+    </div>
+    <div class="barra_busqueda">
+        <input type="text" placeholder="Ingresa tu destino">
+        <button class="boton">Buscar</button>
+    </div>
+</section>
+<!-- Cards -->
 
+<div>
+    <h2>Destinos destacados</h2>
+</div>
 <section class="experiencias">
-    <h2>Experiencias destacadas</h2>
 
     <div class="experiencias-grid">
 
         <!-- Card grande (vertical) -->
+
         <div class="card-tour vertical">
-            <img src="imagenes/EjeCafetero.jpg" alt="EjeCafetero">
+            <img class="imagen_destacados" src="imagenes/san-andres.jpg" alt="san-andres">
+            <div class="card-body">
+                <div class="card-header">
+                    <h3>San Andres Islas</h3>
+                    
+                </div>
+                <p class="descripcion">Explora las naturaleza y de hermosas playas.</p>
+                <button>Mas informacion</button>
+            </div>
+        </div>
+
+        <div class="card-tour vertical">
+            <img class="imagen_destacados" src="imagenes/imagen-principal.jpg" alt="EjeCafetero">
             <div class="card-body">
                 <div class="card-header">
                     <h3>Eje Cafetero</h3>
-                    <p class="precio">Desde<br><span>$700.000</span></p>
                 </div>
-                <p class="descripcion">Descubre la belleza del paisaje cultural cafetero</p>
-                <button>Quiero ir</button>
+                <p class="descripcion">Descubre la belleza del paisaje cultural cafetero.</p>
+                <button>Mas informacion</button>
             </div>
         </div>
-
-        <!-- Cards pequeñas (horizontales) -->
-        <div class="card-group">
-            <div class="card-tour horizontal">
-                <img src="imagenes/Cocuy.jpg" alt="Caminata Tayrona">
-                <div class="card-body">
-                    <h3>Sube al Cocuy</h3>
-                    <p class="precio"><span> Desde $600.000</span></p>
-                    <button>Quiero ir</button>
-                </div>
-            </div>
-
-            <div class="card-tour horizontal">
-                <img src="imagenes/Tayrona.jpg" alt="Caminata Tayrona">
-                <div class="card-body">
-                    <h3>Explora el Tayrona</h3>
-                    <p class="precio"><span>Desde $500.000</span></p>
-                    <button>Quiero ir</button>
-                </div>
-            </div>
+        <div>
+            <a href="destinos" class="boton_destinos">mas destinos</a>
         </div>
-
+        
     </div>
 </section>
+
+<!-- opiniones -->
+
+
 <div class="opiniones">
-    <div class="cuadro1">
-        <h3>Juan Pérez</h3>
-        <h4>La experiencia es muy buena y los precios accequibles</h4>
-        <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+    <div class="title">
+        <h2>Opiniones</h2>
+        <img src="imagenes/niño.jpg" alt="personas" class="personas">
     </div>
-    <div class="cuadro2">
-        <h3>Andrea López</h3>
-        <h4>La experiencia es muy buena y los precios accequibles</h4>
-        <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+    <div class="opiniones-contenido">
+        <div class="cuadro1">
+            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">Juan Pérez</h3>
+            <h4 class="parrafo">para aprovechar bien la visita hay que ir con un guía. Tu ruta local siempre nos gusta. En esta ocasión
+                nos tocó Alba y nos ha encantado. Una chica muy profesional que nos lo ha explicado todo muy bien y
+                hemos aprendido mucho. Además nos daba todas las indicaciones de seguridad muy claras y hemos hecho una
+                visita muy organizada. Muchas gracias Alba .</h4>
+            <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+        </div>
+        <div class="cuadro2">
+            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">Andrea López</h3>
+            <h4 class="parrafo">Estupenda, nuestro Guía Ander es súper Simpático y ameno, te explica todo muy bien, hemos pasado una
+                Mañana estupenda en su compañía, ha resultado todas nuestras dudas, sin duda volveríamos a descubrir la
+                Historia con El Gracias Ander </h4>
+            <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+        </div>
+        <div class="cuadro3">
+            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">Pedro Arce</h3>
+            <h4 class="parrafo">Dana, la guía increíble. Amable, simpática, atenta, con explicaciones detalladas y amenas. Hemos hecho 2
+                tour con ella y todo estupendo. El único pero, demasiada gente, difícil ver todas las salas con tanta gente, y no había mucha
+                circulación de aire, por lo que se hizo un poco agobiante, pero con la explicaciones de Dana se hizo muy
+                ameno.</h4>
+            <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+        </div>
     </div>
-    <div class="cuadro3">
-        <h3>Pedro Arce</h3>
-        <h4>La experiencia es muy buena y los precios accequibles</h4>
-        <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+</div>
+
+<div class="pago">
+    <div class="titulo">
+        <h2  class="metodo_pago">Escoge tu medio de pago preferido</h2>    
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/visa.png" alt="visa">
+    </div>
+    <div>
+        <img class="img_pagos"  src="imagenes/sistecredito.png" alt="sistecredito">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/pse.jpg" alt="pse">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/mastercard.png" alt="mastercard">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/addi.png" alt="addi">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/AmericanExpress.png" alt="AmericanExpress">
     </div>
 </div>
