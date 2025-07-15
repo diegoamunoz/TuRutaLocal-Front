@@ -1,0 +1,46 @@
+<form 
+    class="form form-login"
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+>
+    <h1>Registrar Usuario</h1>
+
+    <div class="form-content">
+    
+        <div class="field">
+            <label for="nombre-usuario">Nombre </label>
+            <input type="string" formControlName="name" placeholder="Ej: Diego" id="nombre-usuario">
+        </div>
+        <div class="field">
+            <label for="email-usuario">Email</label>
+            <input type="string" formControlName="email" placeholder="" id="email-usuario">
+        </div>
+         <div class="field">
+            <label for="username-usuario">Username</label>
+            <input type="string" formControlName="username" placeholder="diegoamun" id="username-usuario">
+        </div>
+        <div class="field">
+            <label for="password-usuario">Password</label>
+            <input type="string" formControlName="password" placeholder="252tet2525" id="password-usuario">
+        </div>
+        <div class="field">
+            <label for="movil-usuario">Móvil</label>
+            <input type="number" formControlName="movil" placeholder="311111111" id="movil-usuario">
+        </div>
+        <div class="field">
+            <label>Rol </label>
+            <input type="radio" formControlName="rol" value="administrador" placeholder="" id="rol-administrador">
+            <label for="rol-administrador">Administrador</label>
+            <input type="radio" formControlName="rol" value="comercial" placeholder="" id="rol-comercial">
+            <label for="rol-comercial">Comercial</label>
+            <input type="radio" formControlName="rol" value="cliente" placeholder="" id="rol-cliente">
+            <label for="rol-cliente">Cliente</label>
+        </div>
+       
+
+        <div class="field">
+            <button type="submit">Registrar Usuario</button>
+        </div>
+    </div>
+</form>
+
