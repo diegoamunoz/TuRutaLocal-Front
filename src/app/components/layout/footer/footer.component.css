@@ -1,0 +1,58 @@
+/*footer*/
+
+.footer {
+    background-image: linear-gradient(#2274A5, #0c2838);
+    color: white;
+    padding: 2.5rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-logo img {
+    height: 63px;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.social-icons img {
+    width: 26px;
+    height: 26px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.footer-contacto h4 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.footer-contacto p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+}
+
+
+.footer-contacto img {
+    width: 20px;
+    height: 20px;
+}
+
+
