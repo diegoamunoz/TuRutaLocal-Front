@@ -25,6 +25,7 @@ export class servicesService {
   }
   
   updateServicio ( id: string, updateServicio: any ) { 
+    console.log(id, updateServicio);
     return this.http.patch<any>(`http://localhost:3000/api/servicios/${id}`, updateServicio , {headers: this.authService.getHeaders()}) 
   }
   getServicioById (id: string)  {

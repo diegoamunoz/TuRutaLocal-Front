@@ -47,6 +47,7 @@ export class ServicioEditComponent {
       this.servicioService.updateServicio( this.selectedId, this.formData.value ).subscribe({
         next: ( data ) => {
           console.log( data );
+          this.router.navigateByUrl('/dashboard/servicios')
         },
         error: ( error ) => {
           console.error( error );
@@ -60,7 +61,7 @@ export class ServicioEditComponent {
     this.activateRoute.params.subscribe({
       next: (data) => {
         console.log(data['id']);
-        this.selectedId = data['data']
+        this.selectedId = data['id']
         this.servicesService.getServicioById(data['id']).subscribe({
           next: (data) => {
             console.log(data);

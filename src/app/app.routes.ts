@@ -10,6 +10,7 @@ import { DashboardComponent } from './pages/private/dashboard/dashboard.componen
 import { authGuard } from './guards/auth.guard';
 import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
 import { ServicioEditComponent } from './pages/private/servicios/servicio-edit/servicio-edit.component';
+import { serviciosPublicComponent } from './pages/public/servicios/servicios-public.component';
 
 
 export const routes: Routes = [
@@ -18,6 +19,7 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent  },
     { path: 'reservas', component: ReservasComponent  },
     { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
+    { path: 'servicios/public', component:serviciosPublicComponent },
     { path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/servicios/edit/:id',component:ServicioEditComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/reservas',component: ReservasComponent, canActivate:[ authGuard ]  },
