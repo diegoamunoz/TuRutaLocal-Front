@@ -1,0 +1,46 @@
+<div class="imagen-principal">
+    <img class="img imagen-principal" src="imagenes/EjeCafetero.jpg" alt="cartagena">
+</div>
+
+
+<h1>Nuestros destinos</h1>
+
+<div class="menu-cards">
+@for (destino of destinos; track $index) {
+    <div class="card">
+        <img class="imagen-destinos" [src]="destino?.urlImage" [alt]="">
+        <div>
+            <h2 class="name">{{destino?.name}}</h2>
+        </div>
+        <div>
+            <h4 class="descripcion">{{destino?.descripcion}}</h4>
+        </div>
+        <div class="boton">
+            <button>Ver detalles</button>
+        </div>
+    </div>
+}
+</div>
+<div class="pago">
+    <div class="titulo">
+        <h2  class="metodo_pago">Escoge tu medio de pago preferido</h2>    
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/visa.png" alt="visa">
+    </div>
+    <div>
+        <img class="img_pagos"  src="imagenes/sistecredito.png" alt="sistecredito">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/pse.jpg" alt="pse">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/mastercard.png" alt="mastercard">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/addi.png" alt="addi">
+    </div>
+    <div>
+        <img class="img_pagos" src="imagenes/AmericanExpress.png" alt="AmericanExpress">
+    </div>
+</div>
