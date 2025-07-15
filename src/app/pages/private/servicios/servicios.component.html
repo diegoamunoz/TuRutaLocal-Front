@@ -1,5 +1,19 @@
 <div class="page-servicios-list">
 
+    <h1>hola</h1>
+
+    <a routerLink="/dashboard/servicios/new">Nuevo Servicio</a>
+    <!-- <pre>{{servicios | json }}</pre> -->
+    <table border="1">
+        <thead>
+            <th>
+                name Service
+            </th>
+            <th>
+                description
+            </th>
+            <th>
+            price
     <h1 class="lista-de-servicios">Lista de servicios</h1>
     <div class="btn-new-service ">
     <a routerLink="/dashboard/servicios/new" class="new-service">Nuevo Servicio</a>
@@ -13,7 +27,6 @@
             <div class="service-info">
                 <h3>{{ servicio.name }}</h3>
                 <p class="description">{{ servicio.description }}</p>
-
                 <div class="meta">
                     <span class="price">{{ servicio.price | currency:'COP':'symbol-narrow' }}</span>
                     <span class="category">{{ servicio.category }}</span>
@@ -31,4 +44,3 @@
     } @else {
     <h3>No hay servicios registrados</h3>
     }
-</div>
