@@ -43,7 +43,7 @@ export class servicioNewFormcomponent {
       this.servicesService.registerServicio(this.formData.value).subscribe({
         next: (data) => {
           console.log(data);
-          this.router.navigateByUrl('/dashboard/servicios/new')
+          this.router.navigateByUrl('/dashboard/servicios')
         },
         error: (error) =>{
           console.error(error);

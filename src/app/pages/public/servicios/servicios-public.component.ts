@@ -3,17 +3,15 @@ import { servicesService } from '../../../services/services.service';
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 
-
 @Component({
-  selector: 'app-servicios',
-  imports: [ RouterLink , CurrencyPipe ],
-  templateUrl: './servicios.component.html',
-  styleUrl: './servicios.component.css'
+  selector: 'app-public',
+  imports: [CurrencyPipe],
+  templateUrl: './servicios-public.component.html',
+  styleUrl: './servicios-public.component.css'
 })
-export class ServiciosComponent {
-  servicios:any = []
-
-  constructor ( private servicesservice : servicesService ) { }
+export class serviciosPublicComponent {
+  servicios:any=[]
+constructor ( private servicesservice : servicesService ) { }
 
   ngOnInit() { 
     this.loadData();
@@ -50,3 +48,5 @@ export class ServiciosComponent {
 
   }
 }
+
+

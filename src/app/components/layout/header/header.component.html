@@ -1,16 +1,25 @@
-<header>
-    <img class="logo" src="imagenes/Group 1.png" alt="TuRutaLocal" routerLink="home" />
-    <button class="abrir-menu" (click)="abrirMenu()"><img src="imagenes/menus.png" alt="menu-cerrar"></button>
-    <nav class="nav" [class.visible]="menuAbierto">
+<p>header works!</p>
+    <nav class="nabvarmenu">
+    <ul class="main-menu">
+        
+        <li class="menu-item">
+            <a class="btn btn-outline-primary btn-login" routerLink="login">Login</a>
+        </li>
+        <li class="menu-item">
+            <a class="btn btn-outline-primary btn-login" (click)="logout()">Logout</a>
+        </li>
+        <li><a routerLink="register">register</a></li>
+        <li><a routerLink="reserva">Nueva reserva usuario</a></li>
+        <li><a routerLink="dashboard/user/new">New User</a></li>
+        <li><a routerLink="dashboard/users">Usuarios list</a></li>
+        <li><a routerLink="dashboard/servicios">Servicios</a></li>
+        <li><a routerLink="dashboard/servicios">Lista Servicio</a></li>
+        <li><a routerLink="dashboard/reservas/new">Nueva Reserva</a></li>
+        <li><a routerLink="dashboard/reservas">Lista Reservas</a></li>
+        <li><a routerLink="dashboard/destinos">destinos</a></li>
+        <li><a routerLink="dashboard/destinos/new-form">new destino</a></li>
+        <li><a routerLink="dashboard/destinos">destinos list</a></li>
+<nav class="nabvarmenu">
+</nav>
 
-        <button class="cerrar-menu" (click)="cerrarMenu()"><img src="imagenes/cancelar.png" alt=""></button>
 
-        <ul class="menu-main">
-            <li><a class="menu-item2" routerLink="destinos" (click)="cerrarMenu()">Destinos</a></li>
-            <li><a class="menu-item2" routerLink="servicios" (click)="cerrarMenu()">Servicios</a></li>
-            <li><a class="menu-item1" routerLink="#" (click)="cerrarMenu()">Registrarte</a></li>
-            <li><a class="menu-item1" routerLink="login" (click)="cerrarMenu()">Inicia sesion</a></li>
-        </ul>
-    </nav>
-
-</header>
