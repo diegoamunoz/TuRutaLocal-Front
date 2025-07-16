@@ -1,37 +1,64 @@
 :root {
-  --color-primary: #228675;
-  --color-text: #333;
-  --color-light: #fff;
-  --color-error: #e30f0f;
-  --radius: 10px;
+  --Azul: #2274A5;
+  --AzulOscuro: #1c5f85;
+  --Morado: #7E2E84;
+  --FondoClaro: #f9f9f9;
+  --Texto: #1A1A1A;
+  --Error: #E53935;
+  --InputBg: #fff;
+  --Font: 'Inter', sans-serif;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f6f8fa;
-  color: var(--color-text);
+/* Fondo para toda la página */
+.registro-page {
+  min-height: 100vh;
+  background-image: url('../../../../../public/imagenes/shutterstock_2419842837.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
 }
 
+/* Formulario centrado */
 .form-register {
-  max-width: 500px;
-  margin: 3rem auto;
-  background-color: var(--color-light);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #ccccccad;
+    max-width: 448px;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 17%);
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
 }
 
-.form-register h1.title {
+/* Logo */
+.form-logo {
+      width: 164px;
+    height: 147px;
+    margin: -62px auto;
+  background-image: url('../../../../../public/imagenes/Logo\ Negro.png');
+  background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Título */
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  color: var(--color-primary);
+  color: var(--Morado);
 }
 
+/* Contenido del formulario */
 .form-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
 }
 
 .field {
@@ -40,59 +67,90 @@ body {
 }
 
 .field label {
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.field input[type="text"],
-.field input[type="email"],
-.field input[type="password"],
-.field input[type="number"] {
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  transition: border-color 0.3s;
+.field input {
+  padding: 1.2rem;
+    font-size: 1.4rem;
+    border: 2px solid #671a6d;
+    border-radius: 0.6rem;
+    background-color: var(--InputBg);
+    transition: border-color 0.2s ease;
 }
 
 .field input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--Azul);
   outline: none;
 }
 
-.field.rol-field {
-  gap: 0.5rem;
+/* Validación visual */
+.field.invalid input {
+  border-color: var(--Error);
 }
 
-.rol-field label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 400;
-}
-
-button[type="submit"] {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  background-color: var(--color-primary);
-  color: var(--color-light);
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-  background-color: #1b6e60;
-}
-
-button[disabled] {
-  background-color: #b0b0b0;
-  cursor: not-allowed;
-}
-
-.error {
-  color: #e30f0f ;
-  font-size: 0.85rem;
+.field .error {
+  display: none;
+  font-size: 1.2rem;
+  color: var(--Error);
   margin-top: 0.3rem;
+}
+
+.field.invalid .error {
+  display: block;
+}
+
+/* Botón */
+.field button {
+  background-color: var(--Azul);
+  color: white;
+  padding: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.field button:hover {
+  background-color: var(--AzulOscuro);
+  transform: translateY(-1px);
+}
+
+.field button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-register input::placeholder {
+  color: var(--morado); /* O el color que estés usando */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-register {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .form-logo {
+    width: 130px;
+    height: 50px;
+  }
+
+  .field input {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+
+  .field button {
+    font-size: 1.4rem;
+  }
 }
