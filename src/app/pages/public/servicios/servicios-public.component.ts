@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { servicesService } from '../../../services/services.service';
 import { RouterLink } from '@angular/router';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-public',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe,JsonPipe],
   templateUrl: './servicios-public.component.html',
   styleUrl: './servicios-public.component.css'
 })

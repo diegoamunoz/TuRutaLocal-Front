@@ -1,57 +1,25 @@
+<!-- <pre>{{servicios|json}}</pre> -->
+
 <div class="page-servicios-list">
-
-    <h1>Lista de servicios</h1>
-
-    <a routerLink="/dashboard/servicios/new">Nuevo Servicio</a>
-    @if (servicios.length > 0 ) {
-    <table border="1">
-        <thead>
-            <th>
-                <tr>image</tr>
-            </th>
-            <th>
-                <tr>name Service</tr>
-            </th>
-            <th>
-                <tr>description</tr>
-            </th>
-            <th>
-                <tr> price</tr>
-            </th>
-            <th>
-                <tr>categoria del servicio</tr>
-            </th>
-            <th>
-                <tr>estado</tr>
-            </th>
-            <th>
-                <tr>acciones</tr>
-            </th>
-
-        </thead>
-        <thead>
-
-        </thead>
-
-
-        <tbody>
-
-            @for (servicio of servicios; track $index ){
-            <tr>
-                <td>
-                </td>
-                <td>{{servicio.image}}</td>
-                <td>{{servicio.name}} </td>
-                <td>{{servicio.description}}</td>
-                <td>{{servicio.price | currency }}</td>
-                <td>{{servicio.category}}</td>
-                <td>{{servicio.state}}</td>
-            }
-
-        </tbody>
-    </table>
-    }
-    @else {
-    <h3> no hay servicios registrados </h3>
+    @if (servicios.length > 0) {
+    <div class="servicios-contenedor">
+        @for (servicio of servicios; track $index) {
+        <div class="servicio-card">
+            <div class="servicio-img">
+                <img [src]="servicio.urlImage" alt="{{ servicio.name }}" />
+            </div>
+            <div class="servicio-info">
+                <h3>{{ servicio.name }}</h3>
+                <p class="descripcion">{{ servicio.description }}</p>
+                <p class="precio">{{ servicio.price | currency:'USD' }}</p>
+                <p class="categoria">{{ servicio.category }}</p>
+                <p class="estado-boton">{{ servicio.state }}</p> <!-- Se verá como botón -->
+            </div>
+        </div>
+        }
+        
+    </div>
+    } @else {
+    <h3>No hay servicios registrados</h3>
     }
 </div>
