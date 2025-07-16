@@ -20,7 +20,7 @@ html, body {
 /* Fondo mejorado con imagen y overlay */
 .full-background {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('../../../../../public/imagenes/fondocalltoaction.jpg') center center no-repeat;
+              url('../../../../../public/imagenes/fondo\ reservas\ 2-Photoroom.jpg') center center no-repeat;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -53,29 +53,38 @@ html, body {
  display: flex;
     flex-direction: column;
     color: white;
-    height: 43rem;
+    height: 600px;
 }
 
 .imgcalltoaction {
-  width: 100vw;
-    height: 44rem;
+      width: 100vw;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../../../../../public/imagenes/fondocalltoaction.jpg) center center no-repeat;
-    background-size: cover
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../../../../../public/imagenes/fondo\ reservas\ 2-Photoroom.jpg) center center no-repeat;
+    background-size: cover;
 }
 
 .imgcalltoaction h1 {
-  background-color: rgba(231, 223, 198, 0.7);
-    color: var(--verydark);
-    font-size: 3.4rem;
-    height: 44rem;
+  color: #5f1e63e3;
+    font-size: 2.5rem;
+    height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     font-weight: 600;
+    margin-top: -15rem;
+}
+
+.imgcalltoaction p {
+    /* justify-content: center; */
+    text-align: center;
+    font-style: initial;
+    color: #220324;
+    background-color: #ffffff70;
+    border: none;
+    font-size: 24px;
 }
 
 .datosreserva {
