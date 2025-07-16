@@ -1,5 +1,5 @@
 .page-servicios-list {
-    padding: 2rem;
+    padding: 3rem 1rem;
     max-width: 1000px;
     margin: auto;
     font-family: 'Segoe UI', sans-serif;
@@ -8,24 +8,29 @@
 .servicios-contenedor {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .servicio-card {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(106, 15, 186, 0.321);
+    padding: 2rem;
     align-items: flex-start;
+    transition: transform 0.2s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-4px);
 }
 
 .servicio-img {
-    width: 180px;
-    height: 120px;
+    width: 220px;
+    height: 150px;
     flex-shrink: 0;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
 }
 
@@ -33,7 +38,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
 .servicio-info {
@@ -42,41 +47,42 @@
 
 .servicio-info h3 {
     color: #7129a7;
-    margin: 0 0 0.5rem;
-    font-size: 1.3rem;
+    margin: 0 0 0.6rem;
+    font-size: 1.6rem;
 }
 
 .servicio-info .descripcion {
-    color: #444;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    color: #141414;
+    font-size: 1.05rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.5;
 }
 
 .servicio-info .precio {
     color: #007bff;
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }
 
 .servicio-info .categoria {
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    color: #7f18b6;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
 }
 
 .estado-boton {
     display: inline-block;
     background-color: #7129a7;
     color: white;
-    padding: 0.4rem 0.9rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1rem;
     text-align: center;
     cursor: pointer;
     transition: background 0.2s ease;
     width: fit-content;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 .estado-boton:hover {
@@ -86,7 +92,8 @@
 /* Estilo para el mensaje de "No hay servicios" */
 .page-servicios-list h3 {
     text-align: center;
-    color: #888;
+    color: #9b15bd;
     font-weight: normal;
     margin-top: 2rem;
+    font-size: 1.8rem;
 }
