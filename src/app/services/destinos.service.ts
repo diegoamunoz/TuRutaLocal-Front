@@ -19,6 +19,10 @@ export class DestinosService {
 
   }
 
+  getDestinosDestacado( cantidad: number ) {
+    return this.http.get<any>( 'http://localhost:3000/api/destinos/c/'+ cantidad );
+  }
+
   deleteDestinos(id: string){
     return this.http.delete<any>( 'http://localhost:3000/api/destinos/' +id, {headers: this.authService .getHeaders()})
   }

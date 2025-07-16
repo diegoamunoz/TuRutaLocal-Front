@@ -29,10 +29,9 @@ h1 {
 .menu-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px;
-
+  justify-content: center;
+  margin-top: 0rem;
+    gap: 5rem;
 }
 
 /* Estilo de cada card */

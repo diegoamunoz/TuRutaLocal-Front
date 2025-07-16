@@ -13,37 +13,26 @@
     <h2>Destinos destacados</h2>
 </div>
 <section class="experiencias">
+    <div class="destinos_home">
+        @for (destino of destinos; track $index) {
 
-    <div class="experiencias-grid">
-
-        <!-- Card grande (vertical) -->
-
-        <div class="card-tour vertical">
-            <img class="imagen_destacados" src="imagenes/san-andres.jpg" alt="san-andres">
-            <div class="card-body">
-                <div class="card-header">
-                    <h3>San Andres Islas</h3>
-                    
-                </div>
-                <p class="descripcion">Explora las naturaleza y de hermosas playas.</p>
-                <button>Mas informacion</button>
+        <div class="card">
+            <img class="imagen-destinos" [src]="destino?.urlImage" [alt]="">
+            <div>
+                <h2 class="name">{{destino?.name}}</h2>
+            </div>
+            <div>
+                <h4 class="descripcion">{{destino?.descripcion}}</h4>
+            </div>
+            <div class="boton">
+                <button>Ver detalles</button>
             </div>
         </div>
-
-        <div class="card-tour vertical">
-            <img class="imagen_destacados" src="imagenes/imagen-principal.jpg" alt="EjeCafetero">
-            <div class="card-body">
-                <div class="card-header">
-                    <h3>Eje Cafetero</h3>
-                </div>
-                <p class="descripcion">Descubre la belleza del paisaje cultural cafetero.</p>
-                <button>Mas informacion</button>
-            </div>
-        </div>
-        <div>
-            <a href="destinos" class="boton_destinos">mas destinos</a>
-        </div>
-        
+}
+    </div>
+    
+    <div>
+        <a href="destinos" class="boton_destinos">mas destinos</a>
     </div>
 </section>
 
