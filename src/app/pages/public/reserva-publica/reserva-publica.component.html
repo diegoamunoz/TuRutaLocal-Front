@@ -8,7 +8,9 @@
         <div>
         <h1>¡Tu aventura está a punto de comenzar!</h1>
         <p> Explora Colombia y enamórate de sus encantos</p>
-        <button></button>
+        <button class="boton-reserva" (click)="scrollToFormulario(formularioReserva)">
+  Reservar ahora
+</button>
         </div>
       </div>
 
@@ -39,7 +41,7 @@
     </section>
 
     <!-- Sección: Formulario Angular -->
-    <section class="formreserva">
+    <section class="formreserva" #formularioReserva>
       <div class="condicionesreserva">
         <h2>Condiciones de la reserva</h2>
         <ul>

@@ -35,7 +35,7 @@ html, body {
   text-align: center;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 1rem;
+  border-radius: 0rem;
 }
 
 /* CONTENEDOR GENERAL */
@@ -43,7 +43,7 @@ html, body {
   max-width: 1280px;
   margin: 2rem auto;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 0rem;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
@@ -85,6 +85,27 @@ html, body {
     background-color: #ffffff70;
     border: none;
     font-size: 24px;
+}
+
+.boton-reserva {
+     background-color: #1a729f;
+    opacity: 96%;
+    color: white;
+    padding: 1rem 2.4rem;
+    border: black;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-left: 15rem;
+}
+
+.boton-reserva:hover {
+  background-color: #6d2466;
+  transform: translateY(-2px);
 }
 
 .datosreserva {
@@ -187,18 +208,20 @@ html, body {
 
 .condicionesreserva {
   flex: 1 1 40%;
-  text-align: left;
-  font-size: 1.4rem;
-  line-height: 2.2rem;
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin-left: 11rem;
 }
 
 .formularioreserva {
-  flex: -1 1 55%;
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 0.8rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    margin-left: 12rem;
 }
+
 
 .form-container h2 {
   color: var(--morado);
@@ -234,15 +257,15 @@ html, body {
 }
 
 .field button {
-  background-color: var(--morado);
-  color: white;
-  padding: 1rem;
-  border: none;
-  border-radius: 0.6rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-  cursor: pointer;
-  transition: background 0.3s;
+      background-color: #4699c8;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .field button:hover {
@@ -263,21 +286,22 @@ html, body {
 
 /* AGRADECIMIENTO */
 .agradecimiento {
-  background: url('../../../../../public/imagenes/imgfinalizar.jpg') center/cover no-repeat;
-  height: 30rem;
-  display: flex;
-  align-items: flex-end;
-  margin-top: 2rem;
+      background: url(../../../../../public/imagenes/imgfinalizar.jpg) center / cover no-repeat;
+    height: 30rem;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0rem;
 }
 
 .textodespedida {
   background-color: rgba(126, 46, 132, 0.5);
-  color: white;
-  font-size: 2rem;
-  padding: 2rem;
-  text-align: center;
-  width: 100%;
-  font-weight: 500;
+    color: white;
+    font-size: 2rem;
+    padding: 2rem;
+    text-align: center;
+    width: 41%;
+    font-weight: 500;
+    height: 26rem;
 }
 
 /* RESPONSIVE */
