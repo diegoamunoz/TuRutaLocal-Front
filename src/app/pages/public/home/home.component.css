@@ -135,6 +135,20 @@ h2 {
   background: #5e2568;
 }
 
+.boton{
+  display: inline-block;
+    padding: 0.4rem 1.3rem;
+    background-color: #7E2E84;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 100;
+    text-decoration: none;
+    border-radius: 51px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 @media (max-width: 1023px) {
   .destinos_home .card {
     max-width: 100%;

@@ -35,6 +35,12 @@
     transform: scale(1.2);
 }
 
+.footer-contacto{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
 .footer-contacto h4 {
     margin-bottom: 1rem;
     font-size: 1.4rem;
