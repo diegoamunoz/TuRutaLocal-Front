@@ -1,1 +1,34 @@
-<p>dashboard works!</p>
+<header class="dashboard-header">
+  <h1>Panel de Administración - Tu Ruta Local</h1>
+</header>
+
+<div class="dashboard-container">
+  <nav class="dashboard-menu">
+    <ul class="menu">
+      <li><a class="menu-btn" routerLink="/login">🔐 Login</a></li>
+      <li><a class="menu-btn" (click)="logout()">🚪 Logout</a></li>
+      <li><a class="menu-btn" routerLink="/register">📝 Register</a></li>
+
+      <li><a class="menu-btn" routerLink="/dashboard/user/new">👤 Nuevo usuario Admin</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/users">👥 Usuarios</a></li>
+
+      <li><a class="menu-btn" routerLink="/dashboard/servicios">🧭 Servicios</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/servicios/new">➕ Nuevo Servicio</a></li>
+
+      <li><a class="menu-btn" routerLink="/reserva">🗓️ Nueva reserva usuario</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/reservas/new">🗓️ Nueva Reserva Admin</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/reservas">📋 Lista Reservas</a></li>
+
+      <li><a class="menu-btn" routerLink="/dashboard/destinos">🌄 Destinos</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/destinos/new-form">➕ Nuevo Destino</a></li>
+    </ul>
+  </nav>
+
+  <main class="dashboard-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+
+
+>>>>>>> f3a9b28d5875b2896833f399caae258e2eb76406

@@ -16,6 +16,8 @@ export class ReservaPublicaComponent {
 
    formData!: FormGroup;
      servicios: any = [];
+     scrollToFormulario(element: HTMLElement): void {
+    element.scrollIntoView({ behavior: 'smooth' })}
    
      constructor( 
        private servicioService: servicesService,

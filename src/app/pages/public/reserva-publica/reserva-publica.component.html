@@ -1,40 +1,114 @@
-<form 
-    class="form form-login"
-    [formGroup]="formData"
-    (ngSubmit)="onSubmit()"
->
-    <h1>Registrar Reserva</h1>
+<!-- reserva.component.html -->
+<div class="maincontainer">
+  <div class="main">
 
-    <div class="form-content">
-        <div class="field">
-            <label for="servicio-name">Servicio</label>
-            <select formControlName="servicio" id="servicio-name">
-                <option value="">Selected..</option>
-                @for ( servicio of servicios; track $index ) {
-                    <option [value]="servicio._id">{{ servicio.name }}</option>
+    <!-- Sección: Resumen de reserva -->
+    <section class="resumenreserva">
+      <div class="imgcalltoaction">
+        <div>
+        <h1>¡Tu aventura está a punto de comenzar!</h1>
+        <p> Explora Colombia y enamórate de sus encantos</p>
+        <button class="boton-reserva" (click)="scrollToFormulario(formularioReserva)">
+  Reservar ahora
+</button>
+        </div>
+      </div>
+
+      <!-- <div class="datosreserva">
+        <div class="cuadroreserva">
+          <h2>Resumen de tu reserva</h2>
+          <h3>Excursión a Valle del Cocora, Salento y Filandia</h3>
+          <img src="./assets/img/Cincoentrellas.png" alt="Cinco estrellas">
+          <h4>Tour en español</h4>
+
+          <div class="fechareserva">
+            <div class="fecha">
+              <img src="./assets/img/calendario.png" alt="Ícono calendario">
+              <h5>15 de mayo de 2025</h5>
+            </div>
+            <div class="numeropersonas">
+              <img src="./assets/img/personas.png" alt="Ícono personas">
+              <h5>2 adultos</h5>
+            </div>
+          </div>
+
+          <div class="precio">
+            <h1>$600.000 COP</h1>
+            <button>Continuar</button>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- Sección: Formulario Angular -->
+    <section class="formreserva" #formularioReserva>
+      <div class="condicionesreserva">
+        <h2>Condiciones de la reserva</h2>
+        <ul>
+          <li>Recibirás confirmación al correo electrónico</li>
+          <li>Puedes cancelar tu reserva 24 horas antes</li>
+          <li>El operador te contactará para coordinar itinerario y métodos de pago</li>
+          <li>El cumplimiento de los planes no es responsabilidad de Tu Ruta Local, el operador es quien debe cumplir el itinerario</li>
+        </ul>
+      </div>
+
+      <div class="formularioreserva">
+        <div class="form-container">
+          <form
+            class="form form-login"
+            [formGroup]="formData"
+            (ngSubmit)="onSubmit()"
+          >
+            <h2>Registrar Reserva</h2>
+            <p class="subtitle">Diligencia la información para completar tu reserva</p>
+
+            <div class="field">
+              <label for="servicio-name">Servicio</label>
+              <select formControlName="servicio" id="servicio-name" required>
+                <option value="">Selecciona...</option>
+                @for (servicio of servicios; track $index) {
+                  <option [value]="servicio._id">{{ servicio.name }}</option>
                 }
-            </select>
-        </div>
-        <div class="field">
-            <label for="servicio-fecha-reserva">Fecha de reserva</label>
-            <input type="date" formControlName="fechaReservada" placeholder="Ej: Manzana" id="servicio-fecha-reserva">
-        </div>
-        <div class="field">
-            <label for="servicio-cantidad-personas">Cantidad personas</label>
-            <input type="number" formControlName="cantidadPersonas" placeholder="Ej: Manzana" id="servicio-cantidad-personas">
-        </div>
-        <div class="field">
-            <!-- <label>Estado de la reserva </label>
-            <input type="radio" formControlName="estado" value="pendiente" placeholder="" id="reserva-estado-pendiente">
-            <label for="reserva-estado-pendiente">Pendiente</label>
-            <input type="radio" formControlName="estado" value="confirmada" placeholder="" id="reserva-estado-confirmada">
-            <label for="reserva-estado-confirmada">Confirmada</label>
-            <input type="radio" formControlName="estado" value="cancelada" placeholder="" id="reserva-estado-cancelada">
-            <label for="reserva-estado-cancelada">Cancelada</label> -->
-        </div>
+              </select>
+            </div>
 
-        <div class="field">
-            <button type="submit">Registrar Reserva</button>
+            <div class="field">
+              <label for="servicio-fecha-reserva">Fecha de reserva</label>
+              <input
+                type="date"
+                formControlName="fechaReservada"
+                id="servicio-fecha-reserva"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="servicio-cantidad-personas">Cantidad de personas</label>
+              <input
+                type="number"
+                formControlName="cantidadPersonas"
+                id="servicio-cantidad-personas"
+                required
+                min="1"
+              />
+            </div>
+
+            <div class="field">
+              <button type="submit">Registrar Reserva</button>
+            </div>
+          </form>
         </div>
-    </div>
-</form>
+      </div>
+    </section>
+
+    <!-- Sección: Agradecimiento -->
+    <section class="agradecimiento">
+      <div class="textodespedida">
+        <p>Viajar es añadir vida a la vida</p>
+        <p>Gracias por apoyar operadores locales</p>
+        <p>¡Vuelve pronto!</p>
+      </div>
+    </section>
+
+  </div>
+</div>

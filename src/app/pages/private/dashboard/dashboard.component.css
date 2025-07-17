@@ -1,0 +1,126 @@
+:root {
+  --Azul: #2274A5;
+  --AzulOscuro: #1c5f85;
+  --Morado: #7E2E84;
+  --FondoClaro: #f9f9f9;
+  --Texto: #1A1A1A;
+  --Error: #E53935;
+  --InputBg: #fff;
+  --Font: 'Inter', sans-serif;
+}
+
+/* Layout */
+.dashboard-container {
+  display: flex;
+    min-height: 100vh;
+    background-color: #f4f6f8;
+}
+
+.dashboard-header {
+  background-color: var(--Azul);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+ .dashboard-header h1 {
+    color: #2274a5;
+    font-size: 2rem;
+ }
+
+
+.dashboard-menu {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 0.8rem;
+}
+
+.menu-btn {
+  display: block;
+  padding: 0.7rem 1rem;
+  background-color: var(--naranjagrisaceo);
+  color: var(--verydark);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-btn:hover {
+  background-color: var(--Azul);
+  color: white;
+  border-color: var(--Azul);
+}
+
+/* Layout */
+/* .dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+} */
+
+.dashboard-header {
+  background-color: var(--Azul);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.dashboard-menu {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 0.8rem;
+}
+
+.menu-btn {
+  display: block;
+  padding: 0.7rem 1rem;
+  background-color: var(--naranjagrisaceo);
+  color: var(--verydark);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-btn:hover {
+  background-color: var(--Azul);
+  color: rgb(192, 21, 198);
+  border-color: var(--Azul);
+}
+
+/* Main content */
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+
