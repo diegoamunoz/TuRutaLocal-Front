@@ -5,7 +5,7 @@ import { CurrencyPipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-public',
-  imports: [CurrencyPipe,JsonPipe],
+  imports: [CurrencyPipe],
   templateUrl: './servicios-public.component.html',
   styleUrl: './servicios-public.component.css'
 })
