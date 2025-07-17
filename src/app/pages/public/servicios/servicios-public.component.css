@@ -45,10 +45,26 @@
     flex: 1;
 }
 
-.servicio-info h3 {
+.titulo-estado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-estado h3 {
     color: #7129a7;
-    margin: 0 0 0.6rem;
+    margin: 0;
     font-size: 1.6rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.estado-texto {
+    color: #2e8b57; /* Verde para disponible */
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .servicio-info .descripcion {
@@ -71,7 +87,7 @@
     margin-bottom: 0.4rem;
 }
 
-.estado-boton {
+.ver-mas-boton {
     display: inline-block;
     background-color: #7129a7;
     color: white;
@@ -81,19 +97,4 @@
     text-align: center;
     cursor: pointer;
     transition: background 0.2s ease;
-    width: fit-content;
-    margin-top: 0.8rem;
-}
-
-.estado-boton:hover {
-    background-color: #5a2188;
-}
-
-/* Estilo para el mensaje de "No hay servicios" */
-.page-servicios-list h3 {
-    text-align: center;
-    color: #9b15bd;
-    font-weight: normal;
-    margin-top: 2rem;
-    font-size: 1.8rem;
 }

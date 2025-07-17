@@ -1,5 +1,3 @@
-<!-- <pre>{{servicios|json}}</pre> -->
-
 <div class="page-servicios-list">
     @if (servicios.length > 0) {
     <div class="servicios-contenedor">
@@ -9,15 +7,17 @@
                 <img [src]="servicio.urlImage" alt="{{ servicio.name }}" />
             </div>
             <div class="servicio-info">
-                <h3>{{ servicio.name }}</h3>
+                <div class="titulo-estado">
+                    <h3>{{ servicio.name }}</h3>
+                    <span class="estado-texto">{{ servicio.state }}</span>
+                </div>
                 <p class="descripcion">{{ servicio.description }}</p>
                 <p class="precio">{{ servicio.price | currency:'USD' }}</p>
                 <p class="categoria">{{ servicio.category }}</p>
-                <p class="estado-boton">{{ servicio.state }}</p> <!-- Se verá como botón -->
+                <a class="ver-mas-boton" [routerLink]="['/reserva']">Reserva ahora</a>
             </div>
         </div>
         }
-        
     </div>
     } @else {
     <h3>No hay servicios registrados</h3>
