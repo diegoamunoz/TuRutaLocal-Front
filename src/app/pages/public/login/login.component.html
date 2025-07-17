@@ -3,6 +3,7 @@
         <form class="form form-login" [formGroup]="formData" (ngSubmit)="onSubmit()">
             <div class="form-content">
                 <div class="field">
+                    <div class="form-logo"></div>
                     <label for="username">Usuario</label>
                     <input type="text" placeholder="ej:valeria@correo.co" id="username" formControlName="email">
                     <div class="error">
@@ -36,7 +37,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <button type="submit" [disabled]="formData.invalid">login</button>
+                    <button type="submit" [disabled]="formData.invalid">Iniciar sesión</button>
                 </div>
             </div>
         </form>

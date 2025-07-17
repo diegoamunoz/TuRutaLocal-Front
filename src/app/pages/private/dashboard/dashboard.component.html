@@ -1,57 +1,33 @@
-<!-- dashboard.component.html -->
-
 <header class="dashboard-header">
   <h1>Panel de Administración - Tu Ruta Local</h1>
 </header>
 
-<nav class="dashboard-menu">
-  <ul class="menu">
-    <li class="menu-item">
-      <a class="btn btn-outline-primary btn-login" routerLink="/login">Login</a>
-    </li>
-    <li class="menu-item">
-      <a class="btn btn-outline-primary btn-login" (click)="logout()">Logout</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/register">Register</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/reserva">Nueva reserva usuario</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/user/new">New User</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/users">Usuarios list</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/servicios">Servicios</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/servicios">Lista Servicio</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/reservas/new">Nueva Reserva</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/reservas">Lista Reservas</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/destinos">Destinos</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/destinos/new-form">New Destino</a>
-    </li>
-    <li class="menu-item">
-      <a routerLink="/dashboard/destinos">Destinos list</a>
-    </li>
-  </ul>
-</nav>
+<div class="dashboard-container">
+  <nav class="dashboard-menu">
+    <ul class="menu">
+      <li><a class="menu-btn" routerLink="/login">🔐 Login</a></li>
+      <li><a class="menu-btn" (click)="logout()">🚪 Logout</a></li>
+      <li><a class="menu-btn" routerLink="/register">📝 Register</a></li>
 
-<main class="dashboard-content">
-  <!-- Aquí se mostrarán las rutas hijas -->
-  <router-outlet></router-outlet>
-</main>
+      <li><a class="menu-btn" routerLink="/dashboard/user/new">👤 Nuevo usuario Admin</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/users">👥 Usuarios</a></li>
+
+      <li><a class="menu-btn" routerLink="/dashboard/servicios">🧭 Servicios</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/servicios/new">➕ Nuevo Servicio</a></li>
+
+      <li><a class="menu-btn" routerLink="/reserva">🗓️ Nueva reserva usuario</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/reservas/new">🗓️ Nueva Reserva Admin</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/reservas">📋 Lista Reservas</a></li>
+
+      <li><a class="menu-btn" routerLink="/dashboard/destinos">🌄 Destinos</a></li>
+      <li><a class="menu-btn" routerLink="/dashboard/destinos/new-form">➕ Nuevo Destino</a></li>
+    </ul>
+  </nav>
+
+  <main class="dashboard-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
 
 
 

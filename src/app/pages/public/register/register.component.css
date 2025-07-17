@@ -121,7 +121,7 @@
 }
 
 .field button:disabled {
-  background-color: #ccc;
+  background-color: #2274a5;
   cursor: not-allowed;
   transform: none;
 }
