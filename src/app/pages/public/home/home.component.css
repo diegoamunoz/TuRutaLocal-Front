@@ -59,80 +59,115 @@ h2 {
 }
 
 
-/* cards */
+/*cards*/
 
-
-/* Contenedor de las cards */
-.menu-cards {
+.destinos_home {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   padding: 20px;
-
 }
 
-/* Estilo de cada card */
-.card {
+/* Card horizontal */
+.destinos_home .card {
+  display: flex;
+  flex-direction: row;
   background: var(--White);
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 4px 12px var(--Maximum-Purple);
+  max-width: 600px;
+  width: 100%;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.destinos_home .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--Maximum-Purple);
+}
+
+/* Imagen a la izquierda */
+.destinos_home .imagen-destinos {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Contenido al lado derecho */
+.destinos_home .card > div {
+  flex: 1;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px #7E2E84;
-  flex-wrap: wrap;
-  height: 26rem;
-  width: 18rem;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px #7E2E84;
-}
-
-/* Imagen de cada destino */
-.imagen-destinos {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Contenido interno */
-.name {
-  margin: 16px;
-  font-size: 1.4rem;
+/* Título */
+.destinos_home .name {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
   color: var(--Lapis-Lazuli);
-  display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.descripcion {
-  margin: 0 16px 16px;
-  font-size: 1rem;
-  color: #000000;
+/* Descripción */
+.destinos_home .descripcion {
   flex-grow: 1;
-  font-weight: 100;
+  margin: 0 0 16px;
+  font-size: 1rem;
+  color: var(--verydark);
+  font-weight: 300;
 }
 
-/* Botón con estilo personalizado */
-.boton {
-  padding: 16px;
-}
-
-.boton button {
-  width: 100%;
+/* Botón interno */
+.destinos_home .boton button {
+  align-self: flex-start;
   background: var(--Maximum-Purple);
   color: var(--White);
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 24px;
-  font-size: 1rem;
   cursor: pointer;
+  transition: background .3s;
 }
 
-.boton button:hover {
-  background: #6a296f;
+.destinos_home .boton button:hover {
+  background: #5e2568;
+}
+
+@media (max-width: 1023px) {
+  .destinos_home .card {
+    max-width: 100%;
+  }
+  .destinos_home .imagen-destinos {
+    width: 35%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .destinos_home .card {
+    flex-direction: column;
+  }
+  .destinos_home .imagen-destinos {
+    width: 100%;
+    height: 200px;
+  }
+  .destinos_home .name {
+    font-size: 1.3rem;
+  }
+  .destinos_home .descripcion {
+    font-size: 0.95rem;
+  }
+}
+
+/* finalcards */
+
+.contenedor_boton_destinos{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
 }
 
 .boton_destinos {

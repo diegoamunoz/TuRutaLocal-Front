@@ -13,10 +13,10 @@
             <h2 class="name">{{destino?.name}}</h2>
         </div>
         <div>
-            <h4 class="descripcion">{{destino?.descripcion}}</h4>
+            <h4 class="descripcion" >{{destino?.descripcion}}</h4>
         </div>
         <div class="boton">
-            <button>Ver detalles</button>
+            <a  [routerLink]="['/servicios/', destino.serviceId]" >servicios</a>
         </div>
     </div>
 }
