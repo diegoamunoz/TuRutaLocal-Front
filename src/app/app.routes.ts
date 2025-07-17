@@ -38,6 +38,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'login', component: LoginComponent  },
     { path: 'register', component: RegisterComponent  },
+    { path: 'destinos', component: DestinosPublicComponent },
     { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
     { path: 'reserva', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
     { path: 'servicios/:id', component:serviciosPublicComponent },
