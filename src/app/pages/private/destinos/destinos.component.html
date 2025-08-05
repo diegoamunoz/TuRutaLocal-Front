@@ -2,9 +2,11 @@
 
 
 <div class="page-destinos-list">
-    <h1>destinos list</h1>
+    <div class="titulo">
+    <h1>Lista Destinos</h1>
     <a href="#" routerLink="/dashboard/destinos/new-form" routerLinkActive="router-link-active" >crear un nuevo destino</a>
-    
+    </div>
+
     @if (destinos.length>0) {
 
          <table border="1">
@@ -18,9 +20,6 @@
             <th>
                 descripcion
             </th>
-            <!-- <th>
-                servicio
-            </th> -->
             <th>
                 actions
             </th>

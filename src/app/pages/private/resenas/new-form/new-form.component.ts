@@ -8,14 +8,13 @@ import { ResenasService } from "../../../../services/resenas.service";
     templateUrl: './new-form.component.html',
     styleUrl: './new-form.component.css'
 })
-export class resenas{
+export class resenasNewForm{
     formData!: FormGroup;
     resenas: any =  [];
 
     constructor(private resenasService: ResenasService){
         this.formData = new FormGroup({
             usuario: new FormControl ( '',[Validators.required]),
-            servicio: new FormControl ( '',[ Validators.required]),
             score: new FormControl ( '',[ Validators.required]),
             comentario: new FormControl ( '',[ Validators.required])
         })
@@ -36,4 +35,9 @@ export class resenas{
           
     this.formData.reset();  // limpiamos los campos del formulario 
   }
+
+  ngOnDestroy(){
+  console.log( 'ngOnDestroy')
 }
+}
+
