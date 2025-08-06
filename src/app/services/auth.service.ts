@@ -2,16 +2,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, map, of, tap, throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  BASE_URL:string = environment.apiUrl
 
   constructor( private http: HttpClient, private router: Router ) { }
 
   loginUser ( credentials: any ) {    // credentials: {username: 'jcarlosj.dev@gmail.com', password: 'wqeqweqw'}
-    return this.http.post<any>( 'http://localhost:3000/api/auth/login', credentials )
+    return this.http.post<any>( `${this.BASE_URL}/api/auth/login`, credentials )
       .pipe(
         tap( ( response ) => {
           console.log( response );
@@ -60,7 +62,7 @@ export class AuthService {
 
   // Verificar el usuario autenticado
   verifyAuthenticateUser() {
-    return this.http.get( 'http://localhost:3000/api/auth/re-new-token', { headers: this.getHeaders() } )
+    return this.http.get( `${this.BASE_URL}/api/auth/re-new-token`, { headers: this.getHeaders() } )
       .pipe(
         map( ( data: any ) => {
           console.log( 'Service verifyAuthenticateUser response:', data );
