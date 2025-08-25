@@ -1,0 +1,48 @@
+<!-- <pre>{{ destinos | json }}</pre> -->
+
+
+<div class="page-resenas-list">
+    <div class="titulo">
+    <h1>Lista Comentarios</h1>
+    <a href="#" routerLink="/dashboard/resenas/new-form" routerLinkActive="router-link-active" >crear un nuevo comentario</a>
+    </div>
+
+    @if (resenas.length>0) {
+
+         <table border="1">
+        <thead>
+            <th>
+                Comentario
+            </th>
+            <th>
+                Calificacion
+            </th>
+            <th>
+                 actions
+            </th>
+        </thead>
+        <tbody>
+            @for (resena of resenas; track $index) {
+            <tr>
+                <td>
+                    {{resena ?.comentario }}
+                </td>
+                <td>
+                    {{resena?.score}}
+                </td>
+                
+                <td>
+                    <a href="#" (click)="onDelete(resena?._id); $event.preventDefault()">eliminar</a>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+    }
+    @else {
+        <h3> no hay resenas registradas</h3>
+    }
+
+   
+</div>

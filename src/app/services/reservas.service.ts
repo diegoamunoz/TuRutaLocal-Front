@@ -1,19 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservasService {
+  enviroment: any;
 
-  constructor( private http:HttpClient) { }
+  constructor( private http:HttpClient) {
+        this.enviroment = environment
+    
+   }
 
   registerReserva ( newReserva: any) {
-    return this.http.post( 'http://localhost:3000/api/reservas' , newReserva );
+    return this.http.post( `${ this.enviroment.apiUrl}/reservas` , newReserva );
 
   }
 
   getReservas() {
-    return this.http.get( 'http://localhost:3000/api/reservas' );
+    return this.http.get( `${ this.enviroment.apiUrl}/reservas` );
   }
 }

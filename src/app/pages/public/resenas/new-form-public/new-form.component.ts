@@ -10,7 +10,7 @@ import { RatingComponent } from "../../../../shared/rating/rating.component";
   templateUrl: './new-form.component.html',
   styleUrl: './new-form.component.css'
 })
-export class resenasNewForm {
+export class resenasFormPublic {
   formData!: FormGroup;
   resenas: any = [];
 
@@ -39,7 +39,7 @@ export class resenasNewForm {
       this.resenasService.registerResena(this.formData.value).subscribe({
         next: (data) => {
           console.log(data);
-          this.router.navigateByUrl('dashboard/resenas');
+          this.router.navigateByUrl('resenas');
         },
         error: (error) => {
           console.error(error);

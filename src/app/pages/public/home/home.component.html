@@ -30,14 +30,13 @@
                 </div>
             </div>
         </div>
-    }
+        }
     </div>
-
 </section>
 
 <div class="contenedor_boton_destinos">
     <a href="destinos" class="boton_destinos">mas destinos</a>
-</div> 
+</div>
 <!-- opiniones -->
 
 
@@ -47,35 +46,26 @@
         <img src="imagenes/niño.jpg" alt="personas" class="personas">
     </div>
     <div class="opiniones-contenido">
-        <div class="cuadro1">
-            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">Juan Pérez</h3>
-            <h4 class="parrafo">para aprovechar bien la visita hay que ir con un guía. Tu ruta local siempre nos gusta.
-                En esta ocasión
-                nos tocó Alba y nos ha encantado. Una chica muy profesional que nos lo ha explicado todo muy bien y
-                hemos aprendido mucho. Además nos daba todas las indicaciones de seguridad muy claras y hemos hecho una
-                visita muy organizada. Muchas gracias Alba .</h4>
-            <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
-        </div>
-        <div class="cuadro2">
-            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">Andrea López</h3>
-            <h4 class="parrafo">Estupenda, nuestro Guía Ander es súper Simpático y ameno, te explica todo muy bien,
-                hemos pasado una
-                Mañana estupenda en su compañía, ha resultado todas nuestras dudas, sin duda volveríamos a descubrir la
-                Historia con El Gracias Ander </h4>
-            <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
-        </div>
-        <div class="cuadro3">
-            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">Pedro Arce</h3>
-            <h4 class="parrafo">Dana, la guía increíble. Amable, simpática, atenta, con explicaciones detalladas y
-                amenas. Hemos hecho 2
-                tour con ella y todo estupendo. El único pero, demasiada gente, difícil ver todas las salas con tanta
-                gente, y no había mucha
-                circulación de aire, por lo que se hizo un poco agobiante, pero con la explicaciones de Dana se hizo muy
-                ameno.</h4>
-            <img class="estrellas" src="imagenes/estrellas.png" alt="estrellas">
+        <div class="cuadro-opiniones">
+            @for (resena of resenas; track $index) {
+
+            <h3 class="nombre_opiniones"><img class="foto" src="imagenes/cuenta.png" alt="usuario">usuario anonimo</h3>
+
+            <div class="parrafo">
+                <h2 class="contenido">{{resena?.comentario}}</h2>
+            </div>
+            <div>
+                <!-- ⭐ Aquí mostramos las estrellas -->
+                <app-rating [rating]="resena?.score" [readonly]="true" [maxStars]="5">
+                </app-rating>
+            </div>
+            }
         </div>
     </div>
 </div>
+
+
+<!-- pagos -->
 
 <div class="pago">
     <div class="titulo">
