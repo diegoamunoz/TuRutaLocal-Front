@@ -6,16 +6,19 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ReservasService {
-  BASE_URL:string = environment.apiUrl
+  enviroment: any;
 
-  constructor( private http:HttpClient) { }
+  constructor( private http:HttpClient) {
+        this.enviroment = environment
+    
+   }
 
   registerReserva ( newReserva: any) {
-    return this.http.post( `${ this.BASE_URL }/api/reservas` , newReserva );
+    return this.http.post( `${ this.enviroment.apiUrl}/reservas` , newReserva );
 
   }
 
   getReservas() {
-    return this.http.get( `${ this.BASE_URL }/api/reservas` );
+    return this.http.get( `${ this.enviroment.apiUrl}/reservas` );
   }
 }

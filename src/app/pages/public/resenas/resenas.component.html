@@ -1,0 +1,37 @@
+<div class="imagen-principal">
+  <img class="img" src="imagenes/campos.jpg" alt="cartagena">
+  <div class="texto-imagen">
+    <h2>Opiniones</h2>
+  </div>
+</div>
+
+
+<!-- <div>
+    <h3>Tu opinion es muy importante para nosostros, dejanos saber como fue tu experiencia para asi mismo poder mejorar nuestro servicios.</h3>
+</div> -->
+
+<div class="resenas-container">
+  @for (resena of resenas; track $index) {
+    <div class="resena-card">
+      <h3 class="nombre_opiniones">
+        <img class="foto" src="imagenes/cuenta.png" alt="usuario">
+        usuario anónimo
+      </h3>
+      <div>
+        <h2>{{resena?.comentario}}</h2>
+      </div>
+      <div>
+        <!-- ⭐ Estrellas -->
+        <app-rating
+          [rating]="resena?.score"
+          [readonly]="true"
+          [maxStars]="5">
+        </app-rating>
+      </div>
+    </div>
+  }
+</div>
+
+<div class="contenedor_boton_resenas">
+    <a href="resenas/new-form" class="boton_resenas">Agrega un comentario</a>
+</div>

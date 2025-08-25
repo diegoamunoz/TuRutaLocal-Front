@@ -12,8 +12,10 @@
 /* Layout */
 .dashboard-container {
   display: flex;
-    min-height: 100vh;
-    background-color: #f4f6f8;
+  background-color: #f4f6f8;
+  border: 2px solid;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .dashboard-header {
@@ -23,18 +25,19 @@
   text-align: center;
   font-size: 1.5rem;
 }
- .dashboard-header h1 {
-    color: #2274a5;
-    font-size: 2rem;
- }
+
+.dashboard-header h1 {
+  color: #2274a5;
+  font-size: 2rem;
+}
 
 
 .dashboard-menu {
   width: 260px;
   background-color: #ffffff;
-  border-right: 1px solid #ddd;
+  border-right: 2px solid;
   padding: 1rem;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .menu {
@@ -83,9 +86,15 @@
 .dashboard-menu {
   width: 260px;
   background-color: #ffffff;
-  border-right: 1px solid #ddd;
   padding: 1rem;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-menu-resenas{
+  width: 260px;
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .menu {
@@ -117,10 +126,8 @@
 }
 
 /* Main content */
-.dashboard-content {
+/* .dashboard-content {
   flex: 1;
   padding: 2rem;
   background-color: #fff;
-}
-
-
+} */

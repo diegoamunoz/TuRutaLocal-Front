@@ -15,22 +15,21 @@ import { ReservaEditComponent } from './pages/private/reservas/reserva-edit/rese
 import { ReservaNewComponent } from './pages/private/reservas/reserva-new/reserva-new.component';
 
 import { UsersComponent } from './pages/private/users/users.component';
-import { UserNewComponent } from './pages/private/users/new-form/users-new-component';
-// import { Resena } from './pages/private/resenas/new-form/new-form.component';
-import { authGuard } from './guards/auth.guard';
 import { UserEditComponent } from './pages/private/users/user-edit/user-edit.component';
+import { UserNewComponent } from './pages/private/users/new-form/users-new-component';
+
+import { authGuard } from './guards/auth.guard';
+
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
+
 import { DestinosComponent } from './pages/private/destinos/destinos.component';
 import { DestinosEditComponent } from './pages/private/destinos/destinos-edit/destinos-edit.component';
 import { destinosNewForm } from './pages/private/destinos/new-form/new-form.component';
 
-
-
-
-
-// import { Resena } from './pages/private/resenas/new-form/new-form.component';
-// import { resenas } from './pages/public/resenas/new-form/new-form.component';
-
+import { resenasNewForm } from './pages/private/resenas/new-form/new-form.component';
+import { ResenasComponent } from './pages/private/resenas/resenas.component';
+import { ResenasPublic } from './pages/public/resenas/resenas.component';
+import { resenasFormPublic } from './pages/public/resenas/new-form-public/new-form.component';
 
 
 
@@ -39,6 +38,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent  },
     { path: 'register', component: RegisterComponent  },
     { path: 'destinos', component: DestinosPublicComponent },
+    { path: 'resenas', component: ResenasPublic},
     { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
     { path: 'reserva', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
     { path: 'servicios/:id', component:serviciosPublicComponent },
@@ -54,12 +54,16 @@ export const routes: Routes = [
     { path: 'dashboard/users',component:UsersComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/user/new',component:UserNewComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/users/edit/:id', component: UserEditComponent, canActivate:[ authGuard ] },
+
     { path: 'dashboard/destinos', component: DestinosComponent, canActivate:[ authGuard ]},
     { path: 'dashboard/destinos/new-form', component:destinosNewForm, canActivate:[ authGuard ]},
     { path: 'dashboard/destinos/edit/:id', component: DestinosEditComponent, canActivate:[ authGuard ]},
 
-    // { path:'resenas/new-form', component: resenas, },
-    // { path:'dashboard/resenas/new-form', component: Resena,  },  
+    { path: 'dashboard/resenas', component: ResenasComponent, canActivate:[ authGuard ]},
+    { path: 'dashboard/resenas/new-form', component: resenasNewForm, canActivate:[ authGuard] },
+    { path: 'resenas/new-form', component: resenasFormPublic},
+
+
     { path: '**', redirectTo: 'home' , pathMatch: 'full' },
     { path: '', redirectTo: 'home' , pathMatch: 'full' },
 ];

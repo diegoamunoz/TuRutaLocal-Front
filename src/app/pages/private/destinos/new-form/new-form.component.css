@@ -1,55 +1,66 @@
-/*formulario de destinos */
-
-
-form {
-    background-color: #7E2E84;
-    border-radius: 10%;
-    padding: 30px;
-    max-width: 500px;
-    margin: auto;
-    border-radius: 12px;
+:root {
+  --Lapis-Lazuli: #2274A5;
+  --Maximum-Purple: #7E2E84;
+  --White: #FFFFFF;
+  --verydark: #131B23;
 }
 
-h1 {
-    text-align: center;
-    color: #000000;
-    margin-bottom: 20px;
+.form-destinos {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--White);
+  border: 2px solid var(--verydark);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.field {    
-    margin-bottom: 20px;
+.form-destinos h1 {
+  font-size: 1.8rem;
+  color: var(--Lapis-Lazuli);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #000000;
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
 }
 
-input[type="text"],
-input[type="number"],
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+.field label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--verydark);
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #000000;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.field input,
+.field select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
 }
 
-button:hover {
-    background-color: #2274A5;
-} 
+.field input:focus,
+.field select:focus {
+  border-color: var(--Lapis-Lazuli);
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: var(--Maximum-Purple);
+  color: var(--White);
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #661b6e;
+}

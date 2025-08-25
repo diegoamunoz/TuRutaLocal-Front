@@ -8,12 +8,14 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  BASE_URL:string = environment.apiUrl
+  UrlApi: string = environment.apiUrl
 
-  constructor( private http: HttpClient, private router: Router ) { }
+  constructor( private http: HttpClient, private router: Router ) { 
+        this.UrlApi = (environment as { apiUrl: string}).apiUrl
+  }
 
   loginUser ( credentials: any ) {    // credentials: {username: 'jcarlosj.dev@gmail.com', password: 'wqeqweqw'}
-    return this.http.post<any>( `${this.BASE_URL}/api/auth/login`, credentials )
+    return this.http.post<any>( `${this.UrlApi}/auth/login`, credentials )
       .pipe(
         tap( ( response ) => {
           console.log( response );
@@ -62,7 +64,7 @@ export class AuthService {
 
   // Verificar el usuario autenticado
   verifyAuthenticateUser() {
-    return this.http.get( `${this.BASE_URL}/api/auth/re-new-token`, { headers: this.getHeaders() } )
+    return this.http.get( `${this.UrlApi}/auth/re-new-token`, { headers: this.getHeaders() } )
       .pipe(
         map( ( data: any ) => {
           console.log( 'Service verifyAuthenticateUser response:', data );

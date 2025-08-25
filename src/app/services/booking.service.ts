@@ -7,28 +7,32 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class BookingService {
-  BASE_URL:string = environment.apiUrl
+  enviroment: any;
+
   constructor( 
     private http: HttpClient,
-    private authService: AuthService
-  ) { }
+    private authService: AuthService) { 
+    this.enviroment = environment
+
+    }
+
   registerBooking( newBooking: any ) {
-    return this.http.post<any>( `${this.BASE_URL}/api/reservas`, newBooking, { headers: this.authService.getHeaders() } )
+    return this.http.post<any>( `${this.enviroment.apiUrl}/reservas`, newBooking, { headers: this.authService.getHeaders() } )
   }
 
   getBookings() {
-    return this.http.get<any>( `${this.BASE_URL}/api/reservas` );
+    return this.http.get<any>( `${this.enviroment.apiUrl}/reservas` );
   }
 
   deleteBooking(id:string){
-    return this.http.delete<any>(`${this.BASE_URL}/api/reservas/`+id, { headers: this.authService.getHeaders() } )
+    return this.http.delete<any>(`${this.enviroment.apiUrl}/reservas/`+id, { headers: this.authService.getHeaders() } )
   }
 
   updateBooking(id:string, updateBooking:any){
-    return this.http.patch<any>( `${this.BASE_URL}/api/reservas/`+id, updateBooking, {headers: this.authService.getHeaders() }  )
+    return this.http.patch<any>( `${this.enviroment.apiUrl}/reservas/`+id, updateBooking, {headers: this.authService.getHeaders() }  )
   }
 
   getBookingbyId(id:string){
-    return this.http.get<any>( `${this.BASE_URL}/api/reservas/`+id, { headers: this.authService.getHeaders() } )
+    return this.http.get<any>( `${this.enviroment.apiUrl}/reservas/`+id, { headers: this.authService.getHeaders() } )
   }
 }

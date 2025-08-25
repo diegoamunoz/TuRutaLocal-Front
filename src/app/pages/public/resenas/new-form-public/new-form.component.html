@@ -1,0 +1,25 @@
+<form  
+    [formGroup]="formData"
+    (ngSubmit)="onSubmit()"
+    class="form form-resenas">
+
+    <h1>Registrar comentario</h1>
+    <!-- Campo de calificación con estrellas -->
+    <div class="field">
+        <label for="calificacion">Calificación</label>
+        <app-rating
+            [rating]="formData.get('score')?.value"
+            (ratingChange)="formData.get('score')?.setValue($event)">
+        </app-rating>
+    </div>
+   
+    <!-- Campo de comentario -->
+    <div>
+      <label for="resenas-comentario">Comentario:</label>
+      <textarea type="text" formControlName="comentario" id="comentario"></textarea>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="formData.invalid">Enviar</button>
+    </div>
+</form>

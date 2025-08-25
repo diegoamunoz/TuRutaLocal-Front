@@ -8,6 +8,8 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  user:any = null;
+  userLogged!: any;
 
   constructor(private authService: AuthService) {
 
