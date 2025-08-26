@@ -4,6 +4,8 @@ import { UsersService } from '../../../services/users.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -28,12 +30,19 @@ export class RegisterComponent {
     if (this.formData.valid) {
       this.usersService.registerUser(this.formData.value).subscribe({
         next: (data) => {
-          console.log('Usuario registrado:', data);
+          // console.log('Usuario registrado:', data);
           this.router.navigate(['/login']);
+          this.formData.reset();
         },
         error: (err) => {
-          console.error('Error registrando usuario', err);
-        },
+          this.formData.reset();
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: err.error.errors.email
+          });
+          // console.error('Error registrando usuario', err.error.errors.email);
+        }
       });
     }
   }
