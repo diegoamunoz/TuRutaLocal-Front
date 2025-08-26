@@ -33,6 +33,6 @@ export class servicesService {
     return this.http.patch<any>(`${ this.enviroment.apiUrl}/servicios/${id}`, updateServicio , {headers: this.authService.getHeaders()}) 
   }
   getServicioById (id: string)  {
-    return this.http.get<any> (`${ this.enviroment.apiUrl}/servicios/${ id }`, {headers: this.authService.getHeaders() })
+    return this.http.get<any> (`${ this.enviroment.apiUrl}/servicios/${ id }`)
   }
 }
