@@ -5,25 +5,19 @@
   <div class="main">
 
     <!-- Sección: Resumen de reserva -->
+<!-- Sección: Resumen de reserva -->
     <section class="resumenreserva">
-      <div>
-        <h2>{{ serviceDetail.name }}</h2>
+      <div class="resumen-card">
         <img [src]="serviceDetail.urlImage" [alt]="serviceDetail.name" />
+        <div class="resumen-info">
+          <h2>{{ serviceDetail.name }}</h2>
+        </div>
       </div>
     </section>
 
+
     <!-- Sección: Formulario Angular -->
     <section class="formreserva" #formularioReserva>
-      <div class="condicionesreserva">
-        <h2>Condiciones de la reserva</h2>
-        <ul>
-          <li>Recibirás confirmación al correo electrónico</li>
-          <li>Puedes cancelar tu reserva 24 horas antes</li>
-          <li>El operador te contactará para coordinar itinerario y métodos de pago</li>
-          <li>El cumplimiento de los planes no es responsabilidad de Tu Ruta Local, el operador es quien debe cumplir el itinerario</li>
-        </ul>
-      </div>
-
       <div class="formularioreserva">
         <div class="form-container">
           <form
@@ -121,18 +115,19 @@
               <button type="submit">Registrar Reserva</button>
             </div>
           </form>
+          <div class="condicionesreserva">
+        <h2>Condiciones de la reserva</h2>
+        <ul>
+          <li>Recibirás confirmación al correo electrónico</li>
+          <li>Puedes cancelar tu reserva 24 horas antes</li>
+          <li>El operador te contactará para coordinar itinerario y métodos de pago</li>
+          <li>El cumplimiento de los planes no es responsabilidad de Tu Ruta Local, el operador es quien debe cumplir el itinerario</li>
+        </ul>
+      </div>
         </div>
       </div>
     </section>
 
-    <!-- Sección: Agradecimiento -->
-    <section class="agradecimiento">
-      <div class="textodespedida">
-        <p>Viajar es añadir vida a la vida</p>
-        <p>Gracias por apoyar operadores locales</p>
-        <p>¡Vuelve pronto!</p>
-      </div>
-    </section>
 
   </div>
 </div>

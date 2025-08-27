@@ -15,7 +15,7 @@
     padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 382px;
     width: 100%;
 }
 
@@ -32,6 +32,25 @@ background-position: center;
 .form-login .field {
     margin-bottom: 1.5rem;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* alinea todo a la izquierda */
+}
+
+form input, 
+form button {
+    width: 100%;         /* ocupa todo el ancho del contenedor */
+    max-width: 500px;    /* mismo límite que los inputs */
+    margin: 10px 0;      /* separa cada elemento */
+    border-radius: 6px;
+}
+
+.field-button {
+    display: contents;
+}
+
 
 input {
     width: 100%;

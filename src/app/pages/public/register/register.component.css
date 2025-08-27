@@ -1,156 +1,163 @@
-:root {
-  --Azul: #2274A5;
-  --AzulOscuro: #1c5f85;
-  --Morado: #7E2E84;
-  --FondoClaro: #f9f9f9;
-  --Texto: #1A1A1A;
-  --Error: #E53935;
-  --InputBg: #fff;
-  --Font: 'Inter', sans-serif;
-}
+/* === ESTILO BASE (escritorio) === */
 
-/* Fondo para toda la página */
 .registro-page {
-  min-height: 100vh;
-  background-image: url('../../../../../public/imagenes/shutterstock_2419842837.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
+    min-height: 100vh;
+    background-image: url('../../../../../public/imagenes/shutterstock_2419842837.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Formulario centrado */
 .form-register {
-      background-color: #ccccccad;
-    max-width: 448px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 900px; /* más ancho para diseño horizontal */
     width: 100%;
-    padding: 3rem;
-    border-radius: 1.2rem;
-    box-shadow: 0 8px 24px rgb(0 0 0 / 17%);
     display: flex;
     flex-direction: column;
-    gap: 0rem;
+    align-items: center;
 }
 
 /* Logo */
 .form-logo {
-      width: 164px;
+    width: 164px;
     height: 147px;
-    margin: -62px auto;
-  background-image: url('../../../../../public/imagenes/Logo\ Negro.png');
-  background-repeat: no-repeat;
-    background-size: contain;
+    margin: -30px auto 0px auto;
+    background-image: url('../../../../../public/imagenes/Logo\ Negro.png');
+    background-repeat: no-repeat;
+    background-size: 20vh;
     background-position: center;
 }
 
 /* Título */
-.title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--Morado);
+.form-register .title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
 }
 
-/* Contenido del formulario */
+/* Contenedor de campos (grid horizontal) */
 .form-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* dos columnas */
+    gap: 2.5rem 6rem; /* espacio entre filas y columnas */
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
+/* Campo */
+.form-register .field {
+    display: flex;
+    flex-direction: column;
 }
 
-.field label {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.form-register label {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #333;
 }
 
-.field input {
-  padding: 1.2rem;
-    font-size: 1.4rem;
-    border: 2px solid #671a6d;
-    border-radius: 0.6rem;
-    background-color: var(--InputBg);
-    transition: border-color 0.2s ease;
+/* Inputs */
+.form-register input {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
 }
 
-.field input:focus {
-  border-color: var(--Azul);
-  outline: none;
+.form-register input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
-/* Validación visual */
-.field.invalid input {
-  border-color: var(--Error);
+/* Error */
+.form-register .error {
+    font-size: 0.95rem;
+    color: red;
+    display: none;
+    font-weight: 700;
 }
 
-.field .error {
-  display: none;
-  font-size: 1.2rem;
-  color: var(--Error);
-  margin-top: 0.3rem;
+.form-register .field.invalid .error {
+    display: block;
 }
 
-.field.invalid .error {
-  display: block;
+/* Botón ocupa las 2 columnas */
+.form-register button {
+    grid-column: span 2;
+    width: 100%;
+    padding: 2.4rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Botón */
-.field button {
-  background-color: var(--Azul);
-  color: white;
-  padding: 1.3rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 0.6rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.form-register button:hover:enabled {
+    background-color: #0056b3;
 }
 
-.field button:hover {
-  background-color: var(--AzulOscuro);
-  transform: translateY(-1px);
+.form-register button:disabled {
+    background-color: #007bff;
+    cursor: not-allowed;
 }
 
-.field button:disabled {
-  background-color: #2274a5;
-  cursor: not-allowed;
-  transform: none;
+/* === MEDIA QUERIES === */
+
+/* Tablets (768px o menos) */
+@media screen and (max-width: 768px) {
+    .form-register {
+        padding: 2rem;
+        max-width: 90%;
+    }
+
+    .form-content {
+        grid-template-columns: 1fr; /* vuelve a columna única */
+    }
+
+    .form-register input,
+    .form-register button {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+
+    .form-register button {
+        grid-column: span 1; /* botón ocupa solo una columna */
+    }
 }
 
-.form-register input::placeholder {
-  color: var(--morado); /* O el color que estés usando */
-}
+/* Celulares (480px o menos) */
+@media screen and (max-width: 480px) {
+    .form-register {
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .form-register {
-    padding: 2rem;
-  }
+    .form-register .field {
+        margin-bottom: 1rem;
+    }
 
-  .title {
-    font-size: 2rem;
-  }
+    .form-register input,
+    .form-register button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
 
-  .form-logo {
-    width: 130px;
-    height: 50px;
-  }
+    .form-register label {
+        font-size: 0.95rem;
+    }
 
-  .field input {
-    font-size: 1.3rem;
-    padding: 1rem;
-  }
-
-  .field button {
-    font-size: 1.4rem;
-  }
+    .form-content {
+        grid-template-columns: 1fr;
+    }
 }
