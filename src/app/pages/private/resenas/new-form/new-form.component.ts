@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { ResenasService } from "../../../../services/resenas.service";
 import { Router } from "@angular/router";
-import { RatingComponent } from "../../../../shared/rating/rating.component";
+import { RatingComponent } from "../../../../componentes/shared/rating/rating.component";
 
 @Component({
   selector: 'app-resenas',

@@ -1,25 +1,30 @@
-<form  
-    [formGroup]="formData"
-    (ngSubmit)="onSubmit()"
-    class="form form-resenas">
+<div class="container-resenas">
 
-    <h1>Registrar comentario</h1>
-    <!-- Campo de calificación con estrellas -->
-    <div class="field">
-        <label for="calificacion">Calificación</label>
-        <app-rating
+  <div class="imagen-principal">
+    <img src="imagenes/selfie2.jpg" alt="cartagena">
+  </div>
+
+
+    <div class="contenido-derecha">
+      <h2>"Queremos conocer tu experiencia, tu comentario nos ayudará a crecer y ofrecer un mejor servicio"</h2>
+      <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="form form-resenas">
+        <h1>Registrar comentario</h1>
+        <div class="field">
+          <label for="calificacion">Calificación</label>
+          <app-rating
             [rating]="formData.get('score')?.value"
             (ratingChange)="formData.get('score')?.setValue($event)">
-        </app-rating>
-    </div>
-   
-    <!-- Campo de comentario -->
-    <div>
-      <label for="resenas-comentario">Comentario:</label>
-      <textarea type="text" formControlName="comentario" id="comentario"></textarea>
+          </app-rating>
+        </div>
+        <div>
+          <label for="resenas-comentario"></label>
+          <textarea formControlName="comentario" id="comentario"
+            placeholder="Escribe aqui tu comentario..."></textarea>
+        </div>
+        <div>
+          <button type="submit" [disabled]="formData.invalid" class="btn-enviar">Enviar</button>
+        </div>
+      </form>
     </div>
 
-    <div>
-      <button type="submit" [disabled]="formData.invalid">Enviar</button>
-    </div>
-</form>
+</div>

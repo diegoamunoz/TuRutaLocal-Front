@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DestinosService } from '../../../services/destinos.service';
 import { Router, RouterLink } from '@angular/router';
 import { ResenasService } from '../../../services/resenas.service';
-import { RatingComponent } from "../../../shared/rating/rating.component";
+import { RatingComponent } from "../../../componentes/shared/rating/rating.component";
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,7 @@ import { RatingComponent } from "../../../shared/rating/rating.component";
 export class HomeComponent {
   [x: string]: Object;
   cantidadDestinos: number = 2;
+  cantidadResenas: number = 3;
 
   formData!: FormGroup;
   destinos: any =  [];
@@ -46,11 +47,11 @@ export class HomeComponent {
           console.error( error );
         },
       complete: () => {
-        this.formData.reset();  // Limpiamos los campos del formulario
+        this.formData.reset(); 
       }
     }),
 
-    this.resenasService.getResenas().subscribe({
+    this.resenasService.getResenaDestacada(this.cantidadResenas).subscribe({
       next: (data) => {
         console.log(data);
         this.resenas = data

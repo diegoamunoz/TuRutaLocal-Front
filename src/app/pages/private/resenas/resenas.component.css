@@ -1,0 +1,75 @@
+.page-resenas-list {
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.page-resenas-list .titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.page-resenas-list .titulo h1 {
+  font-size: 2.2rem; 
+  color: #2274A5; 
+  margin: 0;
+}
+
+.page-resenas-list .titulo a {
+  background-color: #7E2E84; 
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.page-resenas-list .titulo a:hover {
+  background-color: #5a1f5d;
+}
+
+.page-resenas-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.page-resenas-list table th,
+.page-resenas-list table td {
+  border: 1px solid #2274A5;
+  padding: 14px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 16px;  
+  line-height: 1.6;
+}
+
+.page-resenas-list table th {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.page-resenas-list table td:first-child {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.page-resenas-list table td {
+  color: #222;
+}
+
+.page-resenas-list table a {
+  color: #2274A5;
+  text-decoration: none;
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.page-resenas-list table a:hover {
+  text-decoration: underline;
+}

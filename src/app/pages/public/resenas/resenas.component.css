@@ -14,12 +14,12 @@
   border-radius: 0 0 10px 10px;
 }
 
-.texto-imagen{
+.texto-imagen {
   position: absolute;
   top: 28rem;
   left: 16rem;
   transform: translate(-50%, -50%);
-  color: #2274A5;
+  color: var(--Lapis-Lazuli);
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
@@ -43,6 +43,7 @@
   box-shadow: 0 4px 12px rgba(36, 124, 175, 0.993);
   transition: all 0.3s ease;
   width: 60rem;
+  max-width: 100%;
 }
 
 .resena-card:hover {
@@ -75,21 +76,19 @@
   margin-bottom: 1.2rem;
 }
 
-
-/* boton reseñas */
-
-.contenedor_boton_resenas{
+/* botón reseñas */
+.contenedor_boton_resenas {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
 }
 
 .boton_resenas {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #2274A4;
-  color: #FFFFFF;
+  background-color: var(--Lapis-Lazuli);
+  color: var(--White);
   font-size: 1rem;
   font-weight: 100;
   text-decoration: none;
@@ -97,10 +96,79 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  
 }
 
 .boton_resenas:hover {
-  background-color: #7E2E84;
+  background-color: var(--Maximum-Purple);
   transform: translateY(-2px);
+}
+
+
+@media (max-width: 992px) {
+  .imagen-principal img {
+    height: 20rem;
+  }
+
+  .texto-imagen {
+    top: 22rem;
+    left: 50%;
+    font-size: 2.2rem;
+    width: 90%;
+  }
+
+  .resena-card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .imagen-principal img {
+    height: 16rem;
+  }
+
+  .texto-imagen {
+    top: 14rem;
+    font-size: 1.8rem;
+    left: 50%;
+    padding: 0 1rem;
+  }
+
+  .nombre_opiniones {
+    font-size: 1rem;
+  }
+
+  .resena-card h2 {
+    font-size: 0.95rem;
+  }
+
+  .boton_resenas {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto-imagen {
+    font-size: 1.4rem;
+    top: 12rem;
+  }
+
+  .nombre_opiniones {
+    font-size: 0.9rem;
+  }
+
+  .resena-card {
+    padding: 1rem;
+  }
+
+  .resena-card h2 {
+    font-size: 0.9rem;
+  }
+
+  .boton_resenas {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }

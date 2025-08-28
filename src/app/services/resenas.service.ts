@@ -9,30 +9,63 @@ import { environment } from '../../environments/environment';
 export class ResenasService {
   enviroment: any;
 
-  constructor(  private http: HttpClient, private authService: AuthService ) { 
-        this.enviroment = environment
+  constructor(private http: HttpClient, private authService: AuthService) { 
+    this.enviroment = environment
   }
 
-  registerResena( newResena: any ){
-    console.log( 'RESENA', newResena);
-
-    return this.http.post<any>( `${ this.enviroment.apiUrl}/resenas`, newResena, {headers: this.authService .getHeaders()})
+  registerResena(newResena: any) {
+    return this.http.post<any>(
+      `${this.enviroment.apiUrl}/resenas`, 
+      newResena, 
+      { headers: this.authService.getHeaders() }
+    )
   }
 
-  getResenas(){
-    return this.http.get( `${ this.enviroment.apiUrl}/resenas`)
-  } 
-
-  deleteResenas(id: string){
-    return this.http.delete<any>( `${ this.enviroment.apiUrl}/resenas/` +id, {headers: this.authService .getHeaders()})
+  // ✅ Público (solo aprobadas)
+  getResenas() {
+    return this.http.get(`${this.enviroment.apiUrl}/resenas`)
   }
 
-  updateResenas(id:string, updateResenas: any){
-    return this.http.patch<any>( `${ this.enviroment.apiUrl}/resenas/` +id, this.updateResenas, {headers: this.authService .getHeaders()})
+  getResenaDestacada(cantidad: number) {
+    return this.http.get<any>(`${this.enviroment.apiUrl}/resenas/c/`+ cantidad);
   }
 
-  getResenasByid(id: string){
-    return this.http.get<any>( `${ this.enviroment.apiUrl}/resenas/` +id, {headers: this.authService .getHeaders()})
+  deleteResenas(id: string) {
+    return this.http.delete<any>(
+      `${this.enviroment.apiUrl}/resenas/` + id, 
+      { headers: this.authService.getHeaders() }
+    )
   }
 
+  updateResenas(id:string, updateResenas: any) {
+    return this.http.patch<any>(
+      `${this.enviroment.apiUrl}/resenas/` + id, 
+      updateResenas, 
+      { headers: this.authService.getHeaders() }
+    )
+  }
+
+  getResenasByid(id: string) {
+    return this.http.get<any>(
+      `${this.enviroment.apiUrl}/resenas/` + id, 
+      { headers: this.authService.getHeaders() }
+    )
+  }
+
+  // ✅ Nuevo: obtener todas las reseñas (admin)
+  getAdminResenas() {
+    return this.http.get<any>(
+      `${this.enviroment.apiUrl}/resenas/admin`,
+      { headers: this.authService.getHeaders() }
+    )
+  }
+
+  // ✅ Nuevo: aprobar reseña
+  approveResena(id: string) {
+    return this.http.patch<any>(
+      `${this.enviroment.apiUrl}/resenas/${id}/approve`, 
+      {}, 
+      { headers: this.authService.getHeaders() }
+    )
+  }
 }
