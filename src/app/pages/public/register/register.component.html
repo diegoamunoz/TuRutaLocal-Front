@@ -35,10 +35,13 @@
         <input id="movil" type="number" formControlName="movil" placeholder="" />
         <div class="error">Número de móvil válido requerido.</div>
       </div>
-
-      <div class="field">
-        <button type="submit" [disabled]="formData.invalid">Regístrate</button>
+      <div class="register-button">
+        <button type="submit" class="btn-primary" [disabled]="formData.invalid">Regístrate</button>
       </div>
+            <div class="login-button">
+      <button class="btn-secondary" routerLink="/login" type="submit" >¿ya tienes cuenta?,¡inicia sesion!</button>
+      </div>
+
     </div>
   </form>
 </div>

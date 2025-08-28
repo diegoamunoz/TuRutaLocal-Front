@@ -39,13 +39,13 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent  },
     { path: 'destinos', component: DestinosPublicComponent },
     { path: 'resenas', component: ResenasPublic},
-    { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
-    { path: 'reserva/:id', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
+    { path: 'dashboard', component:DashboardComponent },
+    { path: 'reserva/:id', component: ReservaPublicaComponent },
     { path: 'servicios/:id', component:serviciosPublicComponent },
 
-    { path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },
-    { path: 'dashboard/servicios/new', component:servicioNewFormcomponent, canActivate:[authGuard] },
-    { path: 'dashboard/servicios/edit/:id',component:ServicioEditComponent, canActivate:[ authGuard ]  },
+    { path: 'dashboard/servicios',component:ServiciosComponent  },
+    { path: 'dashboard/servicios/new', component:servicioNewFormcomponent },
+    { path: 'dashboard/servicios/edit/:id',component:ServicioEditComponent  },
     
     { path: 'dashboard/reservas',component: ReservasComponent, canActivate:[ authGuard ]  },
     { path: 'dashboard/reservas/new', component: ReservaNewComponent, canActivate:[ authGuard ] },

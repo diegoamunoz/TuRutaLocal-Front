@@ -90,10 +90,10 @@
 }
 
 /* Botón ocupa las 2 columnas */
-.form-register button {
+.btn-primary {
     grid-column: span 2;
     width: 100%;
-    padding: 2.4rem;
+    padding: 1rem;
     font-size: 1rem;
     background-color: #007bff;
     color: white;
@@ -103,13 +103,29 @@
     transition: background-color 0.3s ease;
 }
 
-.form-register button:hover:enabled {
+.btn-primary:hover:enabled {
     background-color: #0056b3;
 }
+.login-button{
+    display: contents;
+}
+.btn-secondary {
+    grid-column: span 2;
+    width: auto;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    background-color: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
 
-.form-register button:disabled {
-    background-color: #007bff;
-    cursor: not-allowed;
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
 }
 
 /* === MEDIA QUERIES === */
