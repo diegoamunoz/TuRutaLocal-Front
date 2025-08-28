@@ -75,6 +75,9 @@ input {
     background-color: white;
     border-radius: 6px;
     cursor: pointer;
+    border: 1px solid #007bff;
+    color: #007bff;
+
 }
 
 
