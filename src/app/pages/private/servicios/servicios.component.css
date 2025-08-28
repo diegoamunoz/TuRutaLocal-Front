@@ -3,6 +3,13 @@
     justify-content: center;
     color: darkslateblue;
 }
+.service-header {
+    display: flex
+;
+    justify-content: center;
+    align-items: anchor-center;
+    flex-direction: column;
+}
 
 .btn-new-service {
     display: flex;

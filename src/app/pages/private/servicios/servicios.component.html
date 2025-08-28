@@ -1,46 +1,27 @@
-<div class="page-servicios-list">
-
-    <h1>hola</h1>
-
-    <a routerLink="/dashboard/servicios/new">Nuevo Servicio</a>
-    <!-- <pre>{{servicios | json }}</pre> -->
-    <table border="1">
-        <thead>
-            <th>
-                name Service
-            </th>
-            <th>
-                description
-            </th>
-            <th>
-            price
-    <h1 class="lista-de-servicios">Lista de servicios</h1>
-    <div class="btn-new-service ">
+<div class="service-header">
+    <h1>Lista de servicios</h1>
     <a routerLink="/dashboard/servicios/new" class="new-service">Nuevo Servicio</a>
-    </div>
-    @if (servicios.length > 0) {
-    <div class="service-list">
-        @for (servicio of servicios; track $index) {
-        <div class="service-card">
-            <img [src]="servicio.image" [alt]="servicio.name" class="service-image" />
+</div>
 
-            <div class="service-info">
-                <h3>{{ servicio.name }}</h3>
-                <p class="description">{{ servicio.description }}</p>
-                <div class="meta">
-                    <span class="price">{{ servicio.price | currency:'COP':'symbol-narrow' }}</span>
-                    <span class="category">{{ servicio.category }}</span>
-                    <span class="estado">{{ servicio.state }}</span>
-                </div>
+<div class="service-list">
+    @for (servicio of servicios; track $index) {
+    <div class="service-card">
+        <img [src]="servicio.urlImage" [alt]="servicio.name" class="service-image" />
 
-                <div class="actions">
-                    <a [routerLink]="['/dashboard', 'servicios', 'edit', servicio._id]">Editar</a> |
-                    <a href="#" (click)="onDelete(servicio._id); $event.preventDefault();">Eliminar</a>
-                </div>
+        <div class="service-info">
+            <h2 class="name">{{ servicio.name }}</h2>
+            <p class="description">{{ servicio.description }}</p>
+            <div class="meta">
+                <span class="price">{{ servicio.price | currency:'COP':'symbol-narrow' }}</span>
+                <span class="category">{{ servicio.category }}</span>
+                <span class="estado">{{ servicio.state }}</span>
+            </div>
+
+            <div class="actions">
+                <a [routerLink]="['/dashboard', 'servicios', 'edit', servicio._id]">Editar</a> |
+                <a href="#" (click)="onDelete(servicio._id); $event.preventDefault();">Eliminar</a>
             </div>
         </div>
-        }
     </div>
-    } @else {
-    <h3>No hay servicios registrados</h3>
     }
+</div>

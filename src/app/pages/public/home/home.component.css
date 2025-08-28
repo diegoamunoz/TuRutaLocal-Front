@@ -24,6 +24,7 @@ h2 {
 .frase {
   color: white;
   font-size: 2rem;
+  font-family:'Courier New', Courier, monospace ;
 }
 
 .barra_busqueda {
