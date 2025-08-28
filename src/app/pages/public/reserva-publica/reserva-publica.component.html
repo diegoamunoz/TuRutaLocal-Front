@@ -2,6 +2,8 @@
 
 <!-- <pre>{{ serviceDetail | json  }}</pre> -->
 <div class="maincontainer">
+<img src="imagenes/fondo-blanco.png" alt="fondo" class="imagen-fondo">
+
   <div class="main">
 
     <!-- Sección: Resumen de reserva -->
@@ -11,7 +13,11 @@
         <img [src]="serviceDetail.urlImage" [alt]="serviceDetail.name" />
         <div class="resumen-info">
           <h2>{{ serviceDetail.name }}</h2>
+          <p>{{serviceDetail.description}}</p>
         </div>
+        <div class="titulo-estado">
+                    <span class="estado-texto">{{ serviceDetail.state }}</span>
+                </div>
       </div>
     </section>
 

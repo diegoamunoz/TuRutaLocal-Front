@@ -1,4 +1,19 @@
 /* === CONTENEDOR PRINCIPAL === */
+.maincontainer{
+  position: relative;
+}
+
+.imagen-fondo {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;   /* mantiene proporción sin deformar */
+  z-index: -1;         /* queda detrás del contenido */
+}
+
+
 .form-container {
   max-width: 1000px;
   margin: 2rem auto;
@@ -20,6 +35,16 @@
   margin: 0 auto;
 }
 
+.resumen-info{
+  font-size: large;
+}
+
+.titulo-estado{
+  color: #2e7d32;
+  font-size: x-large;
+
+}
+
 /* Imagen */
 .resumen-card img {
   width: 280px;
@@ -35,7 +60,7 @@
 }
 
 .resumen-card h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #6a0dad; /* morado */
   margin-bottom: 0.5rem;

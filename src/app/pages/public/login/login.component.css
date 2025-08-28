@@ -39,6 +39,13 @@ form {
     align-items: flex-start; /* alinea todo a la izquierda */
 }
 
+.error{
+        font-size: 1.1rem;
+    font-family: "inter", sans-serif;
+    color: rgb(239, 11, 11);
+    font-weight: 700;
+}
+
 form input, 
 form button {
     width: 100%;         /* ocupa todo el ancho del contenedor */
@@ -60,7 +67,18 @@ input {
     border-radius: 6px;
 }
 
-button {
+.boton-reg{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+.boton-iniciar {
     width: 100%;
     padding: 0.9rem;
     font-size: 1rem;
