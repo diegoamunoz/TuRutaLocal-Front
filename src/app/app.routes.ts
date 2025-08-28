@@ -40,7 +40,7 @@ export const routes: Routes = [
     { path: 'destinos', component: DestinosPublicComponent },
     { path: 'resenas', component: ResenasPublic},
     { path: 'dashboard', component:DashboardComponent, canActivate:[ authGuard ] },
-    { path: 'reserva', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
+    { path: 'reserva/:id', component: ReservaPublicaComponent, canActivate:[ authGuard ] },
     { path: 'servicios/:id', component:serviciosPublicComponent },
 
     { path: 'dashboard/servicios',component:ServiciosComponent, canActivate:[ authGuard ]  },

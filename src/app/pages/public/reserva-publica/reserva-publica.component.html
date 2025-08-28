@@ -1,57 +1,29 @@
 <!-- reserva.component.html -->
+
+<!-- <pre>{{ serviceDetail | json  }}</pre> -->
 <div class="maincontainer">
+<img src="imagenes/fondo-blanco.png" alt="fondo" class="imagen-fondo">
+
   <div class="main">
 
     <!-- Sección: Resumen de reserva -->
+<!-- Sección: Resumen de reserva -->
     <section class="resumenreserva">
-      <div class="imgcalltoaction">
-        <div>
-        <h1>¡Tu aventura está a punto de comenzar!</h1>
-        <p> Explora Colombia y enamórate de sus encantos</p>
-        <button class="boton-reserva" (click)="scrollToFormulario(formularioReserva)">
-  Reservar ahora
-</button>
+      <div class="resumen-card">
+        <img [src]="serviceDetail.urlImage" [alt]="serviceDetail.name" />
+        <div class="resumen-info">
+          <h2>{{ serviceDetail.name }}</h2>
+          <p>{{serviceDetail.description}}</p>
         </div>
+        <div class="titulo-estado">
+                    <span class="estado-texto">{{ serviceDetail.state }}</span>
+                </div>
       </div>
-
-      <!-- <div class="datosreserva">
-        <div class="cuadroreserva">
-          <h2>Resumen de tu reserva</h2>
-          <h3>Excursión a Valle del Cocora, Salento y Filandia</h3>
-          <img src="./assets/img/Cincoentrellas.png" alt="Cinco estrellas">
-          <h4>Tour en español</h4>
-
-          <div class="fechareserva">
-            <div class="fecha">
-              <img src="./assets/img/calendario.png" alt="Ícono calendario">
-              <h5>15 de mayo de 2025</h5>
-            </div>
-            <div class="numeropersonas">
-              <img src="./assets/img/personas.png" alt="Ícono personas">
-              <h5>2 adultos</h5>
-            </div>
-          </div>
-
-          <div class="precio">
-            <h1>$600.000 COP</h1>
-            <button>Continuar</button>
-          </div>
-        </div>
-      </div> -->
     </section>
+
 
     <!-- Sección: Formulario Angular -->
     <section class="formreserva" #formularioReserva>
-      <div class="condicionesreserva">
-        <h2>Condiciones de la reserva</h2>
-        <ul>
-          <li>Recibirás confirmación al correo electrónico</li>
-          <li>Puedes cancelar tu reserva 24 horas antes</li>
-          <li>El operador te contactará para coordinar itinerario y métodos de pago</li>
-          <li>El cumplimiento de los planes no es responsabilidad de Tu Ruta Local, el operador es quien debe cumplir el itinerario</li>
-        </ul>
-      </div>
-
       <div class="formularioreserva">
         <div class="form-container">
           <form
@@ -62,14 +34,51 @@
             <h2>Registrar Reserva</h2>
             <p class="subtitle">Diligencia la información para completar tu reserva</p>
 
+
             <div class="field">
-              <label for="servicio-name">Servicio</label>
-              <select formControlName="servicio" id="servicio-name" required>
-                <option value="">Selecciona...</option>
-                @for (servicio of servicios; track $index) {
-                  <option [value]="servicio._id">{{ servicio.name }}</option>
-                }
-              </select>
+              <label for="servicio-nombre-usuario">Nombre de quien reserva</label>
+              <input
+                type="text"
+                formControlName="nombreUsuario"
+                id="servicio-nombre-usuario"
+              />
+            </div>
+
+            
+            <div class="field">
+              <label for="servicio-cc">Cédula de Ciudadanía</label>
+              <input
+                type="text"
+                formControlName="cedula"
+                id="servicio-cc"
+              />
+            </div>
+
+            <div class="field">
+              <label for="servicio-telefono">Número teléfono</label>
+              <input
+                type="text"
+                formControlName="telefono"
+                id="servicio-telefono"
+              />
+            </div>
+
+            <div class="field">
+              <label for="servicio-email">Email</label>
+              <input
+                type="email"
+                formControlName="email"
+                id="servicio-email"
+              />
+            </div>
+
+            <div class="field">
+              <label for="servicio-direccion">Dirección</label>
+              <input
+                type="text"
+                formControlName="direccion"
+                id="servicio-direccion"
+              />
             </div>
 
             <div class="field">
@@ -93,22 +102,38 @@
               />
             </div>
 
+            <div class="field">
+              <label for="servicio-comentario">Comentarios adicionales</label>
+              <textarea
+                formControlName="comentario"
+                id="servicio-comentario"
+                placeholder="Escribe de forma breve cualquier detalle que quieras aclarar"
+              >
+              </textarea>
+            </div>
+
+            <div class="field">
+              <label for="servicio-total">Total</label>
+              <p>{{ formData.get('total')?.value | currency }}</p>
+            </div>
+
             <div class="field" >
-              <a class="boton" href="home" ruterLink="home" routerLinkActive="router-link-active"  type="submit">Registrar Reserva</a>
+              <button type="submit">Registrar Reserva</button>
             </div>
           </form>
+          <div class="condicionesreserva">
+        <h2>Condiciones de la reserva</h2>
+        <ul>
+          <li>Recibirás confirmación al correo electrónico</li>
+          <li>Puedes cancelar tu reserva 24 horas antes</li>
+          <li>El operador te contactará para coordinar itinerario y métodos de pago</li>
+          <li>El cumplimiento de los planes no es responsabilidad de Tu Ruta Local, el operador es quien debe cumplir el itinerario</li>
+        </ul>
+      </div>
         </div>
       </div>
     </section>
 
-    <!-- Sección: Agradecimiento -->
-    <section class="agradecimiento">
-      <div class="textodespedida">
-        <p>Viajar es añadir vida a la vida</p>
-        <p>Gracias por apoyar operadores locales</p>
-        <p>¡Vuelve pronto!</p>
-      </div>
-    </section>
 
   </div>
 </div>

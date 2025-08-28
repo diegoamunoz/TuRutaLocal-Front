@@ -7,8 +7,8 @@
 
     <div class="form-content">
       <div class="field" [class.invalid]="formData.get('name')?.invalid && formData.get('name')?.touched">
-        <label for="name">Nombre</label>
-        <input id="name" type="text" formControlName="name" placeholder="Ej: Diego" />
+        <label for="name">Nombre y Apellidos</label>
+        <input id="name" type="text" formControlName="name" placeholder="Vulgarcito Gutierrez" />
         <div class="error">El nombre debe tener al menos 3 caracteres.</div>
       </div>
 
@@ -20,19 +20,19 @@
 
       <div class="field" [class.invalid]="formData.get('username')?.invalid && formData.get('username')?.touched">
         <label for="username">Usuario</label>
-        <input id="username" type="text" formControlName="username" placeholder="usuario123" />
+        <input id="username" type="text" formControlName="username" placeholder="" />
         <div class="error">Usuario obligatorio.</div>
       </div>
 
       <div class="field" [class.invalid]="formData.get('password')?.invalid && formData.get('password')?.touched">
         <label for="password">Contraseña</label>
-        <input id="password" type="password" formControlName="password" placeholder="••••••••" />
+        <input id="password" type="password" formControlName="password" placeholder="abc123" />
         <div class="error">La contraseña es obligatoria.</div>
       </div>
 
       <div class="field" [class.invalid]="formData.get('movil')?.invalid && formData.get('movil')?.touched">
         <label for="movil">Móvil</label>
-        <input id="movil" type="number" formControlName="movil" placeholder="3111111111" />
+        <input id="movil" type="number" formControlName="movil" placeholder="" />
         <div class="error">Número de móvil válido requerido.</div>
       </div>
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { environment } from '../../environments/environment';
+import { tap } from 'rxjs';
 
 
 @Injectable({
@@ -21,7 +22,12 @@ export class UsersService {
   }
 
   registerUser(userData: any) {
-    return this.http.post(`${this.enviroment.apiUrl}`, userData);
+    return this.http.post(`${this.enviroment.apiUrl}/auth/register`, userData)
+      .pipe(
+        tap( data => {
+          console.log( data );
+        } )
+      );
   }
 
 

@@ -1,45 +1,68 @@
 <div class="login-background">
-    <div class="login-wrapper">
-        <form class="form form-login" [formGroup]="formData" (ngSubmit)="onSubmit()">
-            <div class="form-content">
-                <div class="field">
-                    <div class="form-logo"></div>
-                    <label for="username">Usuario</label>
-                    <input type="text" placeholder="ej:valeria@correo.co" id="username" formControlName="email">
-                    <div class="error">
-                        @if (formData.get('email')?.invalid && (formData.get('email')?.dirty ||
-                        formData.get('email')?.touched) ) {
-                        @if (formData.get( 'email' )?.errors?.['required']) {
-                        <span>el usuario es obligatorio</span>
-                        }
-                        @if (formData.get('email')?.errors?.[ 'email' ]) {}
-                        <span>correo no valido</span>
-                        }
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="">Contraseña</label>
-                    <input type="password" placeholder="ej:123456" id="password" formControlName="password">
-                    <div class="error">
-                        <!-- validar el estado del campo actual -->
-                        @if (formData.get( 'password' )?.invalid && (formData.get('password')?.dirty ||
-                        formData.get('password')?.touched)) {
-                        @if (formData.get( 'password' )?.errors?.['required']) {
-                        <span>la contraseña es obligatoria</span>
-                        }
-                        @if (formData.get( 'password' )?.errors?.['minlenght']) {
-                        <span>minimo ocho caracteres</span>
-                        }
-                        @if (formData.get( 'password' )?.errors?.['maxlenght']) {
-                        <span>maximo doce caracteres</span>
-                        }
-                        }
-                    </div>
-                </div>
-                <div class="field">
-                    <button type="submit" [disabled]="formData.invalid">Iniciar sesión</button>
-                </div>
-            </div>
-        </form>
-    </div>
+  <div class="login-wrapper">
+    <form class="form form-login" [formGroup]="formData" (ngSubmit)="onSubmit()">
+      <div class="form-content">
+        <div class="field">
+          <div class="form-logo"></div>
+          <label for="username">Usuario</label>
+          <input
+            type="text"
+            placeholder="ej:valeria@correo.co"
+            id="username"
+            formControlName="email"
+          />
+          <div class="error">
+            @if (
+              formData.get('email')?.invalid &&
+              (formData.get('email')?.dirty || formData.get('email')?.touched)
+            ) {
+            @if (formData.get('email')?.errors?.['required']) {
+            <span>el usuario es obligatorio</span>
+            } @if (formData.get('email')?.errors?.['email']) {}
+            <span>correo no valido</span>
+            }
+          </div>
+        </div>
+        <div class="field">
+          <label for="">Contraseña</label>
+          <input
+            type="password"
+            placeholder="ej:123456"
+            id="password"
+            formControlName="password"
+          />
+          <div class="error">
+            @if (
+              formData.get('password')?.invalid &&
+              (formData.get('password')?.dirty ||
+                formData.get('password')?.touched)
+            ) {
+            @if (formData.get('password')?.errors?.['required']) {
+            <span>la contraseña es obligatoria</span>
+            } @if (formData.get('password')?.errors?.['minlenght']) {
+            <span>minimo ocho caracteres</span>
+            } @if (formData.get('password')?.errors?.['maxlenght']) {
+            <span>maximo doce caracteres</span>
+            } }
+          </div>
+        </div>
+      </div>
+
+      <div class="field-reg">
+        <button class="boton-reg" routerLink="/register">
+          ¿ya tienes cuenta?,¡registrate!
+        </button>
+      </div>
+      <div class="field-button">
+        <!-- 🚨 corregido: quité routerLink -->
+        <button
+          class="boton-iniciar"
+          type="submit"
+          [disabled]="formData.invalid"
+        >
+          Iniciar sesión
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

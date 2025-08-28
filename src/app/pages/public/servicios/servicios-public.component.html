@@ -18,10 +18,9 @@
                     <h3>{{ servicio.name }}</h3>
                     <span class="estado-texto">{{ servicio.state }}</span>
                 </div>
-                <p class="descripcion">{{ servicio.description }}</p>
                 <p class="precio">{{ servicio.price | currency:'USD' }}</p>
                 <p class="categoria">{{ servicio.category }}</p>
-                <a class="ver-mas-boton" [routerLink]="['/reserva']">Reserva ahora</a>
+                <a class="ver-mas-boton" [routerLink]="['/reserva', servicio._id]">Ver mas detalles</a>
             </div>
         </div>
         }
